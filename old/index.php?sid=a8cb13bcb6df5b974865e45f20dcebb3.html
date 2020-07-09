@@ -1,0 +1,332 @@
+	<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="keywords" content="diyabc, Approximate Bayesian Computation, ABC, coalescense,  population genetics, cluster, divergences, admixtures, SNP" />
+<meta name="description" content="Inferring population history with DIY ABC: a user-friendly approach to Approximate Bayesian Computation" />
+
+<title>DIYABC - Information</title>
+
+
+
+<!--
+	phpBB style name: prosilver
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by:
+-->
+
+<link href="assets/css/font-awesome.min.css%3Fassets_version=54.css" rel="stylesheet">
+<link href="styles/prosilver/theme/stylesheet.css%3Fassets_version=54.css" rel="stylesheet">
+<link href="styles/prosilver/theme/en/stylesheet.css%3Fassets_version=54.css" rel="stylesheet">
+
+
+
+
+<!--[if lte IE 9]>
+	<link href="./styles/prosilver/theme/tweaks.css?assets_version=54" rel="stylesheet">
+<![endif]-->
+
+
+
+
+
+</head>
+<body id="phpbb" class="nojs notouch section-index ltr ">
+
+
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+	<div id="page-header">
+		<div class="headerbar" role="banner">
+					<div class="inner">
+
+			<div id="site-description" class="site-description">
+				<a id="logo" class="logo" href="index.php.html" title="Board index"><span class="site_logo"></span></a>
+				<h1>DIYABC</h1>
+				<p>Do it yourself ABC</p>
+				<p class="skiplink"><a href="index.php%3Fsid=a8cb13bcb6df5b974865e45f20dcebb3.html#start_here">Skip to content</a></p>
+			</div>
+
+									
+			</div>
+					</div>
+				<div class="navbar" role="navigation">
+	<div class="inner">
+
+	<ul id="nav-main" class="nav-main linklist" role="menubar">
+
+		<li id="quick-links" class="quick-links dropdown-container responsive-menu hidden" data-skip-responsive="true">
+			<a href="index.php%3Fsid=a8cb13bcb6df5b974865e45f20dcebb3.html#" class="dropdown-trigger">
+				<i class="icon fa-bars fa-fw" aria-hidden="true"></i><span>Quick links</span>
+			</a>
+			<div class="dropdown">
+				<div class="pointer"><div class="pointer-inner"></div></div>
+				<ul class="dropdown-contents" role="menu">
+					
+					
+											<li class="separator"></li>
+																			<li>
+								<a href="memberlist.php%3Fmode=team.html" role="menuitem">
+									<i class="icon fa-shield fa-fw" aria-hidden="true"></i><span>The team</span>
+								</a>
+							</li>
+																<li class="separator"></li>
+
+									</ul>
+			</div>
+		</li>
+
+				<li data-skip-responsive="true">
+			<a href="http://www1.montpellier.inra.fr/CBGP/diyabc/app.php/help/faq" rel="help" title="Frequently Asked Questions" role="menuitem">
+				<i class="icon fa-question-circle fa-fw" aria-hidden="true"></i><span>FAQ</span>
+			</a>
+		</li>
+						
+			<li class="rightside"  data-skip-responsive="true">
+			<a href="ucp.php%3Fmode=login.html" title="Login" accesskey="x" role="menuitem">
+				<i class="icon fa-power-off fa-fw" aria-hidden="true"></i><span>Login</span>
+			</a>
+		</li>
+					<li class="rightside" data-skip-responsive="true">
+				<a href="ucp.php%3Fmode=register.html" role="menuitem">
+					<i class="icon fa-pencil-square-o  fa-fw" aria-hidden="true"></i><span>Register</span>
+				</a>
+			</li>
+						</ul>
+
+	<ul id="nav-breadcrumbs" class="nav-breadcrumbs linklist navlinks" role="menubar">
+						<li class="breadcrumbs">
+										<span class="crumb"  itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a href="index.php.html" itemprop="url" accesskey="h" data-navbar-reference="index"><i class="icon fa-home fa-fw"></i><span itemprop="title">Board index</span></a></span>
+
+								</li>
+		
+			</ul>
+				   		<h2 style="text-align: center; color: grey"> Welcome to the webpage of the software DIYABC (Do It Yourself ABC):</h2>
+						<h1 style="text-align: center; font-family: monospace;color: black; ">a user-friendly approach to <i>A</i>pproximate <i>B</i>ayesian <i>C</i>omputation for inference on population history using molecular markers</h1>
+				 <br>
+				 <div style="text-align: center;font-size:120%" >
+							by Jean-Marie Cornuet, Pierre Pudlo, Julien Veyssier, Etienne Loire, Alexandre Dehne Garcia, Filipe Santos and Arnaud Estoup</div>
+					 <div style="text-align: center;color: grey; font-size:110%" >
+						Centre de Biologie et de Gestion des Populations, INRA, Campus International de Baillarguet, CS30016 34988 Montferrier-sur-Lez, France</div>
+							<br><center>
+<table style="text-align: left; width: 70%; background-color: transparent;" border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+    <td>
+      <h3 style="text-align: center;">Dear DIYABC users,</h3>
+      <h4 style="text-align: justify;">
+We have recently made available (July 2015) a new version of the program DIYABC (DIYABC v2.1.0).
+This new version includes the following major and minor improvements:
+</h4>
+<h3>Major improvements</h3>
+<h4 style="text-align: justify;">
+(you can download the following file <a href="diyabc-2.1.0/tmp/diyabc-2.1.0-major_improvements.pdf"> DIYABC_2_1_0_major_improvements.pdf</a>
+ for additional details)
+<br>
+<ol>
+ <li>New analysis options to compute error / accuracy indicators conditionally to the observed dataset.</li>
+ <li>Possibility to specify a MAF (minimum allele frequency) criterion on the analyzed SNP datasets.</li>
+ <li>Optimization of the simulation process of SNP datasets that include a substantial amount of missing data.</li>
+</ol>
+</h4>
+
+<h3>Minor improvements</h3>
+<h4 style="text-align: justify;">
+<ol>
+ <li>We have fixed several memory leaks that could be lethal for computers with low memory capacity.</li>
+ <li>We have improved consistency tests on the observed datafile format (separators, locus-type definition, missing data, monomorphic SNP) with more explicit warning messages.</li>
+ <li>We have fixed a bug that made it difficult to install the linux version of the program without local compilation of the source files.
+ <li>We have fixed bugs related to various operating systems encoding formats.</li>
+ <li>We have corrected minor bugs related to the production of simulated datasets and data analyses.</li>
+ <li>We have written a small computer program to convert a vcf format SNP datafile (which corresponds to a widely use file format for SNP) into a DIYABC format SNP datafile.  The program is a Python 3.x script which can be run under linux and windows operating system. This tool, together with a readme file and example files, is freely available at <a href="https://github.com/loire/vcf2DIYABC.snp"> https://github.com/loire/vcf2DIYABC.snp</a>.</li>
+</ol>
+<br></h4>
+      </td>
+    </tr>
+    <tr>
+    <td><h4>All simulations and analyses that were processed successfully with the previous version of the program do not need to be processed again. Note that a DIYABC projects produced with the previous version of the program might possibly not work with this new version.
+        <br><br>
+      <h4 style="text-align: justify;color:#0003C3">Reference of the associated paper :
+Cornuet J-M, Pudlo P, Veyssier J, Dehne-Garcia A, Gautier M, Leblois R, Marin J-M, Estoup A (2014) DIYABC v2.0:
+a software to make Approximate Bayesian Computation inferences about population history using Single Nucleotide
+Polymorphism, DNA sequence and microsatellite data. Bioinformatics, Vol. 30, no. 8, p1187–1189, <a href="http://doi.org/10.1093/bioinformatics/btt763">doi: 10.1093/bioinformatics/btt763</a>.</h4>
+<br>After login, you can go to the downloads section of DIYABC to download the paper.<br><br>
+      <h4 style="width: 20%;">All the best <br>
+      </h4>
+      <h4 style="width: 50%;"><br>Arnaud Estoup, Jean-Marie Cornuet, Alexandre Dehne Garcia and Etienne Loire on behalf of the DIYABC team
+      </h4>
+		<h5 style="text-align: justify;">
+		</h5>
+      </td>
+    </tr>
+  </tbody>
+</table></center>
+
+
+<br>
+<h3>DIYABC v2.1.0 DOWNLOADS : </h3>
+<h4>
+<table cellmargin="5" border="0" cellpadding="5">
+<colgroup> <col span="2" width="20%"> <col span="2"> </colgroup> <tbody>
+<tr>
+<td style="">Download the <span style="font-style: italic;">windows 32/64</span>
+release : </td>
+<td><a
+href="diyabc-2.1.0/tmp/diyabc-2.1.0-win32.zip"
+class="button1" style="color: red;"> diyabc-2.1.0-win32.zip </a> </td>
+</tr>
+
+<tr>
+<td style="">Download the <span style="font-style: italic;">OS X</span>
+release : </td>
+<td><a
+href="diyabc-2.1.0/tmp/diyabc-2.1.0-mac.dmg"
+class="button1" style="color: red;">  diyabc-2.1.0-mac.dmg </a> </td>
+</tr>
+
+
+<tr>
+<td style="">Download the <span style="font-style: italic;">sources</span>
+, RECOMMANDED FOR LINUX USERS : </td>
+<td><a
+href="diyabc-2.1.0/tmp/diyabc-2.1.0-sources.zip"
+class="button1" style="color: red;">  diyabc-2.1.0-sources.zip </a> </td>
+</tr>
+
+<tr>
+<td style="">Download the <span style="font-style: italic;">linux 32</span>
+release : </td>
+<td><a
+href="diyabc-2.1.0/tmp/diyabc-2.1.0-linux32.zip"
+class="button1" style="color: red;">  diyabc-2.1.0-linux32.zip </a> </td>
+</tr>
+
+<tr>
+<td style="">Download the <span style="font-style: italic;">linux 64</span>
+release : </td>
+<td><a
+href="diyabc-2.1.0/tmp/diyabc-2.1.0-linux64.zip"
+class="button1" style="color: red;">  diyabc-2.1.0-linux64.zip </a> </td>
+</tr>
+
+<tr>
+<td style="">Download the <span style="font-style: italic;">diyabc core binaries (without GUI)</span>
+ for MS Windows (diyabc_core-2.1.0-win.exe), Linux (diyabc_core-2.1.0-linux-i386, diyabc_core-2.1.0-linux-x64, 
+ diyabc_core-2.1.0-OldLinux-x64) and OsX (diyabc_core-2.1.0-OsX): </td>
+<td><a
+href="diyabc-2.1.0/tmp/diyabc_core-2.1.0-linWinOsXExe.zip"
+class="button1" style="color: red;">  diyabc_core-2.1.0-linWinOsXExe.zip </a> </td>
+</tr>
+
+
+<tr>
+<td>Download the<span style="font-style: italic;"> user manual</span>:
+</td>
+<td><a
+href="diyabc-2.1.0/tmp/diyabc-2.1.0-UserManual.pdf"
+class="button2" style="color: green;"> diyabc-2.1.0-UserManual.pdf </a> </td>
+</tr>
+<tr>
+<td>Download the<span style="font-style: italic;"> md5 checksum file</span>:
+</td>
+<td><a
+href="diyabc-2.1.0/tmp/diyabc-2.1.0-md5sum.txt"
+class="button2" style="color: green;"> diyabc-2.1.0-md5sum.txt </a> </td>
+</tr>
+
+<tr>
+</tr>
+</tbody>
+</table>
+</h4>
+	</div>
+</div>
+	</div>
+
+	
+	<a id="start_here" class="anchor"></a>
+	<div id="page-body" class="page-body" role="main">
+		
+		
+<div class="panel" id="message">
+	<div class="inner">
+	<h2 class="message-title">Information</h2>
+	<p>Due to phpBB framework critical vulnerabilities, DIYABC forum should be disabled until a safe update from phpbb.com. Sorry for the inconvenience. The DIYABC team.</p>
+		</div>
+</div>
+
+				</div>
+
+
+<div id="page-footer" class="page-footer" role="contentinfo">
+	<div class="navbar" role="navigation">
+	<div class="inner">
+
+	<ul id="nav-footer" class="nav-footer linklist" role="menubar">
+		<li class="breadcrumbs">
+									<span class="crumb"><a href="index.php.html" data-navbar-reference="index"><i class="icon fa-home fa-fw" aria-hidden="true"></i><span>Board index</span></a></span>					</li>
+		
+				<li class="rightside">All times are <span title="UTC">UTC</span></li>
+							<li class="rightside">
+				<a href="ucp.php%3Fmode=delete_cookies.html" data-ajax="true" data-refresh="true" role="menuitem">
+					<i class="icon fa-trash fa-fw" aria-hidden="true"></i><span>Delete all board cookies</span>
+				</a>
+			</li>
+												<li class="rightside" data-last-responsive="true">
+				<a href="memberlist.php%3Fmode=team.html" role="menuitem">
+					<i class="icon fa-shield fa-fw" aria-hidden="true"></i><span>The team</span>
+				</a>
+			</li>
+									<li class="rightside" data-last-responsive="true">
+				<a href="memberlist.php%3Fmode=contactadmin.html" role="menuitem">
+					<i class="icon fa-envelope fa-fw" aria-hidden="true"></i><span>Contact us</span>
+				</a>
+			</li>
+			</ul>
+
+	</div>
+</div>
+
+	<div class="copyright">
+				Powered by <a href="https://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Limited
+									</div>
+
+	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="AJAX error" data-ajax-error-text="Something went wrong when processing your request." data-ajax-error-text-abort="User aborted request." data-ajax-error-text-timeout="Your request timed out; please try again." data-ajax-error-text-parsererror="Something went wrong with the request and the server returned an invalid reply.">
+		<div id="darken" class="darken">&nbsp;</div>
+	</div>
+
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="Error" data-l-timeout-processing-req="Request timed out.">
+		<a href="index.php%3Fsid=a8cb13bcb6df5b974865e45f20dcebb3.html#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="index.php%3Fsid=a8cb13bcb6df5b974865e45f20dcebb3.html#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<div class="alert_text"></div>
+	</div>
+</div>
+
+</div>
+
+<div>
+	<a id="bottom" class="anchor" accesskey="z"></a>
+	</div>
+
+<script type="text/javascript" src="assets/javascript/jquery.min.js%3Fassets_version=54"></script>
+<script type="text/javascript" src="assets/javascript/core.js%3Fassets_version=54"></script>
+
+
+
+<script type="text/javascript" src="styles/prosilver/template/forum_fn.js%3Fassets_version=54"></script>
+<script type="text/javascript" src="styles/prosilver/template/ajax.js%3Fassets_version=54"></script>
+
+
+
+</body>
+</html>

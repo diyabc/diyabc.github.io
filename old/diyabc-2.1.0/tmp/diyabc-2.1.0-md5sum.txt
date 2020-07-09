@@ -1,0 +1,6 @@
+MD5 (diyabc-2.1.0-UserManual.pdf) = 43769e409762f89d9856e0fc697d599a
+MD5 (diyabc-2.1.0-linux32.zip) = e271c7501ae2429bd33753896fb8b34f
+MD5 (diyabc-2.1.0-linux64.zip) = 58020aa50641390791ce58086e2fbd1c
+MD5 (diyabc-2.1.0-mac.dmg) = db542850e2649c0a8dfb86c1ccab397a
+MD5 (diyabc-2.1.0-sources.zip) = b9840f244c250ec57e8d9d40aeafac05
+MD5 (diyabc-2.1.0-win32.zip) = 2a7b0fa0a48315df2a541b2bd61c225e
