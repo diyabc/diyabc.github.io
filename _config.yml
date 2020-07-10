@@ -28,7 +28,10 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: diyabc
 
 # Build settings
-remote_theme: chrisrhymes/bulma-clean-theme
+#remote_theme: chrisrhymes/bulma-clean-theme
+remote_theme: pmarsceill/just-the-docs
+theme: "just-the-docs"
+
 plugins:
   - jekyll-feed
   - jekyll-readme-index
