@@ -1,37 +1,101 @@
-## Welcome to GitHub Pages
+# Graphical User Interface for DIYABC-RF software
 
-You can use the [editor on GitHub](https://github.com/diyabc/diyabc.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+> :warning: **If you are looking for V2.1 version of DIYABC**: please see [there](/old), we aren't supporting this version anymore.
+> 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+We provide a graphical user interface (GUI) for the DIYABC-RF software [1], 
+called DIYABC-RF GUI.
 
-### Markdown
+Please check the project [website](https://diyabc.github.io/) for 
+additional information and detailed documentation.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+DIYABC-RF GUI is available as a standalone application, or in a R package called `diyabcGUI` as a `shiny` web app. You can either install the standalone app, or the `diyabcGUI` package and run the DIYABC-RF GUI as a standard `shiny` app, c.f. [below](#r-package-installation).
 
-```markdown
-Syntax highlighted code block
+DIYABC-RF GUI is a set of tools implementing Approximate Bayesian 
+Computation (ABC) combined with supervised machine learning based on 
+Random Forests (RF), for model choice and parameter inference in the context 
+of population genetics analysis.`diyabcGUI` provides a user-friendly interface 
+for command-line softwares `diyabc` (https://github.com/diyabc/diyabc) and 
+`abcranger` (https://github.com/diyabc/abcranger).
 
-# Header 1
-## Header 2
-### Header 3
+## Installation
 
-- Bulleted
-- List
+### Standalone app
 
-1. Numbered
-2. List
+For Windows and MacOS users, please download the latest release at 
+<https://github.com/diyabc/diyabcGUI/releases/latest>.
 
-**Bold** and _Italic_ and `Code` text
+For the moment, the standalone app is not available for Linux users. 
+Nonetheless, Linux users can install the `diyabcGUI` package, c.f. 
+[below](#r-package-installation), and 
+run the DIYABC-RF GUI as a standard `shiny` app.
 
-[Link](url) and ![Image](src)
+> **Note:** if encountering instability in the standalone app, we recommend to install and use the `shiny` app available in the `diyabcGUI` R package, c.f. [below](#r-package-installation).
+
+
+### R package installation
+
+1. Install `devtools` package if not available
+```R
+install.packages("devtools")
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+> **Note:** if you encounter any issue when installing `devtools`, please check the [next section](#potential-issue-with-devtools)
 
-### Jekyll Themes
+2. Install `diyabcGUI` package
+```R
+devtools::install_github(
+    "diyabc/diyabcGUI",
+    subdir = "R-pkg"
+)
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/diyabc/diyabc.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+3. **The first time after installation**, you need to download required binary files (e.g. `diyabc` and `abcranger` command line tools) by running
+```R
+library(diyabcGUI)
+diyabcGUI::dl_all_latest_bin()
+```
 
-### Support or Contact
+> **Note:** you can run this command from time to time to update required binary files in case new versions were released.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+4. Launch the interface
+```R
+library(diyabcGUI)
+diyabcGUI::diyabc()
+```
+
+The function `diyabc()` will launch DIYABC-RF GUI as a standard `shiny` web app, that you will be able to use either in your web browser or in the Rstudio `shiny` app viewer.
+
+To run simultaneously mutliple instances of DIYABC-RF GUI, e.g. to simultaneously manage and run multiple projects, you just need to run several times the function `diyabc()` from R (this is not possible from RStudio).
+
+### Potential issue with devtools
+
+You may encounter some issue when installing devtools, please check the official 
+[devtools page](https://github.com/r-lib/devtools).
+
+Following `devtools` recommandations, make sure you have a working development environment.
+
+- Windows: Install Rtools.
+- Mac: Install Xcode from the Mac App Store.
+- Linux: Install a compiler and various development libraries (details vary across different flavors of Linux).
+
+For Ubuntu users [here](https://www.digitalocean.com/community/tutorials/how-to-install-r-packages-using-devtools-on-ubuntu-18-04) is a guide to install devtools requirement (users of other Linux distributions may still find it useful).
+
+
+### Shiny server installation
+
+As a `shiny` app, DIYABC-RF GUI can be installed and run from a Shiny server. To do so, you just need (on Unix system, please adapt for Windows server) to:
+
+1. install the `diyabcGUI` package on your system, c.f. [above](#r-package-installation)
+2. manage the file access rights so that the Shiny server has access to the R package installation directory
+3. Create a symbolic link to the directory given by the R command `system.file("application", package = "diyabcGUI")` inside the `site_dir` folder configured in `/etc/shiny-server/shiny-server.conf` (by default `/srv/shiny-server`), e.g.:
+```bash
+ln -s /path/to/R_LIBS/diyabcGUI/application /srv/shiny-server/diyabc
+```
+4. DIYABC-RF GUI is now available on your server at `https://my.shiny.server.address/diyabc`
+
+---
+
+## Reference
+
+[1] Collin F-D, Raynal L, Durif G, Gautier M, Vitalis R, Lombaert E., Marin J-M, Estoup A (2020) DIYABC Random Forest v1.0: extending approximate Bayesian computation with supervised machine learning to infer demographic history from genetic polymorphisms. Submitted to Molecular Ecology Resources.

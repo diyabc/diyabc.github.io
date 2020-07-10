@@ -257,6 +257,7 @@ DEPENDENCIES
   github-pages
   jekyll-feed
   jekyll-readme-index
+  jemoji
   just-the-docs
   minima
   tzinfo
