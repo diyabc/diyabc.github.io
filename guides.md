@@ -1,3 +1,13 @@
-# User Guides
+---
+layout: page
+permalink: /doc/
+title: User manual
+---
 
-Download the [docx](../rf/Diyabc Random Forest User Manual 10-07-20_submitted_with_MER_ms.docx), [pdf](../rf/Diyabc Random Forest User Manual 10-07-20_submitted_with_MER_ms.pdf) version of the notice.
+The complete documentation of the `DIYABC-RF GUI` software is available in different formats.
+
+You can download the [pdf](../rf/Diyabc Random Forest User Manual 10-07-20_submitted_with_MER_ms.pdf) or [docx](../rf/Diyabc Random Forest User Manual 10-07-20_submitted_with_MER_ms.docx) version of the user manual.
+
+You can also visit the [html version](/rf/notice.html) of the documentation (work in progress).
+
+> :warning: The user manual targets users of the `DIYABC-RF` [graphical interface](/gui/). If you want to use the `DIYABC-RF` command line pipeline, you can visit the [dedicated page](/cli/). Please note that some sections of the user manual (regarding data formating, historical scenario definition) remains valid for the command line tools.  

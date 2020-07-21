@@ -1,15 +1,8 @@
-# Graphical User Interface for DIYABC-RF software
+# Graphical User Interface for DIYABC-RF software 
 
-> :warning: **If you are looking for V2.1 version of DIYABC**: please see [there](/old), we aren't supporting this version anymore.
-> 
+We provide a graphical user interface (GUI) for the DIYABC-RF software [1], called DIYABC-RF GUI.
 
-We provide a graphical user interface (GUI) for the DIYABC-RF software [1], 
-called DIYABC-RF GUI.
-
-Please check the project [website](https://diyabc.github.io/) for 
-additional information and detailed documentation.
-
-DIYABC-RF GUI is available as a standalone application, or in a R package called `diyabcGUI` as a `shiny` web app. You can either install the standalone app, or the `diyabcGUI` package and run the DIYABC-RF GUI as a standard `shiny` app, c.f. [below](#r-package-installation).
+DIYABC-RF GUI is available as a standalone application, or in a R package called `diyabcGUI` (https://github.com/diyabc/diyabcGUI) as a `shiny` web app. You can either install the standalone app, or the `diyabcGUI` package and run the DIYABC-RF GUI as a standard `shiny` app, c.f. [below](#r-package-installation).
 
 DIYABC-RF GUI is a set of tools implementing Approximate Bayesian 
 Computation (ABC) combined with supervised machine learning based on 
@@ -20,13 +13,17 @@ for command-line softwares `diyabc` (https://github.com/diyabc/diyabc) and
 
 ## Installation
 
+### Requirements
+
+- `zip` program
+
 ### Standalone app
 
-For Windows and MacOS users, please download the latest release at 
-<https://github.com/diyabc/diyabcGUI/releases/latest>.
+For Windows users, please download the installer of the latest DIYABC-RF GUI 
+release at <https://github.com/diyabc/diyabcGUI/releases/latest>.
 
-For the moment, the standalone app is not available for Linux users. 
-Nonetheless, Linux users can install the `diyabcGUI` package, c.f. 
+For the moment, the standalone app is not available for Linux and MacOS users. 
+Nonetheless, Linux and MacOS users can install the `diyabcGUI` package, c.f. 
 [below](#r-package-installation), and 
 run the DIYABC-RF GUI as a standard `shiny` app.
 
@@ -35,12 +32,12 @@ run the DIYABC-RF GUI as a standard `shiny` app.
 
 ### R package installation
 
-1. Install `devtools` package if not available
+1. Install `devtools` package if not already done
 ```R
 install.packages("devtools")
 ```
 
-> **Note:** if you encounter any issue when installing `devtools`, please check the [next section](#potential-issue-with-devtools)
+> **Note:** if you encounter any issue when installing `devtools`, please check the [next section](#potential-issue-with-devtools).
 
 2. Install `diyabcGUI` package
 ```R
@@ -75,7 +72,7 @@ You may encounter some issue when installing devtools, please check the official
 
 Following `devtools` recommandations, make sure you have a working development environment.
 
-- Windows: Install Rtools.
+- Windows: Install [Rtools](https://cran.r-project.org/bin/windows/Rtools/).
 - Mac: Install Xcode from the Mac App Store.
 - Linux: Install a compiler and various development libraries (details vary across different flavors of Linux).
 
