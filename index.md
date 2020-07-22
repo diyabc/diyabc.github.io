@@ -3,6 +3,8 @@ layout: home
 title: About
 ---
 
+# DIYABC-RF
+
 `DIYABC-RF` [1] is an inference software implementing 
 *Approximate Bayesian Computation* (ABC) combined with 
 supervised machine learning based on *Random Forests* (RF), 
