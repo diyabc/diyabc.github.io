@@ -15,7 +15,7 @@ population genetics analysis.
 
 ---
 
-## Graphical User Interface
+# Graphical User Interface
 
 `DIYABC-RF` can be used through a graphical user interface (GUI) called 
 `DIYABC-RF GUI`, please visit the [dedicated page](/gui/) for more 

@@ -6,10 +6,10 @@ title: Commande line tools
 
 # Commande line usage with standalone executables
 
-The command line pipeline for the `DIYABC-RF` inference framework is based on two command-line softwares 
+The command line pipeline for the `DIYABC-RF` inference framework is based on two command-line softwares: 
 [diyabc](https://github.com/diyabc/diyabc) and [abcranger](https://github.com/diyabc/abcranger).
 
-Please visit the following pages to get the latest release:
+Please visit the following pages to get the latest releases:
 
 - [diyabc](https://github.com/diyabc/diyabc/releases/latest)
 - [abcranger](https://github.com/diyabc/abcranger/releases/latest)
@@ -17,7 +17,6 @@ Please visit the following pages to get the latest release:
 ## Examples
 
 More details are coming soon.
-
 
 ```sh
 diyabc -p ./ -n "'t:4'"
