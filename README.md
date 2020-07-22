@@ -2,14 +2,14 @@
 
 We provide a graphical user interface (GUI) for the DIYABC-RF software [1], called DIYABC-RF GUI.
 
-DIYABC-RF GUI is available as a standalone application, or in a R package called `diyabcGUI` (https://github.com/diyabc/diyabcGUI) as a `shiny` web app. You can either install the standalone app, or the `diyabcGUI` package and run the DIYABC-RF GUI as a standard `shiny` app, c.f. [below](#r-package-installation).
+DIYABC-RF GUI is available as a standalone application, or in a R package called `diyabcGUI` (<https://github.com/diyabc/diyabcGUI>) as a `shiny` web app. You can either install the standalone app, or the `diyabcGUI` package and run the DIYABC-RF GUI as a standard `shiny` app, c.f. [below](#r-package-installation).
 
 DIYABC-RF GUI is a set of tools implementing Approximate Bayesian 
 Computation (ABC) combined with supervised machine learning based on 
 Random Forests (RF), for model choice and parameter inference in the context 
 of population genetics analysis.`diyabcGUI` provides a user-friendly interface 
-for command-line softwares `diyabc` (https://github.com/diyabc/diyabc) and 
-`abcranger` (https://github.com/diyabc/abcranger).
+for command-line softwares `diyabc` (<https://github.com/diyabc/diyabc>) and 
+`abcranger` (<https://github.com/diyabc/abcranger>).
 
 ## Installation
 
