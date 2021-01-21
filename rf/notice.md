@@ -1,1 +1,1 @@
-{% include DiyabcRandomForestUserManual21-01-2021.html %}
+{% w2m "/rf/Diyabc Random Forest User Manual 21-01-2021.docx" %}
