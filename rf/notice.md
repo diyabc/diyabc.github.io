@@ -1,8 +1,3 @@
----
-layout: page
-title: USER MANUAL for DIYABC Random Forest v1.0
----
-
 <!DOCTYPE HTML>
 <html xmlns:v="urn:schemas-microsoft-com:vml"
 xmlns:o="urn:schemas-microsoft-com:office:office"
