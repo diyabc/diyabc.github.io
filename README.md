@@ -1,4 +1,4 @@
-# ![icon](cocc.png =32x32) Graphical User Interface for DIYABC-RF software
+# ![icon](coccicon_32x32.png) Graphical User Interface for DIYABC-RF software
 
 > **Disclaimer:** `DIYABC-RF GUI` is under final development stage and not officially released yet. You may still encounter a few bugs.
 
