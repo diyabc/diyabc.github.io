@@ -13,6 +13,7 @@ gem "bulma-clean-theme"
 gem "minima"
 gem "just-the-docs"
 gem 'jemoji'
+gem 'jekyll-w2m'
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
