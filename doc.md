@@ -6,7 +6,7 @@ title: User manual
 
 The complete documentation of the `DIYABC-RF GUI` software is available in different formats.
 
-You can download the [pdf](../rf/Diyabc Random Forest User Manual 10-07-20_submitted_with_MER_ms.pdf) or [docx](../rf/Diyabc Random Forest User Manual 10-07-20_submitted_with_MER_ms.docx) version of the user manual.
+You can download the [pdf](../rf/Diyabc Random Forest User Manual 21-01-2021.pdf) or [docx](../rf/Diyabc Random Forest User Manual 21-01-2021.docx) version of the user manual.
 
 You can also visit the [html version](/rf/notice.html) of the documentation (work in progress).
 
