@@ -1,5 +1,8 @@
 ---
+layout: page
+title: USER MANUAL for DIYABC Random Forest v1.0
 ---
+
 <!DOCTYPE HTML>
 <html xmlns:v="urn:schemas-microsoft-com:vml"
 xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -8438,7 +8441,7 @@ lang=EN-US>.<br style='mso-special-character:line-break'>
 lang=EN-US style='mso-bidi-font-family:Cambria;mso-bidi-theme-font:minor-latin'><span
 style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-US>Two parental populations (1 and
-2) with constant effective population sizes </span><span class=VerbatimChar><span
+1) with constant effective population sizes </span><span class=VerbatimChar><span
 lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt'>N1</span></span><span
 lang=EN-US> and </span><span class=VerbatimChar><span lang=EN-US
 style='font-size:11.0pt;mso-bidi-font-size:12.0pt'>N2</span></span><span
