@@ -12,4 +12,6 @@ permalink: /toy_examples/
 
 [TOY_EXAMPLE4_SNP_POOLSEQ_scenario3_MER_light_configuration.zip](toy_examples/TOY_EXAMPLE4_SNP_POOLSEQ_scenario3_MER_light_configuration.zip)
 
-[TOY_EXAMPLES_DIYABC_RANDOM_FOREST.zip](toy_examples/TOY_EXAMPLES_DIYABC_RANDOM_FOREST.zip)
+[TOY_EXAMPLE5_SNP_INDSEQ_several_groups_of_loci_admixture.zip](toy_examples/TOY_EXAMPLE5_SNP_INDSEQ_several_groups_of_loci_admixture.zip)
+
+[All Toy examples from above in one zip](toy_examples/TOY_EXAMPLES_DIYABC_RANDOM_FOREST.zip)
