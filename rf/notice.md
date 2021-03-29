@@ -1,6 +1,6 @@
 # USER MANUAL for DIYABC Random Forest v1.0
 
-# - 21th of January 2021 -
+# - 23th of March 2021 -
 
 François-David Collin <sup>1,\*</sup>, Ghislain Durif <sup>1,\*</sup>,
 Louis Raynal <sup>1</sup>, Eric Lombaert <sup>2</sup>, Mathieu Gautier
@@ -30,15 +30,17 @@ Ghislain Durif: ghislain.durif@umontpellier.fr
 
 # CONTENTS
 
-**Warning: You might want to activate the option “Navigation panel”
+*Warning: You might want to activate the option “Navigation panel”
 (accessible through the “Display” tab) after opening the present manual
-file*.* This navigation panel, visible on the left size of the document
-once activated, will allow you reaching directly through simple click
-actions the different sections and sub-sections described below.**
+file under Word. This navigation panel, visible on the left size of the
+document once activated, will allow you reaching directly through simple
+click actions the different sections and sub-sections described below.
+You can navigate just by directly clicking on the titles of the content
+below when using the pdf format of the present document.*
 
-[1. (BRIEF) INTRODUCTION 4](#_Toc62127926)
+[1. (BRIEF) INTRODUCTION 4](#brief-introduction)
 
-[1.1 General context 4](#brief-introduction)
+[1.1 General context 4](#general-context)
 
 [1.2 How to cite the program DIYABC Random Forest v1.0
 4](#how-to-cite-the-program-diyabc-random-forest-v1.0)
@@ -63,7 +65,7 @@ actions the different sections and sub-sections described below.**
 
 [2.3.1 Key notes 8](#key-notes)
 
-[2.3.2 Examples 9](#_Toc62127937)
+[2.3.2 Examples 9](#_Toc67674922)
 
 [2.4 Mutation model parameterization (microsatellite and DNA sequence
 loci)
@@ -77,59 +79,54 @@ loci)
 MAF and MRC
 13](#snps-do-not-require-mutation-model-parameterization-notion-of-maf-and-mrc)
 
-[2.5 Prior distributions 14](#prior-distributions)
+[2.5 Prior distributions 15](#prior-distributions)
 
 [2.6 Summary statistics as components of the feature vector
 15](#summary-statistics-as-components-of-the-feature-vector)
 
 [2.6.1 For microsatellite loci 15](#for-microsatellite-loci)
 
-[2.6.2 For DNA sequence loci 15](#for-dna-sequence-loci)
+[2.6.2 For DNA sequence loci 16](#for-dna-sequence-loci)
 
 [2.6.3 For SNP loci 16](#for-snp-loci)
 
 [2.7 Generating the training set 16](#generating-the-training-set)
 
-[3. RANDOM FOREST ANALYSIS 17](#random-forest-analysis)
+[3. RANDOM FOREST ANALYSIS 17](#_Toc67674933)
 
 [3.1 Addition of linear combinations of summary statistics to the vector
 feature
 17](#addition-of-linear-combinations-of-summary-statistics-to-the-vector-feature)
 
-[3.2 Prediction using Random Forest: scenario choice
-17](#prediction-using-random-forest-scenario-choice)
+[3.2 Prediction using Random Forest: scenario choice 17](#_Toc67674936)
 
 [3.3 Prediction using Random Forest: parameter estimation
-17](#prediction-using-random-forest-parameter-estimation)
+17](#_Toc67674937)
 
-[3.4 Assessing the quality of predictions
-18](#assessing-the-quality-of-predictions)
+[3.4 Assessing the quality of predictions 18](#_Toc67674938)
 
-[3.4.1 Indices for scenario choice 18](#indices-for-scenario-choice)
+[3.4.1 Metrics for scenario choice 18](#metrics-for-scenario-choice)
 
-[3.4.2 Indices for parameter estimation
-18](#indices-for-parameter-estimation)
+[3.4.2 Metrics for parameter estimation
+18](#metrics-for-parameter-estimation)
 
-[4. PRACTICAL CONSIDERATIONS FOR ABC-RF TREATMENTS
-18](#practical-considerations-for-abc-rf-treatments)
+[4. PRACTICAL CONSIDERATIONS FOR ABC-RF TREATMENTS 18](#_Toc67674941)
 
 [4.1 Are my scenarios and/or associated priors compatible with the
-observed dataset?
-19](#are-my-scenarios-andor-associated-priors-compatible-with-the-observed-dataset)
+observed dataset? 19](#_Toc67674942)
 
 [4.2 Did I simulate enough datasets for my training set?
-19](#did-i-simulate-enough-datasets-for-my-training-set)
+19](#_Toc67674943)
 
-[4.3 Did my forest grow enough trees?
-19](#did-my-forest-grow-enough-trees)
+[4.3 Did my forest frow enough trees? 19](#_Toc67674944)
 
 [5. RUNNING (EXAMPLE) DATASET TREATMENTS USING THE GRAPHIC USER
 INTERFACE (GUI)
 20](#running-example-dataset-treatments-using-the-graphic-user-interface-gui)
 
-[5.1 Launching the GUI 20](#_Toc62127961)
+[5.1 Launching the GUI 20](#_Toc67674946)
 
-[5.2 What is a DIYABC Random Forest project? 20](#doc_openProjectButton)
+[5.2 What is a DIYABC-RF project? 20](#doc_openProjectButton)
 
 [5.3 Main options of the home screen
 21](#main-options-of-the-home-screen)
@@ -137,26 +134,22 @@ INTERFACE (GUI)
 [5.4 How to generate a new IndSeq SNP training set
 22](#how-to-generate-a-new-indseq-snp-training-set)
 
-[5.4.1 Step 1: defining a new IndSeq SNP project
-22](#step-1-defining-a-new-indseq-snp-project)
+[5.4.1 Step 1: defining a new IndSeq project 22](#_Toc67674950)
 
 [5.4.2 Step 2: choosing the data file
 23](#step-2-choosing-the-data-file)
 
-[5.4.3 Step 3: Inform the Historical model
-25](#step-3-inform-the-historical-model)
+[5.4.3 Step 3: Inform the historical model 25](#_Toc67674952)
 
 [5.4.4 Step 4: Inform number of loci to simulate (and chromosome type)
-27](#_Toc62127968)
+27](#_Toc67674953)
 
-[5.4.5 Step 5: Summary statistics 28](#_Toc62127969)
+[5.4.5 Step 5: Summary statistics 28](#_Toc67674954)
 
-[5.4.6 Step 6: Simulate the training set
-29](#step-6-simulate-the-training-set)
+[5.4.6 Step 6: Simulate the training set 29](#_Toc67674955)
 
-[5.4.7 Step 7: Prior-scenario checking PRE-ANALYSIS (optional but
-recommended)
-30](#step-7-prior-scenario-checking-pre-analysis-optional-but-recommended)
+[5.4.7 Step 7:Prior-scenario checking PRE-ANALYSIS (optional but
+recommended) 30](#_Toc67674956)
 
 [5.5 How to generate a new PoolSeq SNP training set
 31](#how-to-generate-a-new-poolseq-snp-training-set)
@@ -166,14 +159,15 @@ set
 31](#how-to-generate-a-new-microsatellite-andor-dna-sequence-training-set)
 
 [5.6.1 Step 4: Inform the genetic model
-32](#step-4-inform-the-genetic-model)
+31](#step-4-inform-the-genetic-model)
 
 [5.6.2 Step 5: Summary statistics 36](#step-5-summary-statistics)
 
 [5.7 How to work from an “Existing project” (for any type of markers)
-37](#_Toc62127976)
+37](#_Toc67674961)
 
-[6. PERFORMING RANDOM FOREST ANALYSES 40](#_Toc62127977)
+[6. PERFORMING RANDOM FOREST ANALYSES
+40](#performing-random-forest-analyses)
 
 [6.1 Files needed 40](#files-needed)
 
@@ -185,11 +179,11 @@ set
 
 [7.1 Data files 47](#data-files)
 
-[7.1.1 IndSeq SNP data 47](#_Toc62127983)
+[7.1.1 IndSeq SNP data 47](#_Toc67674968)
 
-[7.1.2 PoolSeq SNP data 49](#_Toc62127984)
+[7.1.2 PoolSeq SNP data 49](#_Toc67674969)
 
-[7.1.3 Microsatellite and DNA sequence data 51](#_Toc62127985)
+[7.3.1 Microsatellite and DNA sequence data 51](#_Toc67674970)
 
 [7.2 Training set file(s) 53](#training-set-files)
 
@@ -198,14 +192,14 @@ set
 
 [7.4 Other files 56](#other-files)
 
-[8. GENERATE SYNTHETIC DATAFILES 56](#_Toc62127989)
+[8. GENERATE SYNTHETIC DATAFILES 56](#_Toc67674974)
 
-[9. USING DIYABC RANDOM FOREST ON A COMPUTER SERVER AND EXAMPLES OF
-COMMAND LINES 57](#_Toc62127990)
+[9. USING DIYABC-RF ON A COMPUTER SERVER AND EXAMPLES OF COMMAND LINES
+57](#_Toc67674975)
 
-[10. TOY EXAMPLES 59](#_Toc62127991)
+[10. TOY EXAMPLES 59](#_Toc67674976)
 
-[11. REFERENCES CITED 60](#_Toc62127992)
+[11. REFERENCES CITED 60](#_Toc67674977)
 
 # 1. (BRIEF) INTRODUCTION
 
@@ -232,8 +226,8 @@ COMMAND LINES 57](#_Toc62127990)
 > scenarios of different types of molecular data (microsatellites, DNA
 > sequences or SNPs – including traditional **IndSeq** and more recent
 > **PoolSeq** SNP data) and RF treatments including statistical tools to
-> evaluate the power and accuracy of inferences (Collin et al. 2020).
-> Because of the properties inherent of the implemented RF methods and
+> **evaluate the power and accuracy of inferences (Collin et al. 2020).
+> Because of the properties inherent of** the implemented RF methods and
 > the large feature vector (including various summary statistics and
 > their linear combinations) available for SNP data, DIYABC Random
 > Forest v1.0 can efficiently contribute to the analysis of large-size
@@ -254,7 +248,7 @@ COMMAND LINES 57](#_Toc62127990)
 
 You can get from this github site the executable files for different
 operating systems, the latest version of this manual document, as well
-as examples of DIYABC Random Forest analyses for different type of
+as examples of DIYABC Random Forest analyses for different types of
 markers.
 
 ## 1.4. System requirements, installing and launching the program
@@ -267,8 +261,8 @@ markers.
     [https://diyabc.github.io](https://diyabc.github.io/). The different
     developer and user manuals for each component of the software are
     available on the same website. DIYABC-RF is a multithreaded software
-    on three operating systems: GNU/Linux, Microsoft Windows and MacOS.
-    One can use the program can be used through a modern and
+    which can be run on three operating systems: GNU/Linux, Microsoft
+    Windows and MacOS. The program can be used through a modern and
     user-friendly graphical interface designed as an R shiny application
     (Chang et al. 2019). For a fluid and simplified user experience,
     this interface is available through a standalone application, which
@@ -311,19 +305,19 @@ and samples (i.e. nb of markers and sampled individuals) configurations,
 using parameter values drawn from prior distributions. Each resulting
 dataset is summarized using a set of descriptive statistics. Scenarios
 and prior distributions are formalized in the main pipeline of the
-software DIYABC Random Forest v1.0 (DIYABC-RF) and summary statistics
-are computed using the “<u>Training set simulation</u>” module of the
-main pipeline of DIYABC-RF, which essentially corresponds to an extended
-version of the population genetics simulator implemented in DIYABC
-v2.1.0 (Cornuet et al. 2014). As in the latter program, DIYABC-RF allows
-considering complex population histories including any combination of
-population divergence events, symmetrical or asymmetrical admixture
-events (but not any continuous gene flow between populations) and
-changes in past population size, with population samples potentially
-collected at different times. Statistical analysis based on Random
-Forest algorithms of an observed dataset using a given training set are
-computed using the “<u>Random Forest Analysis”</u> module of the main
-pipeline of DIYABC-RF.
+software DIYABC-RF and summary statistics are computed using the
+“<u>Training set simulation</u>” module of the main pipeline of
+DIYABC-RF, which essentially corresponds to an extended version of the
+population genetics simulator implemented in DIYABC v2.1.0 (Cornuet et
+al. 2014). As in the latter program, DIYABC-RF allows considering
+complex population histories including any combination of population
+divergence events, symmetrical or asymmetrical admixture events (but not
+any continuous gene flow between populations) and changes in past
+population size, with population samples potentially collected at
+different times. Statistical analysis based on Random Forest algorithms
+of an observed dataset using a given training set are computed using the
+“<u>Random Forest Analysis”</u> module of the main pipeline of
+DIYABC-RF.
 
 ## 2.2 Main features of algorithms for data simulation
 
@@ -393,16 +387,12 @@ female effective population sizes. In order to combine different
 categories (e.g. autosomal and mitochondrial), we have to take into
 account the relationships among the corresponding effective population
 sizes. This can be achieved by linking the different effective
-population sizes to the effective number of males (
-![\\mathbf{N}\_{\\mathbf{M}}](https://latex.codecogs.com/png.latex?%5Cmathbf%7BN%7D_%7B%5Cmathbf%7BM%7D%7D "\mathbf{N}_{\mathbf{M}}")
-) and females
-(![\\mathbf{N}\_{\\mathbf{F}}](https://latex.codecogs.com/png.latex?%5Cmathbf%7BN%7D_%7B%5Cmathbf%7BF%7D%7D "\mathbf{N}_{\mathbf{F}}"))
-through the sum
-![\\mathbf{N}\_{\\mathbf{T}}\\mathbf{=}\\mathbf{N}\_{\\mathbf{F}}\\mathbf{+}\\mathbf{N}\_{\\mathbf{M}}](https://latex.codecogs.com/png.latex?%5Cmathbf%7BN%7D_%7B%5Cmathbf%7BT%7D%7D%5Cmathbf%7B%3D%7D%5Cmathbf%7BN%7D_%7B%5Cmathbf%7BF%7D%7D%5Cmathbf%7B%2B%7D%5Cmathbf%7BN%7D_%7B%5Cmathbf%7BM%7D%7D "\mathbf{N}_{\mathbf{T}}\mathbf{=}\mathbf{N}_{\mathbf{F}}\mathbf{+}\mathbf{N}_{\mathbf{M}}")
-and the ratio
-![\\mathbf{r =}\\frac{\\mathbf{N}\_{\\mathbf{M}}}{\\left( \\mathbf{N}\_{\\mathbf{F}}\\mathbf{+}\\mathbf{N}\_{\\mathbf{M}} \\right)}](https://latex.codecogs.com/png.latex?%5Cmathbf%7Br%20%3D%7D%5Cfrac%7B%5Cmathbf%7BN%7D_%7B%5Cmathbf%7BM%7D%7D%7D%7B%5Cleft%28%20%5Cmathbf%7BN%7D_%7B%5Cmathbf%7BF%7D%7D%5Cmathbf%7B%2B%7D%5Cmathbf%7BN%7D_%7B%5Cmathbf%7BM%7D%7D%20%5Cright%29%7D "\mathbf{r =}\frac{\mathbf{N}_{\mathbf{M}}}{\left( \mathbf{N}_{\mathbf{F}}\mathbf{+}\mathbf{N}_{\mathbf{M}} \right)}").
-We use the following formulae for the probability of coalescence (*p*)
-of two lineages within this population:
+population sizes to the effective number of males (N<sub>M</sub>) and
+females (N<sub>F</sub>) through the sum
+N<sub>T</sub>=N<sub>F</sub>+N<sub>M</sub> and the ratio
+r=N<sub>M</sub>/(N<sub>F</sub>+N<sub>M</sub>). We use the following
+formulae for the probability of coalescence (*p*) of two lineages within
+this population:
 
 Autosomal diploid loci:
 
@@ -424,34 +414,31 @@ Mitochondrial loci:
 
 ![p = \\frac{1}{\\left( 1 - r \\right)N\_{T}}](https://latex.codecogs.com/png.latex?p%20%3D%20%5Cfrac%7B1%7D%7B%5Cleft%28%201%20-%20r%20%5Cright%29N_%7BT%7D%7D "p = \frac{1}{\left( 1 - r \right)N_{T}}")
 
-Users have to provide a (total) effective size
-![N\_{T}](https://latex.codecogs.com/png.latex?N_%7BT%7D "N_{T}") (on
-which inferences will be made) and a sex-ratio
-![r](https://latex.codecogs.com/png.latex?r "r"). If no sex ratio is
-provided, the default value of
-![r](https://latex.codecogs.com/png.latex?r "r") is taken as 0.5.
+Users have to provide a (total) effective size N<sub>T</sub> (on which
+inferences will be made) and a sex-ratio r. If no sex ratio is provided,
+the default value of r is taken as 0.5.
 
 ## 2.3 Historical model parameterization
 
 The evolutionary scenario, which is characterized by the historical
 model, can be described in a dedicated panel of the interface of the
 program as a succession in time of "events" and "inter event periods".
-In the current version of the program, we consider 4 categories of
+In the current version of the program, we consider four categories of
 events: population divergence, discrete change of effective population
 size, admixture and sampling (the last one allow considering samples
 taken at different times). Between two successive events affecting a
-population, we assume that populations evolve independently
-(e.g. without migration) and with a fixed effective size. The usual
-parameters of the historical model are the times of occurrence of the
-various events (counted in number of generations), the effective sizes
-of populations and the admixture rates. **When writing the scenario,
-events have to be coded sequentially backward in time** (see section
-2.3.2 for examples). Although this choice may not be natural at first
-sight, it is coherent with coalescence theory on which are based all
-data simulations in the program. For that reason, the keywords for a
-divergence or an admixture event are `merge` and `split`, respectively.
-Two keywords `varNe` and `sample` correspond to a discrete change in
-effective population size and a gene sampling within a given population,
+population, we assume that populations evolve independently (e.g.
+without migration) and with a fixed effective size. The usual parameters
+of the historical model are the times of occurrence of the various
+events (counted in number of generations), the effective sizes of
+populations and the admixture rates. **When writing the scenario, events
+have to be coded sequentially backward in time** (see section 2.3.2 for
+examples). Although this choice may not be natural at first sight, it is
+coherent with coalescence theory on which are based all data simulations
+in the program. For that reason, the keywords for a divergence or an
+admixture event are `merge` and `split`, respectively. Two keywords
+`varNe` and `sample` correspond to a discrete change in effective
+population size and a gene sampling within a given population,
 respectively. A scenario takes the form of a succession of lines (one
 line per event), each line starting with the time of the event, then the
 nature of the event, and ending with several other data depending on the
@@ -535,8 +522,8 @@ and
 Note that one needs to write a first line giving the **effective sizes
 of the sampled populations before the first event described**, looking
 backward in time. Expressions between arrows, other than population
-numbers, can be either a numeric value (e.g. 25) or a character string
-(e.g. `t0`). In the latter case, it is considered as a parameter of the
+numbers, can be either a numeric value (e.g. 25) or a character string
+(e.g. `t0`). In the latter case, it is considered as a parameter of the
 model. The program offers the possibility to add or remove scenarios, by
 just clicking on the corresponding buttons. The usual shortcuts (e.g.
 CTRL+C, CTRL+V and CTRL+X) can be used to edit the different scenarios.
@@ -589,20 +576,19 @@ Some or all parameters can be in common among scenarios.
     population is population 1). So, it cannot receive lineages of
     population 3 as it should as a result of the second line. The
     correct ways are either to put line 2 before line 1, or to change
-    line 2 to:  
-    `100 merge 1 3`.
+    line 2 to: `100 merge 1 ``3`.
 
 8.  Since times of events can be parameters, the order of events can
     change according to the values taken by the time parameters. In any
     case, before simulating a dataset, the program sorts out events by
     increasing times. Note that sorting out events by increasing times
-    can only be done when all time values are known, i.e. when
+    can only be done when all time values are known, i.e. when
     simulating datasets. When checking scenarios in the interface, all
     time values are not yet defined, so that when visualizing a
     scenario, events are represented in the same order as they appear in
     the window used to define the scenario. If two or more events occur
-    at the same time, the order is that of the scenario as it is written
-    by the user.
+    at the same time, the order is that of the scenario as written by
+    the user.
 
 9.  Most scenarios begin with sampling events. We then need to know the
     effective size of the populations to perform the simulation of
@@ -610,12 +596,12 @@ Some or all parameters can be in common among scenarios.
     decided to provide the effective size (first line) and the sampling
     description (following lines) on distinct lines.
 
-<span id="_Toc62127937" class="anchor"></span>**2.3.2 Examples**
+<span id="_Toc67674922" class="anchor"></span>**2.3.2 Examples**
 
 Below are some usual scenarios with increasing complexity. Each scenario
 is coded (as in the corresponding interface panel of the program) on the
-left side and a graphic representation (given by DIYABC Random Forest)
-is printed on the right side
+left side and a graphic representation (given by DIYABC-RF) is printed
+on the right side
 
 1.  One population from which several samples have been taken at various
     generations: 0, 3 and 10. Generation 0 could correspond for instance
@@ -659,7 +645,8 @@ is printed on the right side
     ancestral population of size `NA`. At time `ta`, there has been an
     <u>admixture event</u> between the two populations giving birth to
     an admixed population (3) with effective size `N3` and with an
-    admixture rate `ra` relative to population 1.
+    admixture rate `ra` corresponding to the proportion of genes from
+    population 1.
 
 <table>
 <tbody>
@@ -692,11 +679,13 @@ is printed on the right side
 </table>
 
 -   Note that although there are only four samples, the scenario
-    includes a fifth <u>unsampled population</u>. This unsampled
-    population which diverged from population 1 at time `t3` was a
-    parent in the admixture event occurring at time `t2`. Note also that
-    the first line must include the effective sizes of the *five*
-    populations.
+    includes a fifth <u>unsampled population (also called “ghost
+    population”)</u>. This unsampled population which diverged from
+    population 1 at time `t3` was a parent in the admixture event
+    occurring at time `t2`. Note also that the first line must include
+    the effective sizes (here Ne) of the *five* populations. (i.e. the
+    four sampled population and the single unsampled population here at
+    position 5).
 
 1.  Example of DIYABC-RF code for <u>unidirectional
     admixture/introgression</u> where a fraction r2 of genes from
@@ -707,12 +696,13 @@ is printed on the right side
     Na) at time t2. It is worth noting that: (i) in the observed
     datafile, there are only two sampled populations (Pop 1 and Pop 2)
     and the user will need to define two (additional) <u>unsampled</u>
-    populations in the first line of code (Pop 3 and Pop 4); (ii) we
-    advise in this case to draw the fraction of genes transferred during
-    the unidirectional admixture (r2) into a uniform distribution with
-    min and max bounds equal to eg. 0.01 (very weak introgression from
-    'Pop 2' into 'Pop 1') and 0.5 (strong introgression from 'Pop 2'
-    into 'Pop 1'), respectively.
+    populations in the first line of code (Pop 3 and Pop 4 with
+    effective population size N2); (ii) we advise in this case to draw
+    the fraction of genes transferred during the unidirectional
+    admixture (r2) into a uniform distribution with min and max bounds
+    equal to e.g.. 0.01 (very weak introgression from 'Pop 2' into 'Pop
+    1') and 0.5 (strong introgression from 'Pop 2' into 'Pop 1'),
+    respectively.
 
 > <img src="media/image9.jpg" style="width:3.13333in;height:2.83681in" />**N1
 > N2 N2 N2** *\# comment 1*
@@ -735,12 +725,12 @@ is printed on the right side
 > the unsampled population 'Pop 3' and a fraction 1-r2 goes into the
 > unsampled population 'Pop 4' ('Pop 2' disappears)*
 >
-> *\# comment 3: we immediately merge (cf. still time t1) the unsampled
-> population 'Pop 3' (with the fraction r2 of genes from 'Pop 2') into
-> the population 'Pop 1' - hence the unidirectional admixture of r2
-> genes from 'Pop 2' into 'Pop 1' ('Pop 3' disappears)*
+> *\# comment 3: we immediately merge (cf. still at time t1) the
+> unsampled population 'Pop 3' (with the fraction r2 of genes from 'Pop
+> 2') into the population 'Pop 1' - hence the unidirectional admixture
+> of r2 genes from 'Pop 2' into 'Pop 1' ('Pop 3' disappears)*
 >
-> *\# comment 4: 'Pop 4' - which now corresponds to the ex-'Pop 2' with
+> *\# comment 4: 'Pop 4' which now corresponds to the ex-'Pop 2' with
 > the fraction 1-r2 of genes - can be merge into 'Pop 1'*
 >
 > *\# comment 5: the population ancestral to 'Pop 1' and 'Pop 2' now has
@@ -798,16 +788,16 @@ Scenario 3
 ## 2.4 Mutation model parameterization (microsatellite and DNA sequence loci)
 
 The program can analyze microsatellite data and DNA sequence data
-altogether as well as separately. SNP loci can be also analyzed
+altogether as well as separately. SNP loci can only be also analyzed
 separately from microsatellite data and DNA sequence data. It is worth
 stressing that all loci in an analysis must be <u>genetically
-independent</u>. Second, for DNA sequence loci, intralocus recombination
-is not considered. Loci are grouped by the user according to its needs.
-For microsatellite and DNA sequence, a different mutation model can be
-defined for each group. For instance, one group can include all
-microsatellites with motifs that are 2 bp long and another group those
-with a 4 bp long motif. Also, with DNA sequence loci, nuclear loci can
-be grouped together and a mitochondrial locus form a separate group.
+independent</u>. Second, for DNA sequence loci, intra-locus
+recombination is not considered. Loci are grouped by the user according
+to its needs. For microsatellite and DNA sequence, a different mutation
+model can be defined for each group. For instance, one group can include
+all microsatellites with motifs that are 2 bp long and another group
+those with a 4 bp long motif. Also, with DNA sequence loci, nuclear loci
+can be grouped together and a mitochondrial locus form a separate group.
 <u>SNPs do not require mutation model parameterization (see below for
 details)</u>.
 
@@ -886,77 +876,97 @@ subsection (2.4.1) apply also for sequence loci.
 SNPs have two characteristics that allow to get rid of mutation models:
 they are (necessarily) polymorphic and they present only two allelic
 states (ancestral and derived). In order to be sure that all analyzed
-SNP loci have the two characteristics, <u>non-polymorphic loci are
-discarded right from the beginning of analyses</u>. Note that a warning
-message will appear if the observed dataset include monomorphic loci,
-the latter being automatically removed from further analyses by the
-program. Consequently, one can assume that there occurred one and only
-one mutation in the coalescence tree of sampled genes. We will see below
-that this largely simplifies (and speeds up) SNP data simulation as one
-can use in this case the efficient “-s” algorithm of Hudson (2002)
-(Cornuet et al. 2014). Also, this advantageously reduces the dimension
-of the parameter space as mutation parameters are not needed in this
-case. There is however a potential drawback which is the absence of any
-calibration generally brought by priors on mutation parameters.
-<u>Consequently, time/effective size ratios rather than original time or
-effective size parameters will be informative</u>.
+SNP loci have the two characteristics, <u>monomorphic loci are discarded
+right from the beginning of analyses</u> (when the observed dataset is
+scanned by the program). Note that a warning message will appear if the
+observed dataset include monomorphic loci, the latter being
+automatically removed from further analyses by the program. It is
+assumed that there occurred one and only one mutation in the coalescence
+tree of sampled genes. We will see below that this largely simplifies
+(and speeds up) SNP data simulation as one can use in this case the
+efficient “-s” algorithm of Hudson (2002) (Cornuet et al. 2014). Also,
+this advantageously reduces the dimension of the parameter space as
+mutation parameters are not needed in this case. There is however a
+potential drawback which is the absence of any calibration generally
+brought by priors on mutation parameters. <u>Consequently,
+time/effective size ratios rather than original time or effective size
+parameters can be accurately estimated (e.g. Collin et al. 2021)</u>.
 
 It is worth noting that, using the Hudson’s simulation algorithm for SNP
-markers leads to applying a default <u>MAF (minimum allele
+markers leads to applying a kind of default <u>MAF (minimum allele
 frequency)</u> criterion on the simulated dataset. As a matter of fact,
-each locus in both the observed and simulated datasets will be
-characterized by the presence of at least one copy of the SNP alleles
-over all genes sampled from all studied populations (i.e. pooling all
-genes genotyped at the locus). In DIYABC Random Forest v1.0, it is
-possible to impose a given MAF criterion on the observed and simulated
-datasets. This MAF is computed pooling all genes genotyped over all
-studied population samples. For instance, the specification of a MAF
-equal to 5% will automatically select a subset of *m* loci characterized
-by a minimum allele frequency &gt; 5% out of the *l* loci of the
-observed dataset. In agreement with this, only *m* loci with a MAF&gt;5%
-will be retained in a simulated dataset. In practice, the instruction
-for a given MAF has to be indicated directly in the headline of the file
-of the observed dataset (see section 7.1.1 for data file examples). For
-instance, if one wants to consider only loci with a MAF equal to 5% one
-will write &lt;MAF=0.05&gt; in the headline. Writing &lt;MAF=hudson&gt;
-(or omitting to write any instruction with respect to the MAF) will
-bring the program to use the standard Hudson's algorithm without further
-selection. The selection of a subset of loci fitting a given MAF allows:
-(i) to remove the loci with very low level of polymorphism from the
-dataset and hence increase the mean level of genetic variation of both
-the observed and simulated datasets, without producing any bias in the
-analyses; and (ii) to reduce the proportion of loci for which the
+with this simulation algorithm each locus in both the observed and
+simulated datasets will be characterized by the presence of at least one
+copy of the SNP alleles over all genes sampled from all studied
+populations (i.e. pooling all genes genotyped at the locus). In
+DIYABC-RF, it is possible to impose a different MAF criterion on both
+the observed and simulated datasets. For each SNP, the MAF is computed
+pooling all genes genotyped over all studied population samples. For
+instance, the specification of a MAF equal to 5% will automatically
+select a subset of *m* loci characterized by a minimum allele frequency
+≥ 5% out of the *l* loci of the observed dataset and only *m* loci with
+a MAF ≥ 5% will be retained in a simulated dataset. In practice, the
+instruction for a given MAF has to be indicated directly in the headline
+of the file of the observed dataset (see section 7.1.1 for data file
+examples). For instance, if one wants to consider only loci with a MAF
+equal to 5% one will write &lt;MAF=0.05&gt; in the headline. Writing
+&lt;MAF=hudson&gt; (or omitting to write any instruction with respect to
+the MAF) will bring the program to use the standard Hudson's algorithm
+without further selection. The selection of a subset of loci fitting a
+given MAF allows: (i) to remove loci with very low level of polymorphism
+from the dataset and hence increase the mean level of genetic variation
+of both the observed and simulated datasets, without producing any bias
+in the analyses; and (ii) to reduce the proportion of loci for which the
 observed variation may corresponds to sequencing errors. In practice MAF
 values ≤10% are considered. To check for the consistency/robustness of
 the ABC results obtained, it may be useful to treat a SNP dataset
 considering different MAFs (for instance MAF=hudson, MAF=1% and MAF=5%).
+Note that increasing the MAF leads to increase the simulation times of
+SNP datasets as more loci need to be simulated with the Hudson’s
+algorithm to obtain a given number of loci fitting the required MAF.
 
 It is worth stressing that the MAF criterion applies to standard
 Individual sequencing (hereafter **IndSeq**) SNP data. In addition to
-IndSeq data, DIYABC Random Forest v1.0 allows the simulation and
-analyses of pool-sequencing SNP data (hereafter **PoolSeq** data), which
-basically consist of whole-genome sequences of pools of tens to hundreds
-of individual DNAs (Gautier et al., 2013; Schlötterer et al., 2014). In
+IndSeq data, DIYABC-RF allows the simulation and analyses of
+pool-sequencing SNP data (hereafter **PoolSeq** data), which basically
+consist of whole-genome sequences of pools of tens to hundreds of
+individual DNAs (Gautier et al. 2013; Schlötterer et al. 2014). In
 practice, the simulation of PoolSeq data consists first in simulating
 individual SNP genotypes for all individuals in each population pool,
 and then generating pool read counts from a binomial distribution
 parameterized with the simulated allele counts (obtained from individual
-SNP genotypes) and the total pool read coverage (e.g., Hivert, et al.
+SNP genotypes) and the total pool read coverage (e.g., Hivert et al.
 2018). A criterion somewhat similar to the MAF was implemented for
-PoolSeq data: <u>the minimum read count (MRC)</u>. The MRC is the number
-of sequence reads of the minor allele frequency allele when pooling the
-reads over all population samples. The specification of a MRC equal for
-instance to 5 will automatically select a subset of *m* PoolSeq loci
-characterized by more than five reads over all studied pools among the
-*l* loci of the observed dataset. In agreement with this, only *m* loci
-with more than five reads will be retained in a simulated dataset.
+PoolSeq data: <u>the minimum read count (MRC)</u>. The MRC is the
+minimum number of sequence reads for each alleles of a SNP when pooling
+the reads overall population samples. The specification of a MRC equal
+for instance to 5 will automatically select a subset of *m* PoolSeq loci
+for which both alleles have at least five reads among the *l* loci of
+the observed dataset and only *m* loci with a MRC ≥ 5 will be retained
+in a simulated dataset. In practice, the instruction for a given MRC has
+to be indicated directly in the headline of the file of the observed
+dataset (see section 7.1.2 for data file examples). For instance, if one
+wants to consider only loci with a MRC equal to 5 one will write
+&lt;MRC=5&gt; in the headline. The selection of a subset of loci fitting
+a given MRC allows to reduce the proportion of loci for which the
+observed variation may corresponds to sequencing errors. If MRC is large
+enough (e.g. MRC=5 or 10), it also removes the loci with very low level
+of polymorphism from the dataset and hence increase the mean level of
+genetic variation of both the observed and simulated datasets, without
+producing any bias in the analyses; In practice MRC values of 2, 3,4 and
+5 are recommended. To check for the consistency/robustness of the ABC
+results obtained, it may be useful to treat a SNP dataset considering
+different MAFs (for instance MRC=2 and MRC=5). As for the MAF,
+increasing the MRC leads to increase the simulation times of PoolSeq SNP
+datasets as more loci need to be simulated with the Hudson’s algorithm
+to obtain a given number of loci fitting the required MRC.
 
 ## 2.5 Prior distributions
 
 The Bayesian aspect of the ABC-RF approach implies that parameter
 estimations use prior knowledge about these parameters that is given by
 prior distributions of parameters. The program offers a choice among
-usual probability distributions, i.e. Uniform, Log-Uniform, Normal or
+usual probability distributions, i.e. Uniform, Log-Uniform, Normal or
 Log-Normal for historical parameters and Uniform, Log-Uniform or Gamma
 for mutation parameters. Extremum values (min and max) and other
 parameters (e. g. mean and standard deviation) must be filled in by the
@@ -966,7 +976,7 @@ with overlapping prior distributions. However, we want that the first
 one, say `t1`, to always be larger than the second one, say `t2`. For
 that, we just need to set `t1`&gt;`t2` in the corresponding
 edit-windows. Such a condition needs to be between two parameters and
-more precisely between two parameters of the same category (i.e. two
+more precisely between two parameters of the same category (i.e. two
 effective sizes, two times or two admixture rates). The limit to the
 number of conditions is imposed by the logics, not by the program. The
 only binary relationships accepted here are &lt;, &gt;, ≤, and ≥.
@@ -1073,13 +1083,8 @@ Two sample statistics:
 
 ### 2.6.3 For SNP loci
 
-> In addition to “standard” individual-sequencing SNP data (i.e.
-> **IndSeq** data), the program allows the simulation and analyses of
-> pool-sequencing SNP data (i.e. **PoolSeq** data), which basically
-> consist of whole-genome sequences of pools of tens to hundreds of
-> individual DNAs (Gautier et al., 2013; Schlötterer et al., 2014). For
-> both IndSeq and PoolSeq SNPs, we have implemented the following (same)
-> set of summary statistics.
+> For both IndSeq and PoolSeq SNPs, we have implemented the following
+> (same) set of summary statistics.
 >
 > 1\. \[ML1p\] \[ML2p\] \[ML3p\] \[ML4p\] - *Proportion of monomorphic
 > loci* for each population, as well as for each pair, triplet and
@@ -1088,25 +1093,24 @@ Two sample statistics:
 > **Mean (m suffix added to the code name) and variance (v suffix) over
 > loci values are computed for all subsequent summary statistics**
 >
-> 2\. \[HWm\] \[HWv\] \[HBm\] \[HBv\] - *Heterozygosity* for each
+> 2\. \[HWm\] \[HWv\] \[HBm\] \[HBv\] - Heterozygosity for each
 > population and for each pair of populations (Hivert et al. 2018).
 >
 > 3\. \[FST1m\] \[FST1v\] \[FST2m\] \[FST2v\] \[FST3m\] \[FST3v\]
-> \[FST4m\] \[FST4v\] \[FSTGm\] \[FSTGv\] - *FST*-*related statistics*
-> for each population (i.e., population-specific FST; Weir & Goudet
-> 2017), for each pair, triplet, quadruplet and overall populations
-> (when the dataset includes more than four populations) (Hivert et al.
-> 2018).
+> \[FST4m\] \[FST4v\] \[FSTGm\] \[FSTGv\] - FST-related statistics for
+> each population (i.e., population-specific FST; Weir & Goudet 2017),
+> for each pair, triplet, quadruplet and overall populations (when the
+> dataset includes more than four populations) (Hivert et al. 2018).
 >
-> 4\. \[F3m\] \[F3v\] \[F4m\] \[F4v\] - *Patterson’s f-statistics* for
-> each triplet (f3-statistics) and quadruplet (f4-statistics) of
-> populations (Patterson et al. 2012 and Leblois et al. 2018 for the
-> PoolSeq unbiased f3-statistics)
+> 4\. \[F3m\] \[F3v\] \[F4m\] \[F4v\] – allele shared Patterson’s
+> f-statistics for each triplet (f3-statistics) and quadruplet
+> (f4-statistics) of populations (Patterson et al. 2012 and Leblois et
+> al. 2018 for the PoolSeq unbiased f3-statistics)
 >
-> 5\. \[NEIm\] \[NEIv\] - *Nei’s (1972) distance* for each pair of
+> 5\. \[NEIm\] \[NEIv\] - Nei’s (1972) distance for each pair of
 > populations
 >
-> 6\. \[AMLm\] \[AMLv\] - *Maximum likelihood coefficient of admixture*
+> 6\. \[AMLm\] \[AMLv\] - Maximum likelihood coefficient of admixture
 > computed for each triplet of populations (adapted from Choisy et al.
 > 2004).
 
@@ -1124,11 +1128,15 @@ the statistics detailed in section 2.6) of the training set are recorded
 for further statistical analyses (using Random Forest algorithms) in a
 key binary file named <u>reftableRF.bin</u>.
 
-# 3. RANDOM FOREST ANALYSIS
+<span id="_Toc67674933" class="anchor"></span>**3. RANDOM FOREST
+ANALYSIS**
 
-# Once the training set has been generated, one can start various statistical treatments using the Random Forest (RF) algorithms implemented in the program and by running the “Random Forest analyses” module
+Once the training set has been generated, one can start various
+statistical treatments using the Random Forest (RF) algorithms
+implemented in the program and by running the “Random Forest analyses”
+module.
 
-# 3.1 Addition of linear combinations of summary statistics to the vector feature 
+## 3.1 Addition of linear combinations of summary statistics to the vector feature 
 
 For scenario choice, the feature vector can be enriched before
 processing RF predictions (default option that can be disabled) by
@@ -1151,7 +1159,8 @@ choice), we found that including PLS axes improved parameter estimation
 in a heterogeneous way, with a negligible gain in some cases (e.g.
 Collin et al. 2020).
 
-# 3.2 Prediction using Random Forest: scenario choice
+<span id="_Toc67674936" class="anchor"></span>**3.2 Prediction using
+Random Forest: scenario choice**
 
 For scenario choice, the outcome of the first step of RF prediction
 applied to a given target dataset is a <u>classification vote for each
@@ -1165,7 +1174,8 @@ second Random Forest in regression is necessary to provide an estimation
 of the <u>posterior probability of the best supported scenario</u>
 (Pudlo et al. 2016).
 
-# 3.3 Prediction using Random Forest: parameter estimation
+<span id="_Toc67674937" class="anchor"></span>**3.3 Prediction using
+Random Forest: parameter estimation**
 
 For parameter estimation, Raynal et al. (2019) extended the RF approach
 developed in the context of (non-parametric) regression to estimate the
@@ -1176,32 +1186,40 @@ forest strategy”; Raynal et al. 2019). Quite often, practitioners of
 Bayesian inference report the posterior mean, posterior variance or
 posterior quantiles, rather than the full posterior distribution, since
 the former are easier to interpret than the latter. We implemented in
-DIYABC Random Forest the methodologies detailed in Raynal et al. (2019)
-to provide estimations of the <u>posterior mean, variance, median (i.e.
-50% quantile) as well as 5% and 95% quantiles (and hence 90% credibility
+DIYABC-RF the methodologies detailed in Raynal et al. (2019) to provide
+estimations of the <u>posterior mean, variance, median (i.e. 50%
+quantile) as well as 5% and 95% quantiles (and hence 90% credibility
 interval) of each parameter of interest</u>. The posterior distribution
 of each parameter of interest is also inferred using importance weights
 following Meinshausen (2006)’s work on quantile regression forests.
 
-# 3.4 Assessing the quality of predictions 
+<span id="_Toc67674938" class="anchor"></span>**3.4 Assessing the
+quality of predictions**
 
-To evaluate the robustness of inferences, DIYABC Random Forest provides:
+To evaluate the robustness of inferences, DIYABC-RFt provides:
 
-1.  Global (i.e. prior) error/accuracy indices corresponding to
-    prediction quality measures computed *over the entire data space*;
+1.  Global (i.e. prior) error/accuracy metrics corresponding to
+    prediction quality measures computed <u>over the entire data
+    space</u>;
 
-2.  Local (i.e. posterior) error/accuracy indices computed conditionally
+2.  Local (i.e. posterior) error/accuracy metrics computed conditionally
     on the observed dataset and hence corresponding to prediction
-    quality *exactly at the position of the observed dataset*.
+    quality <u>exactly at the position of the observed dataset.</u>
 
 > Note that the program used the out-of-bag prediction method for
 > estimating global and local error/accuracy measures (Pudlo et al.
-> 2016; Raynal et al. 2019; Chapuis et al. 2020). This method is
-> computationally efficient as it makes use of the datasets already
-> present in the training set and hence avoids the (computationally
-> costly) simulations of additional test datasets.
+> 2016; Raynal et al. 2019; Chapuis et al. 2020). The out-of-bag dataset
+> corresponds to the data of the training set that were not selected
+> when creating the different tree bootstrap samples and is hence
+> equivalent to using an independent test dataset (Breiman, 2001; Pudlo
+> et al. 2016; Raynal et al. 2019). Using the out-of-bag prediction
+> method for estimating global and local error/accuracy measures is
+> computationally efficient as this approach makes use of the datasets
+> already present in the training set and hence avoids the
+> computationally costly simulations (especially for large SNP datasets)
+> of additional test datasets.
 
-### 3.4.1 Indices for scenario choice
+### 3.4.1 Metrics for scenario choice
 
 -   <u>Global prior errors</u> including the *confusion matrix* (i.e.
     the contingency table of the true and predicted classes – here
@@ -1212,7 +1230,7 @@ To evaluate the robustness of inferences, DIYABC Random Forest provides:
     posterior probability of the selected scenario (Chapuis et al.
     2020).
 
-### 3.4.2 Indices for parameter estimation
+### 3.4.2 Metrics for parameter estimation
 
 -   <u>Global (prior) and local (posterior) NMAE</u> (i.e. normalized
     mean absolute error): it is the average absolute difference between
@@ -1239,16 +1257,20 @@ To evaluate the robustness of inferences, DIYABC Random Forest provides:
 > median of the difference between the estimated 5% and 95% divided by
 > the true simulated value.
 
-# 4. PRACTICAL CONSIDERATIONS FOR ABC-RF TREATMENTS
+<span id="_Toc67674941" class="anchor"></span>**4. PRACTICAL
+CONSIDERATIONS FOR ABC-RF TREATMENTS**
 
 Random Forest is often (positively) considered as a “tuning-free” method
 in the sense that it does not require meticulous calibrations. This
-represents an important advantage of this method, especially for
-non-expect users. In practice, we nevertheless advise users to consider
-several checking points, thereafter formalized as questions, before
-finalizing inferential treatments using DIYABC Random Forest v1.0.
+represents an important advantage of this method (for instance compared
+to standard ABC methods, Neural Network methods and more sophisticated
+Deep Learning methods; Collin et al. 2020), especially for non-expert
+users. In practice, we nevertheless advise users to consider several
+checking points, thereafter formalized as questions, before finalizing
+inferential treatments using DIYABC-RF.
 
-# 4.1 Are my scenarios and/or associated priors compatible with the observed dataset?
+<span id="_Toc67674942" class="anchor"></span>**4.1 Are my scenarios
+and/or associated priors compatible with the observed dataset?**
 
 This question is of prime interest and applies to ABC-RF as well as to
 any alternative ABC treatments. This issue is particularly crucial,
@@ -1260,24 +1282,27 @@ of the observed dataset, this is a signal of incompatibility and it is
 not recommended to attempt any inferences. In such situations, we
 strongly advise reformulating the compared scenarios and/or the
 associated prior distributions in order to achieve some compatibility in
-the above sense. DIYABC Random Forest v1.0 proposes a visual way to
-address this issue through the simultaneous projection of datasets of
-the training database and of the observed dataset on the first Linear
-Discriminant Analysis (LDA) axes. In the LDA projection, the (target)
-observed dataset has to be reasonably located within the clouds of
-simulated datasets. The program also proposes some complementary
-dedicated tools: (i) a Principal Component Analysis (PCA) representing
-on 2-axes plans the simulated dataset from the training set and the
-observed dataset; and (ii), <u>for each summary statistics</u>, the
-proportion of simulated data (considering the total training set) that
-have a value below the value of the observed dataset. A star indicates
-proportions lower than 5% or greater than 95% (two stars, &lt;1% or
-&gt;1%; three stars, &lt;0.1% or &gt;0.1%). The latter numerical results
-can help users to reformulating the compared scenarios and/or the
-associated prior distributions in order to achieve some compatibility
-(see e.g. Cornuet et al. 2010).
+the above sense. DIYABC-RF proposes a visual way to address this issue
+through the simultaneous projection of datasets of the training database
+and of the observed dataset on the first Linear Discriminant Analysis
+(LDA) axes. In the LDA projection, the (target) observed dataset has to
+be reasonably located within the clouds of simulated datasets. The
+program also proposes some complementary dedicated tools: (i) a
+Principal Component Analysis (PCA) representing on 2-axes plans the
+simulated dataset from the training set and the observed dataset; and
+(ii), <u>for each summary statistics</u>, the proportion of simulated
+data (considering the total training set) that have a value below the
+value of the observed dataset. A star indicates proportions lower than
+5% or greater than 95% (two stars, &lt;1% or &gt;1%; three stars,
+&lt;0.1% or &gt;0.1%). The latter numerical results can help users to
+reformulating the compared scenarios and/or the associated prior
+distributions in order to achieve some compatibility (see e.g. Cornuet
+et al. 2010). See also the complementary and more basic procedure based
+on Principal Component Analysis (PCA) proposed in section “5.4.7 Step 7:
+Prior-scenario checking PRE-ANALYSIS (optional but recommended)”.
 
-# 4.2 Did I simulate enough datasets for my training set?
+<span id="_Toc67674943" class="anchor"></span>**4.2 Did I simulate
+enough datasets for my training set?**
 
 A rule of thumb is, for scenario choice to simulate between 2,000 and
 20,000 datasets per scenario among those compared (Pudlo et al. 2016;
@@ -1285,17 +1310,18 @@ Estoup et al. 2018), and for parameter estimation to simulate between
 10,000 and 100,000 datasets under a given scenario (Raynal et al. 2019;
 Chapuis et al. 2020). To evaluate whether or not this number is
 sufficient for RF analysis, we recommend to compute error/accuracy
-metrics such as those proposed by DIYABC Random Forest v1.0 from both
-the entire training set and a subset of the latter (for instance from a
-subset of 80,000 simulated datasets if the training set includes a total
-of 100,000 simulated datasets). If error (accuracy) metrics from the
-subset are similar, or only slightly higher (lower) than the value
-obtained from the entire database, one can consider that the training
-set contains enough simulated datasets. If a substantial difference is
+metrics such as those proposed by DIYABC-RF from both the entire
+training set and a subset of the latter (for instance from a subset of
+80,000 simulated datasets if the training set includes a total of
+100,000 simulated datasets). If error (accuracy) metrics from the subset
+are similar, or only slightly higher (lower) than the value obtained
+from the entire database, one can consider that the training set
+contains enough simulated datasets. If a substantial difference is
 observed between both values, then we recommend increasing the number of
 simulated datasets in the training set.
 
-# 4.3 Did my forest grow enough trees?
+<span id="_Toc67674944" class="anchor"></span>**4.3 Did my forest frow
+enough trees?**
 
 According to our experience, a forest made of 500 to 2,000 trees often
 constitutes an interesting trade-off between computation efficiency and
@@ -1304,12 +1330,12 @@ statistical precision (Breiman, 2001; Chapuis et al. 2020; Pudlo et al.
 sufficient, we recommend plotting error/accuracy metrics as a function
 of the number of trees in the forest. The shapes of the curves provide a
 visual diagnostic of whether such key metrics stabilize when the number
-of trees tends to a given value. DIYABC Random Forest v1.0 provides such
-a plot-figure as output.
+of trees tends to a given value. DIYABC-RF provides such a plot-figure
+as output.
 
 # 5. RUNNING (EXAMPLE) DATASET TREATMENTS USING THE GRAPHIC USER INTERFACE (GUI)
 
-<span id="_Toc62127961" class="anchor"></span>**5.1 Launching the GUI**
+<span id="_Toc67674946" class="anchor"></span>**5.1 Launching the GUI**
 
 -   The GUI is the standard and user-friendly interface to use the
     software DIYABC-RF. You can configure the required parameters and
@@ -1320,9 +1346,9 @@ a plot-figure as output.
     parallel.
 
 -   When using the operating system Microsoft Windows, launch the GUI by
-    double-clicking on <s>the icon of</s> the file DIYABC-RF\_GUI.bat
-    included in the DIYABC-RF\_GUI\_xxx\_windows.zip file available from
-    [https://diyabc.github.io](https://diyabc.github.io/) . When using
+    double-clicking on the file DIYABC-RF\_GUI.bat included in the
+    DIYABC-RF\_GUI\_xxx\_windows.zip file available from
+    [https://diyabc.github.io](https://diyabc.github.io/). When using
     MacOS, launch the GUI by double-clicking on the icon of the file
     DIYABC-RF\_GUI.command included in the
     DIYABC-RF\_GUI\_xxx\_macos.zip file available from
@@ -1332,8 +1358,8 @@ It is worth stressing that the program can also be run locally as any
 shiny application using R (only possibility on Linux). You can visit
 <https://diyabc.github.io/gui/#r-package-installation> for more details.
 
-The main pipeline of DIYABC-RF includes two <s>main</s> modules
-corresponding to the two main phases:
+The main pipeline of DIYABC-RF includes two modules corresponding to the
+two main phases:
 
 -   Module 1 = “<u>Training set simulation</u>” where users specify how
     simulated data will be generated under the ABC framework to produce
@@ -1357,35 +1383,35 @@ files are the same as those described in section 7.1 for observed (i.e.
 real) datasets for which one usually wants to make inferences.
 
 <span id="doc_openProjectButton" class="anchor"></span>**5.2 What is a
-DIYABC Random Forest project?**
+DIYABC-RF project?**
 
 A DIYABC-RF project consists of different files, related to the training
 set simulation and random forest analyses. A project includes at least
 one <u>observed dataset</u> and one <u>header file</u> associated to a
-(already generated or not) <u>training set</u>. The header file, always
-named headerRF.txt, contains all information necessary to compute a
-training set associated with the data: i.e. the scenarios, the scenario
-parameter priors, the characteristics of loci, the loci parameter priors
-and the list of summary statistics to compute using the *Training set
-simulation* module. As soon as the first records of the training set
-have been simulated, they are saved in the training set file, always
-named reftableRF.bin. In addition, the file statobsRF.txt, stores the
-value of the summary statistics computed from the observed dataset.
+(already generated or not) <u>training set</u>. The header file, named
+headerRF.txt, contains all information necessary to compute a training
+set associated with the data: i.e. the scenarios, the scenario parameter
+priors, the characteristics of loci, the loci parameter priors and the
+list of summary statistics to compute using the Training set simulation
+module. As soon as the first records of the training set have been
+simulated, they are saved in the training set file, named
+reftableRF.bin. In addition, the file statobsRF.txt, stores the value of
+the summary statistics computed from the observed dataset.
 
 Outputs of Random forest analyses are available in sub-directories (each
 one corresponding to a specific setting that you may have configured for
-the random forest analyses) in the project directory (please see the
+the random forest analyses) in the project directory; see the
 corresponding section 7.3 for more details regarding the content of
-outputs generated by a Random Forest analysis).
+outputs generated by a Random Forest analysis.
 
-It is worth stressing that you need to SAVE a project to avoid losing
-your work before quitting the GUI. A project zip file will be generated
-and can be saved. If you want to later continue with a project, or
-clone/modify an existing project, you can provide an existing project
-zip file in the GUI when starting a project.
+It is worth stressing that you need to **SAVE** a project to avoid
+losing your work before quitting the GUI. A project zip file will be
+generated and can be saved. If you want to later continue with a
+project, or clone/modify an existing project, you can provide the key
+files of an existing projec in the GUI when starting a project.
 
-Finally, we strongly advised NOT to manually edit project-related files,
-unless you know what you are doing!
+Finally, we strongly advised NOT to manually edit project-related files
+in a text editor, unless you know what you are doing!
 
 ## 5.3 Main options of the home screen
 
@@ -1418,12 +1444,13 @@ When launching the GUI, the home screen appears like this:
 > The different options proposed are self-meaning. Default values can be
 > changed by the user. Note that the loop-size option corresponds to the
 > number of simulated datasets distributed over all computer threads and
-> stored in RAM before writing them into the training set file
+> stored in the RAM before writing them into the training set file
 > (reftableRF.bin).
 
 ## 5.4 How to generate a new IndSeq SNP training set
 
-## 5.4.1 Step 1: defining a new IndSeq SNP project
+> <span id="_Toc67674950" class="anchor"></span>**5.4.1 Step 1: defining
+> a new IndSeq project**
 
 Defining a new project requires different steps which are not strictly
 the same whether the data are microsatellites/DNA sequences (MSS) or SNP
@@ -1433,8 +1460,8 @@ main pipeline” button). The following panel appears.
 
 <img src="media/image18.png" style="width:7.7125in;height:4.33819in" />
 
--   Enter and validate a project name in the “Project name” window (here
-    IndSeq\_demonstration\_project)
+-   Enter a project name in the “Project name” window (here
+    IndSeq\_demonstration\_project). Validate the project name.
 
 -   Select the Data type including the locus type (Microsat/sequence or
     SNP) and the sequencing mode (for SNP only; IndSeq or PoolSeq). Here
@@ -1443,7 +1470,7 @@ main pipeline” button). The following panel appears.
 -   Select the “New project” button as we want to implement a new
     project from scratch.
 
-## 5.4.2 Step 2: choosing the data file
+### 5.4.2 Step 2: choosing the data file 
 
 -   Choose a data file (an IndSeq format data file in this case) using
     the “Select file” browser (here
@@ -1457,8 +1484,8 @@ main pipeline” button). The following panel appears.
     M=mitochondrial…; see section 7.1 for details about datafile
     format), and the number of available loci based on the MAF criterion
     (here 15617 &lt;A&gt;, as14383 loci, including 0 monomorphic loci,
-    have been filtered out by the program after scanning the proposed
-    observed dataset).
+    have been filtered out due to a MAF&lt;5% by the program after
+    scanning the proposed observed dataset).
 
 > <img src="media/image19.png" style="width:7.7125in;height:4.33819in" />
 
@@ -1469,7 +1496,8 @@ main pipeline” button). The following panel appears.
 
 <img src="media/image20.png" style="width:7.7125in;height:4.33819in" />
 
-## 5.4.3 Step 3: Inform the Historical model
+> <span id="_Toc67674952" class="anchor"></span>**5.4.3 Step 3: Inform
+> the historical model**
 
 Click on the “Add” button of the “Define historical models” section. The
 following panel appears:
@@ -1509,12 +1537,12 @@ in the “Condition setting” frame. As noted in the panel, conditions
 should have the following format: XX&lt;YY. where ‘XX' and 'YY' are
 parameters of the same type. You can use the standard comparison signs:
 '&gt;', '&gt;=', '&lt;', '=&lt;'. It is worth stressing that the
-omission of such conditional constraints on merge times (cf. a
+omission of such conditional constraints on merge times (cf. a
 population needs to exist in the past to allow coalescence events in it)
 is one of the most frequent implementation error made by DIYABC-RF
 users. If forgotten a message "Error in simulation process: check your
-scenarios, priors and conditions"" appears. Note that the occurrence of
-a too large number of time conditional constraints within a scenario may
+scenarios, priors and conditions" appears. Note that the occurrence of a
+too large number of time conditional constraints within a scenario may
 substantially slow down simulations as a valid t parameter vector will
 be retain and run only once all conditions are fulfilled.
 
@@ -1523,17 +1551,18 @@ be retain and run only once all conditions are fulfilled.
     add a single or several other scenarios). In the present example, we
     simulate datasets from six different scenarios that we want to
     compare (see Collin et al. 2020 example based on pseudo-observed
-    datasets for details), hence the six scenario windows that we have
-    completed with instructions for each one. For the sixth scenario the
-    panel looks like this:
+    datasets for details); hence the six scenario windows that we have
+    completed with instructions for each one. For the last sixth
+    scenario the panel looks like this:
 
 <img src="media/image25.png" style="width:7.7125in;height:4.33819in" />
 
-Complete time conditions for the six scenarios are: t21&gt;t32,
-t42&lt;t21, t43&lt;t32, t32&gt;t423, t431&lt;t32 and t421&lt;t21
+You need to complete time conditions for the six scenarios by writing
+t21&gt;t32, t42&lt;t21, t43&lt;t32, t32&gt;t423, t431&lt;t32 and
+t421&lt;t21 on successive lines in the “Condition setting” frame.
 
-<span id="_Toc62127968" class="anchor"></span>**5.4.4 Step 4: Inform
-number of loci to simulate (and chromosome type)**
+> <span id="_Toc67674953" class="anchor"></span>**5.4.4 Step 4: Inform
+> number of loci to simulate (and chromosome type)**
 
 Choose the number of SNP locus that you want to simulate for each
 chromosome type define in the data file (*A* for autosomal diploid loci,
@@ -1543,9 +1572,11 @@ chromosome type define in the data file (*A* for autosomal diploid loci,
 experience, analyzing (evolutionary neutral) scenarios using 5000 to
 20000 SNP loci is sufficient to obtain robust results. In this example,
 we choose to consider simulations based on a subset of 5000 SNP loci
-(with MAF=0.05 as indicated previously) taken in order from the
-<u>first</u> SNP locus of the data file, by replacing 30000 by 5000 in
-the corresponding frame. Click on the button “Validate”.
+(with &lt;MAF=0.05&gt; as indicated previously in the headline of the
+observed dataset file) taken in order f<u>rom the first SNP locus of the
+data file</u> (users may want to change this stating point), by
+replacing 30000 by 5000 in the corresponding frame. Click on the button
+“Validate”.
 
 It is worth stressing that choosing a subset of 5000 SNP loci taken from
 the SNP locus 5001 of the data file would lead to a training set
@@ -1557,9 +1588,9 @@ to do that).
 
 <img src="media/image26.png" style="width:7.37792in;height:4.15in" />
 
-<span id="_Toc62127969" class="anchor"></span>**5.4.5 Step 5: Summary
-statistics**
-
+> <span id="_Toc67674954" class="anchor"></span>**5.4.5 Step 5: Summary
+> statistics**
+>
 > In the present version of the program, all available summary
 > statistics are computed as mentioned in the interface below the
 > “Summary statistics” item (see previous panel-copy) and as detailed
@@ -1594,8 +1625,9 @@ statistics**
 > v for mean and variance over loci, respectively; see section 2.6.3)
 > will be used in most files produced by the program, including the key
 > files headerRF.txt, reftableRF.bin and statobsRF.txt.
-
-## 5.4.6 Step 6: Simulate the training set
+>
+> <span id="_Toc67674955" class="anchor"></span>**5.4.6 Step 6: Simulate
+> the training set**
 
 You can access the “training set simulation” module by clicking on the
 corresponding + button on the far right of the box blue title bar
@@ -1619,21 +1651,22 @@ corresponding + button on the far right of the box blue title bar
     requested simulations have been processed.
 
 -   <u>Do not forget to click on the “Save” button in the “Project
-    administration” lower panel to implement and save a concatenated zip
-    file including various input and output files</u> (see section 7 for
-    a description of the content of some of those files) on your
-    computer. The name of the implemented/saved concatenated .zip file
-    is the one given at the start in the “Project name” window (here
-    IndSeq\_demonstration\_project).
+    administration” lower panel (see panel below) to implement and save
+    a concatenated zip file including various input and output files</u>
+    (see section 7 for a description of the content of some of those
+    files) on your computer. The name of the implemented/saved
+    concatenated .zip file is the one given at the start in the “Project
+    name” window (here IndSeq\_demonstration\_project).
 
 <img src="media/image28.png" style="width:7.7125in;height:4.33819in" />
 
--   Warning: The button “Reset” at the very bottom part of the “Project
-    administration” panel restart the pipeline from scratch removing all
-    configurations previously set up and all data and result files
-    generated.
+-   <u>Warning</u>: The “Reset” button at the very bottom part of the
+    “Project administration” panel restart the pipeline from scratch
+    removing all configurations previously set up and all data and
+    result files generated.
 
-## 5.4.7 Step 7: Prior-scenario checking PRE-ANALYSIS (optional but recommended)
+> <span id="_Toc67674956" class="anchor"></span>**5.4.7 Step
+> 7:Prior-scenario checking PRE-ANALYSIS (optional but recommended)**
 
 Before performing a full ABC-RF analysis on a large size training set,
 we advise using the prior-scenario checking option on a training set of
@@ -1641,12 +1674,11 @@ small size (e.g. including 500 to 1000 simulated dataset per scenarios).
 As a matter of fact, this pre-analysis option is a convenient way to
 reveal potential mis-specification of models (scenarios) and/or prior
 distributions of parameters (and correct it). This action requires a
-training set file (\`reftableRF.bin\`) and a statobsRF.txt file either
-generated when clicking on 'Simulate' or uploaded with an existing
-project. When clicking on the button <u>“Run” of the “Prior and scenario
-checking” option (see previous/above panel copy)</u> the program will
-use the statobsRF.txt and reftableRF.bin files to generate two specific
-outputs:
+training set file (reftableRF.bin) and a statobsRF.txt file either
+generated when clicking on the “Simulate” button or uploaded with an
+existing project. When clicking on the “Run” button of the “Prior and
+scenario checking” option (see previous panel copy) the program will
+generate two specific outputs:
 
 -   A Principal Component Analysis (PCA) representing on 2-axes plans
     the simulated dataset from the training set and the observed dataset
@@ -1677,12 +1709,12 @@ outputs:
 
 ## 5.5 How to generate a new PoolSeq SNP training set
 
-Follow the same five steps described in section 5.4 for IndSeq SNPs.
+Follow the same steps described in section 5.4 for IndSeq SNPs.
 
 -   *Step 1*: Defining a new PoolSeq SNP project  see section 5.4.1
 
-Click on the “Launch project” button of the home screen. Select SNP as
-project type and PoolSeq as sequencing mode
+Click on the “Start” button of the home screen. Select SNP as project
+type and PoolSeq as sequencing mode
 
 -   *Step 2*: Choosing the data file  see section 5.4.2 and select a
     dataset file characterized by a PoolSeq format (format detailed in
@@ -1711,7 +1743,7 @@ Follow the same steps described in section 5.4 for IndSeq SNPs.
 -   *Step 1*: Defining a new or microsatellites/DNA sequences project 
     see section 5.4.1
 
-> Click on the “Launch project” button of the home screen. Select
+> Click on the “Startt” button of the home screen. Select
 > Microsat/Sequences as project type (not any sequencing mode is needed)
 
 -   *Step 2*: Choosing the data file  see section 5.4.2 and select a
@@ -1741,7 +1773,7 @@ Follow the same steps described in section 5.4 for IndSeq SNPs.
 > be done using the following panels (implemented here from a toy
 > example including microsatellites + DNA sequences named
 > TOY\_EXAMPLE2\_microsatellites\_DNAsequence\_two\_pops\_ancient\_admixture;
-> see section 10. TOY EXAMPLES for details about this toy example).**
+> see section 10. “TOY EXAMPLES” for details about this toy example).**
 
 -   First: define the number of groups of markers (a group been defined
     by different mutational modalities). By default, all microsatellite
@@ -1752,47 +1784,48 @@ Follow the same steps described in section 5.4 for IndSeq SNPs.
 
 <img src="media/image29.png" style="width:6.13345in;height:3.45in" />
 
--   Second: define the motif size and range of motif variation. By
-    default, all microsatellite loci are supposed to be dinucleotidic
-    (motif = 2) with a range of 40.
+-   Second: define the motif size and continuous range of motif
+    variation. By default, all microsatellite loci are supposed to be
+    dinucleotidic (motif = 2) with a range of 40.
 
 <img src="media/image30.png" style="width:6.11667in;height:3.44056in" />
 
 > It is worth stressing that the values for motif size and allelic range
 > are just default values and do not necessarily correspond to the
-> actual data. The user who knows the real values for its data is
-> required to set the correct values at this stage. If the range is too
-> short to include all values observed in the analyzed dataset, a
-> message appears in a box asking to enlarge the corresponding allelic
-> range. Note that the allelic range is measured in number of motifs, so
-> that a range of 40 for a motif length of 2 bp means that the
-> difference between the smallest and the longest alleles should not
-> exceed 80 bp. It is worth stressing that the indicated allelic range
-> (expressed in number of continuous allelic states) corresponds to a
-> potential range which is usually larger than the range observed from
-> the analyzed dataset (cf. all possible allelic states have usually not
-> been sampled). In practice it is difficult to assess the actual
-> microsatellite constraints on the allelic range; to do that one needs
-> allelic data from several distantly related populations/sub-species as
-> well as related species which is rarely the case(see Pollack et al.
-> 1998; Estoup et al. 2002). We achieved a meta-analysis from numerous
-> primer notes documenting the microsatellite allelic ranges of many
-> (i.e. &gt; 100) different species (and related species). We used the
-> corrective statistical treatment on such data proposed by (Pollack et
-> al. 1998). Our results pointed to a mean microsatellite allelic range
-> of 40 continuous states (hence the default allelic range value of 40
-> mentioned in the program). We also found, however, that range values
-> greatly varied among species and among loci within species
-> (unpublished results). We therefore recommend the following pragmatic
-> behavior when considering the allelic range of your analysed
-> microsatellite dataset: (i) if the difference in number of motif of
-> your locus is &lt; 40 motifs in the analysed dataset then leave the
-> default allelic range value of 40. (ii) if the difference in number of
-> motif of your locus is &gt;40 motifs in your dataset then take
-> Max\_allele\_size ![-](https://latex.codecogs.com/png.latex?- "-")
+> actual microsatellite observed dataset. The user who knows the real
+> values for its data is required to set the correct values at this
+> stage. If the range is too short to include all values observed in the
+> analyzed dataset, a message appears in a box asking to enlarge the
+> corresponding allelic range. Note that the allelic range is measured
+> in number of motifs, so that a range of 40 for a motif length of 2 bp
+> means that the difference between the smallest and the longest alleles
+> should not exceed 80 bp. It is worth stressing that the indicated
+> allelic range (expressed in number of continuous allelic states)
+> corresponds to a potential range which is usually larger than the
+> range observed from the analyzed dataset (cf. all possible allelic
+> states have usually not been sampled). In practice it is difficult to
+> assess the actual microsatellite constraints on the allelic range; to
+> do that one needs allelic data from several distantly related
+> populations/sub-species as well as related species which is rarely the
+> case(see Pollack et al. 1998; Estoup et al. 2002). We achieved a
+> meta-analysis from numerous primer notes documenting the
+> microsatellite allelic ranges of many (i.e. &gt; 100) different
+> species (and related species). We used the corrective statistical
+> treatment on such data proposed by (Pollack et al. 1998). Our results
+> pointed to a mean microsatellite allelic range of 40 continuous states
+> (hence the default allelic range value of 40 mentioned in the
+> program). We also found, however, that range values greatly varied
+> among species and among loci within species (unpublished results). We
+> therefore recommend the following pragmatic choice when considering
+> the allelic range of your analyzed microsatellite dataset: (i) if the
+> difference in number of motif of your locus is &lt; 40 motifs in the
+> analyzed dataset then leave the default allelic range value of 40.
+> (ii) if the difference in number of motif of your locus is &gt;40
+> motifs in your dataset then take Max\_allele\_size
+> ![-](https://latex.codecogs.com/png.latex?- "-")
 > Min\_allele\_size)/motif size + say 10 additional motifs to re-define
-> the allelic range of the locus in the corresponding DIYABC panel
-> (e.g. (200 nu ![-](https://latex.codecogs.com/png.latex?- "-") 100
+> the allelic range of the locus in the corresponding DIYABC-RF panel
+> (e.g. (200 nu ![-](https://latex.codecogs.com/png.latex?- "-") 100
 > nu)/2 + 10 = 50 + 10 = 60 as allelic range).
 
 -   Third: adjust the prior specificities of mutational modalities as
@@ -1817,7 +1850,8 @@ example as above).**
     previous microsatellite markers). Otherwise you can associate some
     loci to additional groups (after clicking on the button “Add group”)
     if you consider that such loci have different mutational modalities
-    (for instance here Locus\_S\_M\_16\_).
+    (for instance here Locus\_S\_M\_16\_ corresponding to a sequence of
+    mitochondrial DNA).
 
 -   Adjust the prior specificities of mutational modalities (for the
     different DNA sequence groups you have defined previously) using the
@@ -1831,9 +1865,9 @@ example as above).**
 > mean mutation rate is not suited to mitochondrial DNA which generally
 > evolves at a faster rate than nuclear DNA (Haag-Liautard et al.,
 > 2008). So we set its value to 10<sup>-8</sup>. For all other mutation
-> model parameters, one can just keep the default values. <u>See section
+> model parameters, one can just keep the default values. See section
 > 2.4.2 “DNA sequence loci” for details about the mutation models
-> proposed for DNA sequences</u>.
+> proposed for DNA sequences.
 
 -   Before launching a run to simulate the training set, do not forget
     to <u>validate your microsatellite and/or DNA settings by clicking
@@ -1854,7 +1888,8 @@ example as above).**
 
 > The following set of summary statistics has been implemented.
 
-Single sample statistics:  
+-   Single sample statistics:
+
 1\. mean number of alleles across loci (NAL)
 
 2\. mean gene diversity across loci (HET)
@@ -1863,7 +1898,8 @@ Single sample statistics:
 
 3\. mean M index across loci (MGW)
 
-Two sample statistics:  
+-   Two sample statistics:
+
 1\. mean number of alleles across loci (two samples) (N2P)
 
 2\. mean gene diversity across loci (two samples) (H2P)
@@ -1879,14 +1915,16 @@ between two samples (FST)
 
 6\. distance between two samples (DM2)
 
-Three sample statistics:  
+-   Three sample statistics:
+
 1\. Maximum likelihood coefficient of admixture (AML)
 
 **<u>For DNA sequence loci</u>**
 
 > The following set of summary statistics has been implemented.
 
-Single sample statistics:  
+-   Single sample statistics:
+
 1\. number of distinct haplotypes (NHA)
 
 2\. number of segregating sites (NSS)
@@ -1905,7 +1943,8 @@ Single sample statistics:
 8\. Variance of the numbers of the rarest nucleotide at segregating
 sites (VNS)
 
-Two sample statistics:  
+-   Two sample statistics:
+
 1\. number of distinct haplotypes in the pooled sample (NH2)
 
 2\. number of segregating sites in the pooled sample (NS2)
@@ -1917,14 +1956,14 @@ Two sample statistics:
 ![{5.F}\_{\\text{ST}}](https://latex.codecogs.com/png.latex?%7B5.F%7D_%7B%5Ctext%7BST%7D%7D "{5.F}_{\text{ST}}")
 between two samples (HST)
 
-> Three sample statistics:
+-   Three sample statistics:
 
-1.  Maximum likelihood coefficient of admixture (SML)
+    1.  Maximum likelihood coefficient of admixture (SML)
 
-<span id="_Toc62127976" class="anchor"></span>**5.7 How to work from an
+<span id="_Toc67674961" class="anchor"></span>**5.7 How to work from an
 “Existing project” (for any type of markers)**
 
-Working from an existing project is particularly appealing when that one
+Working from an existing project is particularly appealing when one
 wants to:
 
 \(i\) **objective 1**: simply add more simulations in the training set
@@ -1957,7 +1996,7 @@ section 5.4.
 -   Click on the “Existing project” button of the ”Project type” item as
     we want to work from an existing project.
 
--   Use the browser of the ”Project files” item to select key files in
+-   Use the browser of the “Project files” item to select key files in
     the Existing project directory (here a directory named
     “IndSeq\_demonstration\_project”). Key files are <u>headerRF.txt</u>
     (mandatory), <u>reftableRF.bin</u> (if one simply wants to add more
@@ -1965,8 +2004,9 @@ section 5.4.
     project without changing anything in the headerRF.txt cf. objective
     1 above), and <u>statobsRF.txt</u> (optional). If the objective 2 is
     concerned then only the file headerRF.txt is needed (avoid loading
-    the reftableRF.bin file as the latter might not be in agreement with
-    the new headerRF.txt file that you will generate).
+    the reftableRF.bin file as the latter might not be in accordance
+    with the new headerRF.txt file and the associated simulated data
+    that you will generate).
 
 <img src="media/image36.png" style="width:7.7125in;height:4.33819in" />
 
@@ -1977,8 +2017,10 @@ section 5.4.
     of loci (30000), the minimum allele frequency chosen for simulation
     (MAF=0.05), the sex ratio indicated by the user (NM=1NF), the total
     number of individuals and populations, and finally the locus type
-    and their corresponding numbers (A= autosomal, M=mitochondrial,…;
-    see section 7.1 for details about data file format).
+    and their corresponding numbers (A= autosomal, M=mitochondrial,…),
+    including information regarding the number of loci available after
+    applying the MAF (or MRC) criterion; see section 7.1 for details
+    about data file format.
 
 -   A “Project set up is ok” message appears at the bottom of the panel
     if all items have gone correctly. You can then go the next steps by
@@ -1991,19 +2033,19 @@ section 5.4.
 > (historical models, priors and conditions, number of SNP loci to
 > simulate). Warning: such information cannot be changed.
 >
-> To change information in the headerRF.txt (cf. **objective 2**) click
-> on the “Edit configuration” button located at the top of the panel and
-> changes for instance the scenarios formulated, the definition of
-> priors, the number of loci to simulate etc. In this case a new
-> reftableRF.bin file will be generated from scratch following the
+> <u>To change information in the headerRF.txt (cf. **objective 2**)
+> click on the “Edit configuration” button</u> located at the top of the
+> panel and changes for instance the scenarios formulated, the
+> definition of priors, the number of loci to simulate etc. In this case
+> a new reftableRF.bin file will be generated from scratch following the
 > instruction included in the newly generated headerRF.txt file.
 
 -   Following **objective 1**, you can launch new simulations that will
     be added to those already present in the pre-existing training set
     (i.e. reftableRF.bin file). As we have already 12000 simulations in
     the initial reftableRF.bin file we put the number of simulation to a
-    number &gt; 12000 (here 24000). Then click on the large blue color
-    button “Simulate”.
+    number &gt; 12000 (here 24000 to double the number of simulated
+    data). Then click on the large blue color button “Simulate”.
 
 <img src="media/image38.png" style="width:6.04457in;height:3.4in" />
 
@@ -2024,10 +2066,10 @@ section 5.4.
 -   You might also want to launch the optional but recommended option
     “Prior and scenario checking”. For details see section 5.4.7.
 
--   <span id="_Toc62127977" class="anchor"></span>Warning: The button
-    “Reset” at the very bottom part of the “Project administration”
-    panel restart the pipeline from scratch removing all configurations
-    previously set up and all data and result files generated.
+-   Warning: The button “Reset” at the very bottom part of the “Project
+    administration” panel restart the pipeline from scratch removing all
+    configurations previously set up and all data and result files
+    generated.
 
 # 6. PERFORMING RANDOM FOREST ANALYSES
 
@@ -2046,9 +2088,9 @@ Four files are needed at this stage:
     generated when producing the headerRF.txt and reftableRF.bin files.
 
 -   <u>Warning</u>: although not necessary *per se* for Random Forest
-    analyses as the later only need the statobsRF.txt file as data point
-    to analyze, the **observed (here IndSeq SNP) data file** has to be
-    present.
+    analyses (as the later only need the statobsRF.txt file as data
+    point to analyze), the **observed (here IndSeq SNP) data file** has
+    to be loaded too.
 
 -   **It is worth stressing that these files are: (i) already available
     following an in-course (and terminated) training set simulation
@@ -2101,16 +2143,16 @@ Four files are needed at this stage:
 
 -   You may 'group' your models in several groups. For instance, if you
     have six models, labeled from 1 to 6, you can specify '1,2,3;4,5,6'
-    to make 2 groups of 3. Leave blank to not group scenarios and
-    analyzed them separately (see Collin et al. 2020). (default =
+    to make 2 groups of 3 scenarios. Leave blank to not group scenarios
+    and analyzed them separately (see Collin et al. 2020). (default =
     blank). Note that if you write ‘1;3;5’ then the RF scenario choice
     analysis will concern only the scenarios 1, 3 and 5 of the training
     set.
 
--   Indicate the number of tress in the forest (default = 500). See
+-   Indicate the number of trees in the forest (default = 500). See
     section 4.3 for useful insights about this number.
 
--   Click on the button “RUN” to launch the RF analysis for scenario
+-   Click on the “RUN” button to launch the RF analysis for scenario
     choice
 
 <img src="media/image43.png" style="width:7.7125in;height:4.33819in" />
@@ -2120,12 +2162,19 @@ Four files are needed at this stage:
     analysis has been entirely processed.
 
 -   Do not forget to click on the “Save” button in the “Project
-    administration” panel to implement and save a concatenated zip file
-    including various input and output files (see section 7.3 for a
-    description of the content of some of those files) on your computer.
-    The name of the implemented/saved concatenated zip file is the one
-    given at the start of the analysis (i.e. Analysis (sub-project)
-    name; here “Scenario\_choice\_demonstration.zip”).
+    administration” panel to implement and save input and output files
+    (see section 7.3 for a description of the content of some of those
+    files) on your computer. These files will be included into a
+    (sub)directory with a name corresponding to the one provided at the
+    start of the model choice analysis (here
+    “Scenario\_choice\_demonstration”). The corresponding (sub)directory
+    will be itself included within the Project name main directory (here
+    IndSeq\_demonstration\_project). The ensemble can be loaded as a
+    concatenated zip file (IndSeq\_demonstration\_project.zip). You can
+    launch and saved several model choice analyses successively by
+    giving different (sub-project) name to each analysis (e.g.
+    “Scenario\_choice\_demonstration\_set1”,
+    “Scenario\_choice\_demonstration\_set2”,…)
 
 -   Warning: The button “Reset” in the “Project administration” panel
     restart the pipeline from scratch removing all configurations
@@ -2155,14 +2204,15 @@ Four files are needed at this stage:
 
 <img src="media/image45.png" style="width:7.7125in;height:4.33819in" />
 
--   Indicate the Scenario ID number for parameter estimation (default
-    = 1)
+-   Indicate the ID number of the chosen scenario for parameter
+    estimation (default = 1). Here scenario3.
 
 -   Indicate the name of the parameter to estimate (here the admixture
     rate “ra”): a list of parameter names available for estimation
     according to the header and training set files is provided. Give a
-    single name or a combination of names as explained in the interface.
-    One analysis has to be processed for each parameter of interest.
+    single parameter name or a combination of names as explained in the
+    interface. One analysis has to be processed for each parameter of
+    interest.
 
 -   Indicate the number of simulated datasets in the training set to
     consider for analyses (default = 0 = total number of simulated
@@ -2175,9 +2225,9 @@ Four files are needed at this stage:
     section 4.2 for useful insights about the number of simulated
     datasets in the training set to consider for parameter estimation.
     In practice, it might be useful to generate a (second) training set
-    including only the selected scenario to process parameter estimation
-    from a larger number of simulated datasets (e.g. 10000 as in Collin
-    et al. 2020).
+    including <u>only the selected scenario</u> to process parameter
+    estimation from a larger number of simulated datasets (e.g. 10000 as
+    in Collin et al. 2020).
 
 -   Indicate the number of noise variables to add (default = 5). Noise
     variables (corresponding to values randomly drawn into uniform
@@ -2194,15 +2244,15 @@ Four files are needed at this stage:
     PLS components you will keep in the analysis (default = 0.95)
 
 -   Indicate the number of out-of-bag (oob) testing samples (default =
-    10 but a minimum of 1000 oob testing samples is often necessary to
-    obtained stable estimation of accuracy indices; see section 3.4.2).
+    1000 as a minimum of 1000 oob testing samples is often necessary to
+    obtained stable estimation of accuracy metrics; see section 3.4.2).
     This number should be equal or lower to the number of datasets
     available in the training set for the scenario under study.
 
 -   Indicate the number of trees in the forest – here 1000 - (default =
     500). See section 4.3 for useful insights about this number.
 
--   Click on the button “Run” to launch the parameter estimation
+-   Click on the “Run” button to launch the parameter estimation
     analyses focusing on the single parameter (or parameter combination)
     indicated above.
 
@@ -2213,12 +2263,19 @@ Four files are needed at this stage:
     analysis has been entirely processed.
 
 -   Do not forget to click on the “Save” button in the “Project
-    administration” panel to implement and save a concatenated zip file
-    including various input and output files (see section 7.3 for a
-    description of the content of some of those files) on your computer.
-    The name of the implemented/saved concatenated zip file is the one
-    given at the start of the analysis (i.e. Analysis (sub-project)
-    name; here “Parameter\_estimation\_ra\_demonstration.zip”).
+    administration” panel to implement and save input and output files
+    (see section 7.3 for a description of the content of some of those
+    files) on your computer. These files will be included into a
+    (sub)directory with a name corresponding to the one provided at the
+    start of the model choice analysis (here
+    “Parameter\_estimation\_ra\_demonstration”). The corresponding
+    (sub)directory will be itself included within the Project name main
+    directory (here IndSeq\_demonstration\_project). The ensemble can be
+    loaded as a concatenated zip file
+    (IndSeq\_demonstration\_project.zip). You can launch and saved
+    several parameter estimation analyses successively by giving
+    different (sub-project) name to each analysis (e.g.
+    “Parameter\_estimation\_ra”, “Parameter\_estimation\_N4”,…)
 
 -   Warning: The button “Reset” in the “Project administration” panel
     restart the pipeline from scratch removing all configurations
@@ -2226,32 +2283,32 @@ Four files are needed at this stage:
 
 # 7. KEY FILES
 
-The program uses and produces various files which we will describe now.
+The program uses and produces various files that we describe now.
 
 ## 7.1 Data files 
 
-<span id="_Toc62127983" class="anchor"></span>**7.1.1 IndSeq SNP data**
+> <span id="_Toc67674968" class="anchor"></span>**7.1.1 IndSeq SNP
+> data**
 
 The data file format includes:
 
 -   A first line (headline) providing the sex-ratio as above (e.g.
-    ![NM = 1.0NF &gt;](https://latex.codecogs.com/png.latex?NM%20%3D%201.0NF%20%3E "NM = 1.0NF >")),
-    the required MAF (minimum allele frequency criterion; e.g. MAF=0.05
-    or MAF=hudson&gt;), and any text that can be used as a title. The
-    sex ratio of the analyzed species is noted under the form
-    &lt;NM=rNF&gt;, in which r is the ratio of the number of females per
-    male (e.g. &lt;NM=2.5NF&gt; means that the number of males is 2.5
-    times the number of females; for a balanced sex ratio one should
-    write &lt;NM=1.0NF&gt;). The MAF is computed pooling all genes
-    genotyped over all studied population samples. For instance, the
-    specification of a MAF equal to 5% (i.e. MAF=0.05) will
-    automatically select a subset of m loci characterized by a minimum
-    allele frequency 5% among the *l* locus of the observed dataset. In
-    agreement with this, only *m* locus with a MAF&gt;5%. Writing
-    &lt;MAF = Hudson&gt; (or omitting to write any instruction with
-    respect to the MAF) will bring the program to use the standard
-    Hudson’s algorithm without further selection; see also the above
-    section 2.4.2.
+    &lt;NM=1.0NF&gt;, the required MAF (minimum allele frequency
+    criterion; e.g. &lt;MAF=0.05&gt; or &lt;MAF=hudson&gt;), and any
+    text that can be used as a title. The sex ratio of the analyzed
+    species is noted under the form &lt;NM=rNF&gt;, in which r is the
+    ratio of the number of females per male (e.g. &lt;NM=2.5NF&gt; means
+    that the number of males is 2.5 times the number of females; for a
+    balanced sex ratio one should write &lt;NM=1.0NF&gt;). For each SNP,
+    the MAF is computed pooling all genes genotyped over all studied
+    population samples. For instance, the specification of a MAF equal
+    to 5% will automatically select a subset of *m* loci characterized
+    by a minimum allele frequency ≥ 5% out of the *l* loci of the
+    observed dataset and only *m* loci with a MAF ≥ 5% will be retained
+    in a simulated dataset. Writing &lt;MAF=Hudson&gt; (or omitting to
+    write any instruction with respect to the MAF) will bring the
+    program to use the standard Hudson’s algorithm without further
+    selection; see also the above section 2.4.2.
 
 -   A second line starting with the three keywords `IND SEX POP`,
     separated by at least one space, followed by as many letters as SNP
@@ -2277,7 +2334,19 @@ The data file format includes:
     defining a genotype according to the number of the reference allele
     composing the genotype.</u>
 
--   Missing SNP genotypes are noted 9 for all type of SNP loci.
+-   Missing SNP genotypes are noted 9 for all type of SNP loci. Missing
+    data are taken into account in the following way. For each
+    appearance of a missing genotype in the observed dataset, the
+    program records the individual and the locus. When simulating
+    datasets, the program replaces the simulated genotype (obtained
+    through the coalescence process algorithm) by the missing data code
+    at all corresponding locations. All summary statistics are thus
+    computed with the same missing data as for the observed dataset.
+    Warning: data files with virtually any amount of missing data can be
+    analyzed by DIYABC-RF. However, for each locus a minimum of one
+    genotyped individual per population is required. This is because
+    summary statistics cannot be computed at a given locus in a given
+    population if only missing data are present.
 
 -   Only a subset of the SNP loci included in the data file can be
     considered (selected) in the simulations and hence in subsequent
@@ -2293,33 +2362,36 @@ The data file format includes:
     the entire dataset) are considered. Monomorphic SNP loci (over the
     entire dataset) are automatically filtered by the program. It is
     preferable, however, that the user removes himself all monomorphic
-    loci from his/her (observed) dataset before submitting it to DIYABC
-    Random Forest.
+    loci from his/her (observed) dataset before submitting it to
+    DIYABC-RF.
 
--   Before running any simulation, DIYABC Random Forest provides a text
-    file including the set of SNP loci selected from the observed
-    dataset (e.g. polymorphic loci 1 to 1000 with a MAF=0.05). This file
-    is named “UserDataFileName.bin.txt”.
+-   Before running any simulation, DIYAB-RF provides a text file
+    including the set of SNP loci selected from the observed dataset
+    (e.g. polymorphic loci 1 to 1000 with a MAF=0.05). This file is
+    named “UserDataFileName.bin.txt”.
 
 **EXAMPLE**
 
 In our example below, the species is diploid, has an unbalanced sex
-ration the sex-ratio as above (i.e. &lt;NM=1.5NF&gt;) and two of its
-populations were genotyped at 23 SNP loci: 20 autosomal loci, 1 X-linked
-locus, 1 Y-linked locus and 1 mitochondrial locus. The first line
-provides the title which includes the species sex-ratio and the MAF
-(minimum allele frequency). The second line indicates: individual name
-in column 1, individual sex in column 2 (`M` for male, `F` for female,
-`9` or any other letter if unknown), population name in column 3 and one
-column per SNP locus (letter `A` for an autosomal locus, `X` for an
-X-linked locus, `Y` for a Y-linked locus and `M` for a mitochondrial
-locus). Columns are separated by one or more spaces. SNP genotypes are
-coded `0`, `1` or `2` (`9` for missing data) according to the number of
-reference alleles at the corresponding locus. Note that the sex has no
-influence on simulations for autosomal, mitochondrial or haploid loci
-(any sex can be hence declared). For individuals with an unknown sex
-(denoted `9`, see `IND P1_2, P1_3 and P2_15),` data for autosomal (as
-well as mitochondrial and haploid) loci will be taken into account and
+ratio (i.e. &lt;NM=1.5NF&gt;) and two of its populations were genotyped
+at 23 SNP loci: 20 autosomal loci, 1 X-linked locus, 1 Y-linked locus
+and 1 mitochondrial locus. The first line provides the title and
+includes the species sex-ratio and the MAF (minimum allele frequency).
+The second line indicates: individual name in column 1, individual sex
+in column 2 (`M` for male, `F` for female, `9` or any other letter if
+unknown), population name in column 3 and one column per SNP locus
+(letter `A` for an autosomal locus, `X` for an X-linked locus, `Y` for a
+Y-linked locus and `M` for a mitochondrial locus). Columns are separated
+by one or more spaces. SNP genotypes are coded `0`, `1` or `2` (`9` for
+missing data) according to <u>the number of reference alleles</u> at the
+corresponding locus. In other words, the homozygous genotype 2 has two
+reference alleles, the homozygous genotype 0 has two non-reference
+alleles and the heterozygous genotype 1 has one reference allele and one
+non-reference allele. Note that the sex has no influence on simulations
+for autosomal, mitochondrial or haploid loci (any sex can be hence
+declared). For individuals with an unknown sex (denoted `9`, see
+`IND P1_2, P1_3 and P2_15),` data for autosomal (as well as
+mitochondrial and haploid) loci will be taken into account and
 simulated. On the other hand, the genotypes of X-linked and Y-linked
 loci for the `same IND P1_2, P1_3 and P2_15` with unknown sex cannot be
 safely determined and are hence noted `9` for missing data (i.e. they
@@ -2327,41 +2399,41 @@ are not simulated).
 
 <img src="media/image48.png" style="width:4.83333in;height:4.35417in" alt="image" />
 
-<span id="_Toc62127984" class="anchor"></span>**7.1.2 PoolSeq SNP data**
+> <span id="_Toc67674969" class="anchor"></span>**7.1.2 PoolSeq SNP
+> data**
 
 The data file format includes:
 
 -   A first line (headline) providing the sex-ratio of the analyzed
-    species (e.g.&lt;NM=1.0NF&gt;), the required MRC (minimum read count
-    criterion; e.g. &lt;MRC=5&gt;), and any text that can be used as a
-    title. The sex ratio is noted under the form &lt;NM=rNF&gt;, in
+    species (e.g. &lt;NM=1.0NF&gt;), the required MRC (minimum read
+    count criterion; e.g. &lt;MRC=5&gt;), and any text that can be used
+    as a title. The sex ratio is noted under the form &lt;NM=rNF&gt;, in
     which r is the ratio of the number of females per male (e.g.
     &lt;NM=2.5NF&gt; means that the number of males is 2.5 times the
     number of females; for a balanced sex ratio one should write
-    &lt;NM=1.0NF&gt;). The MRC is the number of sequence reads of the
-    minor allele frequency allele when pooling the reads over all
-    population samples. The specification of a MRC equal for instance to
-    5 (as in the present example) will automatically select a subset of
-    *m* PoolSeq loci characterized by more than five reads over all
-    studied pools among the l loci of the observed dataset. For
+    &lt;NM=1.0NF&gt;). The MRC is the minimum number of sequence reads
+    for each alleles of a SNP when pooling the reads overall population
+    samples. The specification of a MRC equal to 5 will automatically
+    select a subset of *m* PoolSeq loci for which both alleles have at
+    least five reads among the *l* loci of the observed dataset. For
     instance, the first locus of the list (cf. third line of the file)
-    will not be selected. In agreement with this, only *m* loci with
-    more than five reads will be retained in a simulated dataset. We
-    advise using MRC values of 2, 3, 4 or 5.
+    will not be selected. In agreement with this, and only *m* loci with
+    a MRC ≥ 5 will be retained in a simulated dataset. We advise using
+    MRC values of 2, 3, 4 or 5.
 
--   Remember that (in contrast to IndSeq SNP) only PoolSeq SNPs located
-    on autosomal chromosomes of diploid individuals can be considered by
-    the program.
+-   Remember that (in contrast to IndSeq SNP) <u>only PoolSeq SNPs
+    located on autosomal chromosomes of diploid individuals can be
+    considered by the program</u>.
 
 -   A second line provides the haploid sample size of each population
     pool.
 
 -   The following lines correspond to the PoolSeq SNP genotypes (given
-    in read counts). Each line represents a SNP and each pair of columns
-    points to a population pool in the same order as in the second line.
-    For each SNP-pool combination, the number of read counts is
-    indicated for the first and second allele in the first and second
-    column, respectively.
+    in read counts). Each line represents a SNP and each <u>pair of
+    columns</u> points to a population pool in the same order as in the
+    second line. For each SNP-pool combination, the number of read
+    counts is indicated for the first and second allele in the first and
+    second column, respectively.
 
 -   Warning: no missing data (i.e. “0 0” data; cf. no read count for any
     allele) is allowed in the PoolSeq data file and this for any pools
@@ -2408,44 +2480,32 @@ will not be selected when generating simulated datasets.
 
 <img src="media/image49.wmf" style="width:6.52569in;height:4.35417in" />
 
-<span id="_Toc62127985" class="anchor"></span>**7.1.3 Microsatellite and
-DNA sequence data**
+> <span id="_Toc67674970" class="anchor"></span>**7.3.1 Microsatellite
+> and DNA sequence data**
 
 The data file format is an extended format of the file used in the
 classical population genetics program Genepop (Rousset et al. 1995). The
 additional features are:
 
--   In the title line appears the sex ratio noted
-    ![NM = rNF &gt;](https://latex.codecogs.com/png.latex?NM%20%3D%20rNF%20%3E "NM = rNF >"),
-    in which ![r](https://latex.codecogs.com/png.latex?r "r") is the
-    ratio of the number of females per male
-    (![\\text{e.g.}](https://latex.codecogs.com/png.latex?%5Ctext%7Be.g.%7D "\text{e.g.}")
-    ![NM = 2.5NF &gt;](https://latex.codecogs.com/png.latex?NM%20%3D%202.5NF%20%3E "NM = 2.5NF >")
-    means that the number of males is 2.5 times the number of females;
-    for a balanced sex ratio one should write
-    ![NM = 1.0NF &gt;](https://latex.codecogs.com/png.latex?NM%20%3D%201.0NF%20%3E "NM = 1.0NF >")).
-    Since the title is generally only copied, this addition should not
-    interfere with other programs using Genepop datafiles. Also if there
-    is no such sex ratio addition, DIYABC will consider by default that
-    NM=1.0NF.
+-   In the title line appears the sex ratio noted &lt;NM=rNF&gt;, in
+    which ![r](https://latex.codecogs.com/png.latex?r "r") is the ratio
+    of the number of females per male (e.g. NM=2.5NF) means that the
+    number of males is 2.5 times the number of females; for a balanced
+    sex ratio one should write&lt;NM=1.0NF&gt;. Since the title is
+    generally only copied, this addition should not interfere with other
+    programs using Genepop datafiles. Also if there is no such sex ratio
+    addition, DIYABC-RF will consider by default that NM=1.0NF.
 
 -   After the locus name, there is an indication for the category of the
-    locus which is
-    ![A &gt;](https://latex.codecogs.com/png.latex?A%20%3E "A >") for
-    autosomal diploid loci,
-    ![H &gt;](https://latex.codecogs.com/png.latex?H%20%3E "H >") for
-    autosomal haploid loci,
-    ![X &gt;](https://latex.codecogs.com/png.latex?X%20%3E "X >") for
-    X-linked (or haplo-diploid) loci,
-    ![Y &gt;](https://latex.codecogs.com/png.latex?Y%20%3E "Y >") for
-    Y-linked loci and
-    ![M &gt;](https://latex.codecogs.com/png.latex?M%20%3E "M >") for
-    mitochondrial loci. If no category is noted, DIYABC will consider
-    the locus as autosomal diploid or autosomal haploid depending on the
-    corresponding genotype of the first typed individual.
+    locus which is A for autosomal diploid loci &lt;H&gt; for autosomal
+    haploid loci, &lt;X&gt; for X-linked (or haplo-diploid) loci, Y for
+    Y-linked loci and &lt;M&gt; for mitochondrial loci. If no category
+    is noted, DIYABC-RF will consider the locus as autosomal diploid or
+    autosomal haploid depending on the corresponding genotype of the
+    first typed individual.
 
 -   Genotypes of microsatellite loci are noted with **six digit
-    numbers** if diploid (e.g. 190188 for a heterozygous genotype with
+    numbers** if diploid (e.g. 190188 for a heterozygous genotype with
     one allele 190 and one allele 188, and 200200 for a homozygous
     genotype with two alleles 200) and by **three digit numbers**
     (e.g. 190) if haploid. <u>The three digit numbers correspond to the
@@ -2481,12 +2541,12 @@ additional features are:
     > through the coalescence process algorithm) by the missing data
     > code at all corresponding locations. All summary statistics are
     > thus computed with the same missing data as for the observed
-    > dataset. *WARNING*: data files with virtually any amount of
-    > missing data can be analyzed by DIYABC Random Forest. <u>However,
-    > for each locus a minimum of one genotyped individual per
-    > population is required.</u> This is because summary statistics
-    > cannot be computed at a given locus in a given population if only
-    > missing data are present.
+    > dataset. Warning: data files with virtually any amount of missing
+    > data can be analyzed by DIYABC-RF. <u>However, for each locus a
+    > minimum of one genotyped individual per population is
+    > required.</u> This is because summary statistics cannot be
+    > computed at a given locus in a given population if only missing
+    > data are present.
 
 **EXAMPLES**
 
@@ -2495,17 +2555,11 @@ samples, each of 12 diploid individuals (8 females and 4 males in the
 first sample and 5 females and 7 males in the second sample). As deduced
 from the letter between and on the locus name lines (see page 25), these
 individuals have been genotyped at 3 microsatellite loci (1 autosomal
-![A &gt;](https://latex.codecogs.com/png.latex?A%20%3E "A >"), 1
-X-linked ![X &gt;](https://latex.codecogs.com/png.latex?X%20%3E "X >")
-and 1 Y-linked
-![Y &gt;](https://latex.codecogs.com/png.latex?Y%20%3E "Y >")) and 3 DNA
-sequence loci (1 autosomal. 1 X-linked and 1 mitochondrial
-![M &gt;](https://latex.codecogs.com/png.latex?M%20%3E "M >")). The
-species sex-ratio, given in the title line, is of three males for one
-female
-(![NM = 3NF &gt;](https://latex.codecogs.com/png.latex?NM%20%3D%203NF%20%3E "NM = 3NF >"))
-or in other words, the number of males equals three times the number of
-females.
+&lt;A&gt;, 1 X-linked &lt;X&gt; and 1 Y-linked &lt;Y&gt;) and 3 DNA
+sequence loci (1 autosomal &lt;A&gt;. 1 X-linked &lt;&lt;X&gt; and 1
+mitochondrial &lt;M&gt;). The species sex-ratio, given in the title
+line, is of three males for one female (&lt;NM=3NF&gt;) or in other
+words, the number of males equals three times the number of females.
 
 <img src="media/image50.png" style="width:5.38333in;height:4.19167in" alt="image" />
 
@@ -2547,25 +2601,19 @@ created in the project directory:
 
 ## 7.3 Output files produced by a Random Forest analysis
 
-DIYABC Random Forest provides various numerical and graphical outputs.
-The integration of the various graphical outputs is managed with the
-ggplot2 R package (Wickham 2016), allowing user to create and export
+DIYABC-RF provides various numerical and graphical outputs. The
+integration of the various graphical outputs is managed with the ggplot2
+R package (Wickham 2016), allowing user to create and export
 high-quality graphics related to the analyses. Non-graphical outputs are
 saved in text files. Graphs are saved as images, and user can choose the
-image format among png, jpg, etc. Once a Random Forest analysis is
-terminated, do not forget to click on the “Save” button in the “Project
-housekeeping” panel to implement and save a concatenated .zip file
-including various input and output files (see section 7 for a
-description of the content of some of those files) on your computer. The
-name of the implemented/saved concatenated .zip file is the one given at
-the start in the “Project name” window.
+image format among png, jpg, etc.
 
 We now describe all the files produced by each Random Forest analysis.
 
 **abcranger\_call.log**: log files with votes and posterior probability
 of the selected (i.e. best) scenario (i.e. model) for a model choice
 analysis and with the main outputs of parameter estimation (including
-predictions and accuracy of estimation indices) for a parameter
+predictions and accuracy of estimation metrics) for a parameter
 estimation analysis.
 
 <u>Scenario choice analysis</u>
@@ -2575,11 +2623,12 @@ estimation analysis.
 **modelchoice\_out.settings**: this file summarizes the settings
 associated to the RF analysis processed for scenario choice.
 
-**modelchoice\_out.confusion**: mean misclassification error rate and
-confusion matrix (i.e. the contingency table of the true and predicted
-classes for each example in the training set). These indices are
-computed using the out-of-bag (a.k.a. out-of-bootstrap or oob) training
-data as free test dataset.
+**modelchoice\_out.confusion**: mean misclassification error rate (also
+named global prior error rate; Collin et al. 2021) and confusion matrix
+(i.e. the contingency table of the true and predicted classes for each
+example in the training set). These metrics are computed using the
+out-of-bag (a.k.a. out-of-bootstrap or oob) training data as free test
+dataset.
 
 **modelchoice\_out.predictions**: votes, prediction of the selected
 scenario and posterior probability of the selected scenario (i.e.
@@ -2587,8 +2636,8 @@ model).
 
 **modelchoice\_out.ooberror**: Evolution of prediction power relatively
 to the number of trees in the forest. Line number is the number of
-trees. Power is the global (prior) error rate for scenario choice with
-the mean taken as point estimate (computed using oob). See the file
+trees. Power is the global (prior) error rate for scenario choice
+(computed using oob). See the file
 modelchoice\_out\_graph\_error\_versus\_ntrees.png for a graphical
 representation.
 
@@ -2598,18 +2647,18 @@ when choosing among scenarios. The variable importance of each
 statistics is computed as the mean decrease of impurity across the
 trees, where the impurity measure is the Gini index. Note that the scale
 is irrelevant: only the relative values matter. The variable importance
-was computed for each of the summary statistics provided by DIYABC
-Random Forest, plus the LDA axes (denoted LDA) if they have been added
-to the feature vector. The higher the variable importance the more
-informative is the statistic. Variable importance of noise variables
-(denoted NOISEx and corresponding to values randomly drawn into uniform
-distributions bounded between 0 and 1) are also provided. Such noise
-variable can be added to the feature vector processed by RF in order to
-evaluate the threshold of variable importance values below which
-components of the vector are not informative anymore. More details about
-summary statistics including their code names can be found in section
-2.6.3. Population index(s) are also indicated at the end of each
-statistic. See Collin et al. 2020 for examples. See the file
+was computed for each of the summary statistics provided by DIYABC-RFt,
+plus the LDA axes (denoted LDA) if they have been added to the feature
+vector. The higher the variable importance the more informative is the
+statistic. Variable importance of noise variables (denoted NOISEx and
+corresponding to values randomly drawn into uniform distributions
+bounded between 0 and 1) are also provided. Such noise variable can be
+added to the feature vector processed by RF in order to evaluate the
+threshold of variable importance values below which components of the
+vector are not informative anymore. More details about summary
+statistics including their code names can be found in section 2.6.3.
+Population index(s) are also indicated at the end of each statistic. See
+Collin et al. 2020 for examples. See the file
 modelchoice\_out\_graph\_variable\_importance.png for a graphical
 representation.
 
@@ -2627,20 +2676,20 @@ the training set on the first two linear discriminant analysis (LDA)
 axes when analyzing more than two scenarios (models) and on a single LDA
 axis when analyzing a pair of scenarios (or two groups of scenarios).
 The location of the observed dataset in the LDA projection is indicated
-by a star symbol or a vertical line. Graphical representation obtained
-from the text file modelchoice\_out.lda; see also Figure 2 in Collin et
-al. 2020.
+by a specific symbol or a vertical line. Such Graphical representation
+has been obtained from the text file modelchoice\_out.lda; see also
+Figure 2 in Collin et al. 2020.
 
 **modelchoice\_out\_graph\_error\_versus\_ntrees.png:** Evolution of
-prediction power relatively to the number of trees in the forest.
-Graphical representation obtained from the text file
+prediction power relatively to the number of trees in the forest. Such
+graphical representation has been obtained from the text file
 modelchoice\_out.ooberror ; see also Figure S1 in Collin et al. 2020.
 
 **modelchoice\_out\_graph\_variable\_importance.png:** Contributions of
 the 50 most informative statistics (including LDA axes if computed) to
-the Random Forest when choosing among scenarios. Graphical
-representation obtained from the text file modelchoice\_out.importance;
-see also Figure 3 in Collin et al. 2020.
+the Random Forest when choosing among scenarios. Such graphical
+representation has been obtained from the text file
+modelchoice\_out.importance; see also Figure 3 in Collin et al. 2020.
 
 <u>Parameter estimation analysis</u>
 
@@ -2660,9 +2709,10 @@ estim\_param\_out\_graph\_error\_versus\_ntrees.png for a graphical
 representation.
 
 **estim\_param\_out.oobstats**: this file contains various accuracy
-indices of parameter estimation (computed using oob). Both global
-(prior) error indices and Local (posterior) error indices are provided
-(see Collin et al. 2020 for details).
+metrics of parameter estimation (computed using oob). Both global
+(prior) error metrics and Local (posterior) error metrics are provided;
+See section 3.4.2 Metrics for parameter estimation and Collin et al.
+2020 for details).
 
 **estim\_param\_out.importance**: variables importance (sorted) which
 correspond to the contributions of the statistics to the Random Forest
@@ -2671,18 +2721,17 @@ statistics is computed as the mean decrease of impurity across the
 trees, where the impurity measure is the residual sum of squares. Note
 that the scale is irrelevant: only the relative values matter. The
 variable importance was computed for each of the summary statistics
-provided by DIYABC Random Forest, plus the PLS axes (denoted Comp.) if
-they have been added to the feature vector. The higher the variable
-importance the more informative is the statistic. Variable importance of
-noise variables (denoted NOISEx and corresponding to values randomly
-drawn into uniform distributions bounded between 0 and 1) are also
-provided. Such noise variable can be added to the feature vector
-processed by RF in order to evaluate the threshold of variable
-importance values below which components of the vector are not
-informative anymore. More details about summary statistics including
-their code names can be found in section 2.6.3. Population index(s) are
-also indicated at the end of each statistic. See Collin et al. 2020 for
-examples. See the file
+provided by DIYABC-RF, plus the PLS axes (denoted Comp.) if they have
+been added to the feature vector. The higher the variable importance the
+more informative is the statistic. Variable importance of noise
+variables (denoted NOISEx and corresponding to values randomly drawn
+into uniform distributions bounded between 0 and 1) are also provided.
+Such noise variable can be added to the feature vector processed by RF
+in order to evaluate the threshold of variable importance values below
+which components of the vector are not informative anymore. More details
+about summary statistics including their code names can be found in
+section 2.6.3. Population index(s) is also indicated at the end of each
+statistic. See Collin et al. 2020 for examples. See the file
 estim\_param\_out\_graph\_variable\_importance.png for a graphical
 representation.
 
@@ -2710,15 +2759,16 @@ representation for the estimated parameter (obtained from the text file
 estim\_param\_out.predweights).
 
 **estim\_param\_out\_graph\_error\_versus\_ntrees.png:** Evolution of
-prediction power relatively to the number of trees in the forest.
-Graphical representation obtained from the text file
+prediction power relatively to the number of trees in the forest. Such
+graphical representation has been obtained from the text file
 estim\_param\_out.ooberror; see also Figure S1 in Collin et al. 2020.
 
 **estim\_param\_out\_graph\_variable\_importance.png**: Contributions of
 the 50 most informative statistics (including PLS components – denoted
 as Comp - if computed) to the Random Forest when choosing among
-scenarios. Graphical representation obtained from the text file
-estim\_param\_out.ooberror; see also Figure 3 in Collin et al. 2020.
+scenarios. Such graphical representation has been obtained from the text
+file estim\_param\_out.ooberror; see also Figure 3 in Collin et al.
+2020.
 
 ## 7.4 Other files
 
@@ -2737,25 +2787,24 @@ the random generator.
 about the initialization of the random generator
 
 **Files produced with IndSeq analysis**  
-    - &lt;observed\_dataset\_name&gt;.bin and
+- &lt;observed\_dataset\_name&gt;.bin and
 &lt;observed\_dataset\_name&gt;.txt: observed dataset file in bin and
 txt format, respectively  
-    - maf.txt: file in which the minimum allele frequency value (maf)
-has been recorded
+- maf.txt: file in which the minimum allele frequency value (maf) has
+been recorded
 
-<span id="_Toc62127989" class="anchor"></span>**8. GENERATE SYNTHETIC
+<span id="_Toc67674974" class="anchor"></span>**8. GENERATE SYNTHETIC
 DATAFILES**
 
 An (auxiliary) module named “**Synthetic data file generation**” (based
-on the DIYABC simulation engine) is available in DIYABC Random Forest
-v1.0. You can use this module to generate datafile(s) for various types
-of genetic markers corresponding to synthetic “ground truth” raw data
-(not summarized through statistics) under a given historical scenario
-and a set of parameter values **fixed by the user**. Such
-**pseudo-observed dataset** does not refer to any (actual) observed
-dataset. **The formats of the generated datafiles are similar to those
-of the observed input datafiles read by DIYABC Random Forest v1.0 (see
-sections 7.1.1, 7.1.2 and 7.1.3).**
+on the DIYABC-RF simulation engine) is available in the package. You can
+use this module to generate datafile(s) for various types of genetic
+markers corresponding to synthetic “ground truth” raw data (i.e. not
+summarized through statistics) under a given historical scenario and a
+set of parameter values **fixed by the user**. Such **pseudo-observed
+dataset** does not refer to any (actual) observed dataset. **The formats
+of the generated datafiles are similar to those of the observed input
+datafiles read by DIYAB-RF (see sections 7.1.1, 7.1.2 and 7.1.3).**
 
 To access to the panels allowing generating files corresponding to full
 in silico datasets (also called pseudo-observed datasets) click on the
@@ -2767,35 +2816,37 @@ upper-left part of the same panel.
 
 The panels following such clicking are very similar to those detailed in
 the sections 5.4 (IndSeq data), 5.5 (PoolSeq data) and 5.6
-(microsatellite and/or DNA sequence data). <u>Their self-meaning content
-allows defining a scenario, fixing prior values for historical (and
-genetic) parameters, and the number (and type) of loci to simulate</u>.
-Note that those panels are completed by two (also self-meaning)
-additional panels in which you indicate the sample sizes for each
-population (with the proportion of males and females in each sample),
-the sex ratio of the studied species, and the number of datafiles that
-you want to simulate.
+(microsatellite and/or DNA sequence data) and are thus not shown here.
+<u>Their self-meaning content allows defining a scenario, fixing prior
+values for historical (and genetic) parameters, and the number (and
+type) of loci to simulate</u>. It is worth stressing that those panels
+are completed by two (also self-meaning) additional panels in which you
+indicate the sample sizes for each population (with the proportion of
+males and females in each sample), the sex ratio of the studied species,
+and the number of datafiles that you want to simulate. For the
+simulation of <u>pseudo-observed PoolSeq datasets</u> the user is asked
+for a read coverage value (default value: coverage = 100X).
 
-<span id="_Toc62127990" class="anchor"></span>**9. USING DIYABC RANDOM
-FOREST ON A COMPUTER SERVER AND EXAMPLES OF COMMAND LINES**
+<span id="_Toc67674975" class="anchor"></span>**9. USING DIYABC-RF ON A
+COMPUTER SERVER AND EXAMPLES OF COMMAND LINES**
 
 The computing effort is considerably reduced for ABC Random Forest, as
-the method requires a substantially smaller training set compared to ABC
-methods (e.g., a few thousands of simulated datasets versus hundreds of
-thousands of simulations per scenario for most ABC approaches; Blum &
-François, 2010; Fraimout et al., 2017; Pudlo et al., 2016; Raynal et
-al., 2019). Given the ever-increasing dimensionality of modern genetic
-data generated using NGS technologies, this is a particularly appealing
-property of this method. Your personal computer or any local server
-should hence represent sufficient computer resources to run most of your
-DIYABC Random Forest analyses in a descent time. However, in some cases
-(for instance when very large SNP datasets have to be simulated), it
-might be useful to take advantage of <u>a compute server (single node of
-a cluster, or even a powerful workstation), especially to generate the
-training set (i.e. the file reftableRF.bin)</u>.
+the method requires a substantially smaller training set compared to
+traditional ABC methods (e.g., a few thousands of simulated datasets
+versus hundreds of thousands of simulations per scenario for most ABC
+approaches; Blum & François, 2010; Fraimout et al., 2017; Pudlo et al.,
+2016; Raynal et al., 2019). Given the ever-increasing dimensionality of
+modern genetic data generated using NGS technologies, this is a
+particularly appealing property of this method. Your personal computer
+or any local server should hence represent sufficient computer resources
+to run most of your DIYABC-RF analyses in a descent time. However, in
+some cases (for instance when very large SNP datasets have to be
+simulated), it might be useful to take advantage of <u>a compute server
+(single node of a cluster, or even a powerful workstation), especially
+to generate the training set (i.e. the file reftableRF.bin)</u>.
 
 To do this (i.e. generate the reftableRF.bin training set), go to the
-DIYABC Random Forest main site
+DIYABC-RF main site
 [<u>https://diyabc.github.io/</u>](https://diyabc.github.io/) at the
 *Command line tools* section to find the diyabc v3.0 binary (executable)
 file corresponding to your Operating System. Compilation and command
@@ -2804,8 +2855,8 @@ diyabc RF</u>](https://github.com/diyabc/diyabc).
 
 Similarly, compilation, command line instructions as well as the sources
 and various binary versions of the program abcranger, which is the
-Random Forest inference engine of the program DIYABC Random Forest, are
-also available at [<u>the github repository for
+Random Forest inference engine of the program DIYABC-RF, are also
+available at [<u>the github repository for
 abcranger</u>](https://github.com/diyabc/abcranger). However, this might
 be less crucial as Random Forest treatments with abcranger (using a
 given training set) are much more rapid than the generation of the
@@ -2813,8 +2864,8 @@ training set with diyabc v3.0 (e.g. Collin et al. 2020).
 
 **EXAMPLES OF COMMAND LINES**
 
-Warning: for more details and options see instructions in [<u>Commande
-line tools - DIYABC RF</u>](https://diyabc.github.io/cli/)
+Warning: for additional details and options see instructions in
+[<u>Commande line tools - DIYABC RF</u>](https://diyabc.github.io/cli/)
 
 -   *Simulation of a training set using the (linux) executable file
     diyabc\_vXXX (where XXX is the version)*
@@ -2823,8 +2874,19 @@ Put in a given directory the following files:
 
 -   The file corresponding to your (observed) dataset
 
--   The header file (<u>that you will have to name **header.txt**</u> as
-    a headerRF.txt file will be automatically produced)
+-   The header file which can be the **headerRF.txt** file or a
+    **header.txt** file, <u>the later file corresponding to the standard
+    header file of DIYABC v2.1.0</u> (Cornuet et al. 2014) in which any
+    number and type of summary statistics is specified. This allowed
+    users to “recycle” header files that they might have previously
+    produced with DIYABC v2.1.0. It is worth stressing that the program
+    rewrites and produces automatically - using the headerRF.txt file or
+    the header.txt file as starting point - a headerRF.txt file with all
+    necessary information and <u>including all available summary
+    statistics</u> for RF analysis to feed diyabc\_vXXX and start
+    simulation of the training set. Note that the standalone DIYABC–RF
+    too can cope with a standard header file (i.e. header.txt) of DIYABC
+    v2.1.0.
 
 -   The file RNG\_state\_0000.bin, which you should generate at first in
     a terminal window with:
@@ -2838,12 +2900,12 @@ You can then launch the simulation in a terminal window with:
 
 ./diyabc\_vXXX -p ./ -R ALL -r 12000 -g 50 -m -t 8
 
-By doing so you will simulate of a training set including 12000 datasets
-with <u>all</u> summary statistics available in diyabcrf (plus LDA axes
-added to the feature vector) and using a loop size of 50 simulated
-datasets and a total of 8 cores (you can specify at most the number of
-cores specified by the previously generated RNG\_state\_\*\*\*.bin file)
-.
+By doing so you will simulate a training set (reftableRF.bin) including
+12000 datasets with <u>all</u> summary statistics available in DIYABC-RF
+(plus LDA axes added to the feature vector) and using a loop size of 50
+simulated datasets and a total of 8 cores (you can specify at most the
+number of cores specified by the previously generated
+RNG\_state\_\*\*\*.bin file) .
 
 -   *Random Forest analyses* *using the (linux) executable file
     abcranger\_vXXX*
@@ -2868,9 +2930,9 @@ You can then launch the analysis in a terminal window with:
 
 By doing so you will process a model choice analysis on 12000 datasets
 of the training set with a forest including 1000 trees, with error
-metrics computed from 12000 “out-of-bag (oob) datasets, and using a
-total of 8 cores. All output files names will have
-“modelchoice\_analysis” as prefix.
+metrics computed from 12000 out-of-bag (oob) datasets, and using a total
+of 8 cores. All output files names will have “modelchoice\_analysis” as
+prefix.
 
 -   Parameter estimation (t) using RF
 
@@ -2893,14 +2955,14 @@ example datasets in Collin et al. (2020) can be consulted at*
 It is worth stressing that abcranger is not limited to population
 genetics applications as you can use the program as a Random Forest
 inference engine independently from the diyabc simulator. However, for
-the moment, the binary standalone used by the DIYABC Random Forest
-interface handles only outputs produced by the diyabc simulator. A
-python wrapper (and example notebooks) is available at the [<u>notebook
+the moment, the binary standalone used by the DIYABC-RF interface
+handles only outputs produced by the DIYABC-RF simulator. A python
+wrapper (and example notebooks) is available at the [<u>notebook
 directory in the github
 repository</u>](https://github.com/diyabc/abcranger) and a R wrapper
 will be soon provided at the same site.
 
-<span id="_Toc62127991" class="anchor"></span>**10. TOY EXAMPLES**
+<span id="_Toc67674976" class="anchor"></span>**10. TOY EXAMPLES**
 
 Five toy examples to process run-tests with DIYABC-RF (i.e. for a quick
 generation of a training set and rapid Random Forest analyses) can be
@@ -2915,18 +2977,18 @@ by choosing the “Existing project” option and loading these two files.
 **TOY\_EXAMPLE1\_microsatellites\_one\_pop\_bottlenecked**
 
 The pseudo-observed dataset includes a single population bottlenecked at
-time tbn in the past with 4 samples (20 inds per sample) taken at
+time tbn in the past with 4 samples (20 individuals per sample) taken at
 different times. Note that NM=1.0NF, Npresent= 200, tbn=300,
 Npass=20000. The dataset includes 45 autosomal microsatellite loci and 5
 mitochondrial microsatellite loci with 2 groups of mutation parameters.
 
 The headerRF.txt file formalizes two scenarios: one with and one without
-bottleneck events.
+a bottleneck event.
 
 **TOY\_EXAMPLE2\_microsatellites\_DNAsequence\_two\_pops\_ancient\_admixture**
 
-The pseudo-observed dataset includes 2 populations with ancestral
-admixture between 2 unsampled pops at time ta=5000 (ra=0.5) that
+The pseudo-observed dataset includes two populations with ancestral
+admixture between two unsampled pops at time ta=5000 (ra=0.5) that
 diverged at time t2=6000 with N1=5000 and t1=1000 for 10 autosomal
 microsatellites 5 autosomal DNA sequences and 5 mitochondrial DNA
 sequences with 3 groups of mutation parameters.
@@ -2958,17 +3020,17 @@ same results as those described in Collin et al. (2020).
 
 **TOY\_EXAMPLE5\_SNP\_INDSEQ\_several\_groups\_of\_loci\_admixture**
 
-The IndSeq SNP pseudo-observed dataset includes 3 populations with pop 3
-admixed between pops 1 and 2 at time ta=100 (r=0.4) and pops 1 and 2
-diverging at time ts=10000 (N1=20000, N2=5000, N3=10000, N4=10000). Note
-that NM=0.428571NF and MAF=Hudson. The dataset includes SNP loci of
+The IndSeq SNP pseudo-observed dataset includes three populations with
+pop 3 admixed between pops 1 and 2 at time ta=100 (r=0.4) and pops 1 and
+2 diverging at time ts=10000 (N1=20000, N2=5000, N3=10000, N4=10000).
+Note that NM=0.428571NF and MAF=Hudson. The dataset includes SNP loci of
 different types: A=700 loci, X=100, Y=100 and M=100.
 
 The headerRF.txt file formalizes three scenarios: one with and two
 without admixture event. The headerRF.txt file requests only A=70 loci,
 X=10, Y=10 and M=10 to speed-up simulations.
 
-<span id="_Toc62127992" class="anchor"></span>**11. REFERENCES CITED**
+<span id="_Toc67674977" class="anchor"></span>**11. REFERENCES CITED**
 
 Beaumont M. 2010. Approximate Bayesian computation in evolution and
 ecology. *Annual Review of Ecology, Evolution, and Systematics*, 41,
@@ -2988,8 +3050,8 @@ Chapuis M-P, R. Raynal, L, Plantamp, C, Meynard, CN, Blondin, L. Marin
 J-M, Estoup A. 2020. A young age of subspecific divergence in the desert
 locust *Schistocerca gregaria*, inferred by ABC Random Forest.
 *Molecular Ecology* 29(23), 4542-4558. https//doi:10.1111/mec.15663.
-Previous version reviewed and recommended by Peer Community in
-Evolutionary Biology, bioRxiv, 671867, 10.24072/pci.evolbiol.100091
+Previous version reviewed and recommended by *Peer Community in
+Evolutionary Biology*, bioRxiv, 671867, 10.24072/pci.evolbiol.100091
 
 Choisy M, P. Franck, Cornuet J-M. 2004. Estimating admixture proportions
 with microsatellites: comparison of methods based on simulated data.
@@ -3091,8 +3153,8 @@ Nei M 1987. *Molecular Evolutionary Genetics*. Columbia University
 Press, New York, 512 pp.
 
 Patterson N, Moorjani P, Luo Y, Mallick S, Rohland N, Zhan Y, Reich D.
-2012. Ancient admixture in human history. Genetics, 192 ,3), 1065–1093.
-https://doi.org/10.1534/genetics.112.145037
+2012. Ancient admixture in human history. *Genetics*, 192 ,3),
+1065–1093. https://doi.org/10.1534/genetics.112.145037
 
 Pascual M., MP Chapuis, F Mestres, J Balanyá, RB Huey, GW Gilchrist, L
 Serra, Estoup A. 2007. Introduction history of *Drosophila subobscura*
@@ -3138,7 +3200,7 @@ Weir BS, Cockerham CC. 1984. Estimating F-statistics for the analysis of
 population structure. *Evolution* 38: 1358-1370.
 
 Weir BS, Goudet J. 2017. A unified characterization of population
-structure and relatedness. Genetics, 206(4), 2085-2103.
+structure and relatedness. *Genetics*, 206(4), 2085-2103.
 https://doi.10.1534/genetics.116.198424
 
 Wickham H. 2016. ggplot2: Elegant Graphics for Data Analysis.
