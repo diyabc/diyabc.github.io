@@ -3,7 +3,7 @@ layout: home
 title: About
 ---
 
-> :warning: **IMPORTANT**: an important release is due in the next few days (before May 12th). It will fix numerous ongoing issues. Please wait for this new release before opening new issues.
+> :warning: :construction: **IMPORTANT**: an important release is due in the next few days (before May 12th). It will fix numerous ongoing issues. Please wait for this new release before opening new issues.
 
 # DIYABC-RF
 
