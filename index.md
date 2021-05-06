@@ -3,6 +3,8 @@ layout: home
 title: About
 ---
 
+> **IMPORTANT**: an important release is due in the next few days (before May 12th). It will fix numerous ongoing issues. Please wait for this new release before opening new issues.
+
 # DIYABC-RF
 
 `DIYABC-RF` [1] is an inference software implementing 
