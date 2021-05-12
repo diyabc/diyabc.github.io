@@ -17,7 +17,7 @@ population genetics analysis.
 
 # Graphical User Interface
 
-### :warning: :construction: **IMPORTANT**: an important release is due in the next few days (before May 21th). It will fix numerous ongoing issues. Please wait for this new release before opening new issues. IT was preivously planned for May 12th, we are really sorry for the delay, the final development step did not go as smoothly as we expected.
+### :warning: :construction: **IMPORTANT**: an important release is due in the next few days (before May 21th). It will fix numerous ongoing issues. Please wait for this new release before opening new issues. It was preivously planned for May 12th, and we are really sorry for the delay, the final development stage did not go as smoothly as we expected.
 
 `DIYABC-RF` can be used through a graphical user interface (GUI) called 
 `DIYABC-RF GUI`, please visit the [dedicated page](/gui/) for more 
