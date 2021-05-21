@@ -17,7 +17,7 @@ population genetics analysis.
 
 # Graphical User Interface
 
-### :warning: :construction: **IMPORTANT**: an important release is due in the next few days (before May 21th). It will fix numerous ongoing issues. Please wait for this new release before opening new issues. It was preivously planned for May 12th, and we are really sorry for the delay, the final development stage did not go as smoothly as we expected. :construction:
+### :warning: :construction: **IMPORTANT**: an important release is due in the next few days (before May 28th). It will fix numerous ongoing issues. Please wait for this new release before opening new issues. It was preivously planned for May 12th, and we are really sorry for the delay, the final development stage did not go as smoothly as we expected. :construction: :warning:
 
 <br>
 
