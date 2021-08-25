@@ -1,8 +1,6 @@
 # Graphical User Interface for DIYABC-RF software
 
-### !! **IMPORTANT**: an important release is due before the end of June 2021 (the planning is now fixed, after several delays). It will fix numerous ongoing issues. Please wait for this new release before opening new issues. It was previously planned for May 12th, and we are really sorry for the delay, the final development stage did not go as smoothly as we expected !!
-
-> **Disclaimer:** `DIYABC-RF GUI` is under final development stage and not officially released yet. You may still encounter a few bugs.
+> **Disclaimer:** `DIYABC-RF GUI` is under final development stage. You may still encounter a few bugs. Please check ongoing issues or fill a new one [here](https://github.com/diyabc/diyabcGUI/issues) if you encounter any problem.
 
 We provide a graphical user interface (GUI) for the `DIYABC-RF` software [1], called `DIYABC-RF GUI`.
 
