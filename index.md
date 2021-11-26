@@ -45,7 +45,7 @@ Please visit the [dedicated page](/cli/) for more details.
 
 ## `DIYABC-RF` project examples
 
-Please visit the [dedicated page](/toy_examples/) to find examples of `DIYABC-RF` data analysis project, including data files and related `DIYABC-RF` configuration files.
+Please visit the [dedicated page](/toy_examples/) to find examples of `DIYABC-RF` data analysis projects, including data files and related `DIYABC-RF` configuration files.
 
 ---
 
