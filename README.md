@@ -133,4 +133,4 @@ Please see the dedicated [directory](https://github.com/diyabc/diyabcGUI/tree/ma
 
 ## Reference
 
-[1] Collin F-D, Raynal L, Durif G, Gautier M, Vitalis R, Lombaert E., Marin J-M, Estoup A (2020) DIYABC Random Forest v1.0: extending approximate Bayesian computation with supervised machine learning to infer demographic history from genetic polymorphisms. Submitted to Molecular Ecology Resources.
+[1] Collin, Francois David, Ghislain Durif, Louis Raynal, Eric Lombaert, Mathieu Gautier, Renaud Vitalis, Jean Michel Marin, and Arnaud Estoup. (2021) ‘Extending approximate Bayesian computation with supervised machine learning to infer demographic history from genetic polymorphisms using DIYABC Random Forest’, Molecular Ecology Resources, 21(8), pp. 2598–2613. [<doi:10.1111/1755-0998.13413>](https://doi.org/10.1111/1755-0998.13413).
