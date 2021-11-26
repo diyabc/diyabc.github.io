@@ -14,12 +14,209 @@ Please visit the following pages to get the latest releases:
 - [diyabc](https://github.com/diyabc/diyabc/releases/latest)
 - [abcranger](https://github.com/diyabc/abcranger/releases/latest)
 
-## Examples
+---
 
-More details are coming soon.
+## `DIYABC-RF` pipeline
 
-```sh
-diyabc -p ./ -n "'t:4'"
-diyabc -p ./ -R "" -m -g 50 -r 100 -t 4
+The `DIYABC-RF` pipeline includes two step:
+
+1. Training set simulations (c.f. [dedicated section](#training-set-simulation))
+
+2. Random forest analysis (c.f. [dedicated section](#random-forest-analysis))
+
+You can also use `DIYABC-RF` simulation engine to generate synthetic data files for your benchmark or evaluation experiments (c.f. [dedicated section](#synthetic-data-generation)).
+
+---
+
+## Input data an configuration file
+
+Please check the [documentation](/doc/) and the [toy examples] about the supported input data (SNP, Poolseq, Microsat/Sequence) and how to write the corresponding `header.txt` configuration file.
+
+You can also check this [repository](https://github.com/diyabc/MER_publication_materials) and especially this [README](https://github.com/diyabc/MER_publication_materials/blob/main/MER_2021_DATASET_EXAMPLES/README.md) containing the data and configuration files related to data analysis made with `DIYABC-RF`.
+
+A `DIYABC-RF` **project** is a directory containing:
+- your data file
+- `DIYABC-RF` configuration files, including header files (`header.txt` or `headerRF.txt`)
+- any potential files generated during the pipeline run, including the random seed file (`RNG_state_0000.bin`), the training set files (`reftableRF.bin`, `statobsRF.bin`) and other result files (c.f. below).
+
+Now we assume that we are working from a `DIYABC-RF` project directory.
+
+---
+
+## Training set simulation
+
+To simulate the training set for the random forest (based on your data set), you need the `diyabc-rf` program for your OS from [here](https://github.com/diyabc/diyabc/releases/latest), named `diyabc-rf-<os>-<version>` (where `<os>` is your OS and `<version>` is the software version).
+
+Then you need to write a `header.txt` (or `headerRF.txt`) configuration file describing your project configuration (c.f. [previous section](#input-data-an-configuration-file)).
+
+You can also use the [GUI](/gui/) to generate the `header.txt` file.
+
+1. Generate the seed for data generation:
+```bash
+diyabc-rf-<os>-<version> -p ./ -n "t:<n_core>"
+```
+
+2. Training set simulation:
+```bash
+diyabc-rf-<os>-<version> -p ./ -R "ALL" -m -t <n_core> -g <batch_size> -r <n_simu>
+```
+
+3. (Optional) Prior and Model checking:
+```bash
+diyabc-rf-<os>-<version> -p ./ -d a:pl
+```
+
+Options:
+- `<n_core>` (integer): number of cores to run the program in parallel mode (it is highly recommended to use parallel computations to reduce the simulation time).
+- `<batch_size>` (integer): number of particles simulated in a single batch (loop-size), default is `100`.
+- `<n_simu>` (integer): training set final size.
+
+> Note: you can increase the size of an existing data set by running again the program with a larger training set size (`<n_simu>`).
+
+You can run `diyabc-rf-<os>-<version> -h` for more details about the program options and input parameters.
+
+The **prior and model checking step** does a projection of the observed data set and of the simulated training set (through a PCA) to give an insight about the consistency between your data set and the simulated data based on the historical models and the chosen values for the parameter priors that you chose. Results can be found in the files prefixed with `pcaloc`.
+
+---
+
+## Random forest analysis
+
+With the random forest analysis, based on the training set, you can either run a model selection procedure, or estimate a parameter (or a combination of parameters) from a given model.
+
+To run the random forest analysis, you need the `abcranger` program for your OS, available from [here](https://github.com/diyabc/abcranger/releases/latest), named `abcranger-<os>-<version>` (where `<os>` is your OS and `<version>` is the software version).
+
+You can run `abcranger-<os>-<version> -h` for more details about the program options and input parameters.
+
+### Model selection
+
+To run the model selection procedure, you can run:
+```bash
+abcranger -t <n_tree> -j <n_core>
+```
+
+Options:
+- `<n_tree>` (integer): number of trees in the random forest.
+- `<n_core>` (integer): number of cores to run the program in parallel mode (it is highly recommended to use parallel computations to reduce the simulation time).
+
+**Output**: results are written in a collection of files prefixed with `modelchoice_out.` in the project directory.
+
+
+### Parameter estimation
+
+To run, the parameter estimation procedure, you can run:
+```bash
+abcranger -t <n_tree> -j <n_core> --parameter <param_name> --chosenscen <id>
+```
+
+Options:
+- `<n_tree>` (integer): number of trees in the random forest.
+- `<n_core>` (integer): number of cores to run the program in parallel mode (it is highly recommended to use parallel computations to reduce the simulation time).
+- `<param_name>` (alphanum string): name of the parameter to estimate in the model corresponding to the chosen scenario.
+- `<id>` (integer): index of the scenario (starting from 1) among the models listed in the `header.txt` or `headerRF.txt` file from which you want to estimate a parameter.
+
+**Output**: results are written in a collection of files prefixed with `estimparam_out.` in the project directory.
+
+---
+
+## Example
+
+Here is an example of an analysis.
+
+```bash
+# init data generation seeds
+diyabc -p ./ -n "t:8"
+# training set simulations
+diyabc -p ./ -R "ALL" -m -g 50 -r 100 -t 8
+# prior checking
+diyabc -p ./ -d a:pl
+# parameter estimation
 abcranger -t 1000 -j 8 --parameter N1 --chosenscen 1 --noob 50
+# model choice
+abcranger -t 1000 -j 8
+```
+
+---
+
+## Synthetic data generation
+
+You can also use `diyabc` program to generate synthetic data for your benchmark or evaluation experiments.
+
+You need to write a `headersim.txt` configuration file describing your data and the model that will be used to simulate them.
+
+You can also use the [GUI](/gui/) to generate the `headersim.txt` file.
+
+To generate the data file, you can run:
+```bash
+# init data generation seeds
+diyabc -p ./ -n "t:8"
+# synthetic data generation
+diyabc-rf-<os>-<version> -p ./ -k
+```
+
+Here are some examples of `headersim.txt` files:
+
+- SNP data:
+```
+SNP_sim_dataset_4POP 1 0.5
+4 samples
+5 5
+5 5
+5 5
+5 5
+
+scenario (8)
+N1 N2 N3 N4
+0 sample 1
+0 sample 2
+0 sample 3
+0 sample 4
+t431 split 4 1 3 ra
+t32 merge 2 3
+t21 merge 1 2
+
+historical parameters (8)
+N1 N 7000
+N2 N 2000
+N3 N 4000
+N4 N 3000
+t431 T 200
+ra A 0.3
+t32 T 300
+t21 T 500
+
+loci description (100)
+100 <A> [P] G1
+```
+
+- SNP poolseq data:
+```
+poolseq_sim_dataset_4POP_cov100 1 0.5
+4 samples
+50 50
+50 50
+50 50
+50 50
+
+scenario (8)
+N1 N2 N3 N4
+0 sample 1
+0 sample 2
+0 sample 3
+0 sample 4
+t431 split 4 1 3 ra
+t32 merge 2 3
+t21 merge 1 2
+
+historical parameters (8)
+N1 N 7000
+N2 N 2000
+N3 N 4000
+N4 N 3000
+t431 T 200
+ra A 0.3
+t32 T 300
+t21 T 500
+
+loci description (100)
+100 <A> [P] G1
 ```
