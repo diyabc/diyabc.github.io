@@ -36,14 +36,14 @@ framework.
 ## Command line interface
 
 For advanced users, it is possible to use `DIYABC-RF` as a command-line 
-pipeline based on the command-line softwares [diyabc](https://github.com/diyabc/diyabc) 
+pipeline based on the command-line software [diyabc](https://github.com/diyabc/diyabc) 
 and [abcranger](https://github.com/diyabc/abcranger).
 
 Please visit the [dedicated page](/cli/) for more details.
 
 ---
 
-## `DIYABC-RF` project examples
+## DIYABC-RF project examples
 
 Please visit the [dedicated page](/toy_examples/) to find examples of `DIYABC-RF` data analysis project, including data files and related `DIYABC-RF` configuration files.
 
