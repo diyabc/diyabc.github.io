@@ -4,7 +4,7 @@ title: Toy examples
 permalink: /toy_examples/
 ---
 
-Here you can find toy examples including data set and DIYABC-RF configuration files.
+Here you can find toy examples of `DIYABC-RF` data analysis project, including data file and related `DIYABC-RF` configuration files.
 
 [TOY_EXAMPLE1_microsatellites_one_pop_bottlenecked.zip](toy_examples/TOY_EXAMPLE1_microsatellites_one_pop_bottlenecked.zip)
 
