@@ -17,7 +17,7 @@ population genetics analysis.
 
 ## Documentation
 
-The complete interface **documentation** for the _graphical user interface_ (GUI) and the _command line interface_ (CLI) is available on the [dedicated page](/doc/).
+The complete software **documentation** for the _graphical user interface_ (GUI) and the _command line interface_ (CLI) is available on the [dedicated page](/doc/).
 
 ---
 
