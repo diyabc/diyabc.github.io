@@ -156,6 +156,7 @@ diyabc-rf-<os>-<version> -p ./ -k
 Here are some examples of `headersim.txt` files:
 
 - SNP data:
+
 ```
 SNP_sim_dataset_4POP 1 0.5
 4 samples
@@ -189,6 +190,7 @@ loci description (100)
 ```
 
 - SNP poolseq data:
+
 ```
 poolseq_sim_dataset_4POP_cov100 1 0.5
 4 samples
