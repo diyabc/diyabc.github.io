@@ -1,3 +1,6 @@
+---
+nav_exclude: true
+---
 # USER MANUAL for DIYABC Random Forest v1.0
 
 # - 23th of March 2021 -
