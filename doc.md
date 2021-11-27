@@ -12,4 +12,4 @@ You can also visit the [html version](/rf/notice.html) of the documentation (wor
 
 > :warning: The user manual targets users of the `DIYABC-RF` [graphical interface](/gui/). If you want to use the `DIYABC-RF` command line pipeline, you can visit the [dedicated page](/cli/). Please note that some sections of the user manual (regarding data formating, historical scenario definition) remains valid for the command line tools.  
 
-<!-- pandoc Diyabc\ Random\ Forest\ User\ Manual\ 21-01-2021.docx -t markdown_strict -o notice.md --extract-media=.  --webtex -->
+<!-- pandoc -f docx+styles 'DIYABC Random Forest User Manual 26-03-2021 (1).docx' -t markdown_strict+tex_math_dollars --template ./notice.template  -o notice.md --extract-media=. --filter ./filtertoc.py -->

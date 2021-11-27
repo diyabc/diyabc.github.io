@@ -59,3 +59,6 @@ readme_index:
 #   - vendor/gems/
 #   - vendor/ruby/
 logo: "cocc.png"
+
+compress_html:
+  blanklines: true

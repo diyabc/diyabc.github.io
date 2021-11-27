@@ -1,0 +1,35 @@
+---
+nav_exclude: true
+math: mathjax2
+---
+$if(titleblock)$
+$titleblock$
+
+$endif$
+$for(header-includes)$
+$header-includes$
+
+$endfor$
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
+
+$for(include-before)$
+$include-before$
+
+$endfor$
+$if(toc)$
+$table-of-contents$
+
+$endif$
+$body$
+$for(include-after)$
+
+$include-after$
+$endfor$
