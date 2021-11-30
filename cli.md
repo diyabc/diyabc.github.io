@@ -30,7 +30,7 @@ You can also use `DIYABC-RF` simulation engine to generate synthetic data files 
 
 ## Input data an configuration file
 
-Please check the [documentation](/doc/) and the [toy examples] about the supported input data (SNP, Poolseq, Microsat/Sequence) and how to write the corresponding `header.txt` configuration file.
+Please check the [documentation](/doc/) and the [toy examples](/toy_examples/) about the supported input data (SNP, Poolseq, Microsat/Sequence) and how to write the corresponding `header.txt` configuration file.
 
 You can also check this [repository](https://github.com/diyabc/MER_publication_materials) and especially this [README](https://github.com/diyabc/MER_publication_materials/blob/main/MER_2021_DATASET_EXAMPLES/README.md) containing the data and configuration files related to data analysis made with `DIYABC-RF`.
 
