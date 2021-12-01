@@ -28,7 +28,7 @@ You can also use `DIYABC-RF` simulation engine to generate synthetic data files 
 
 ---
 
-## Input data an configuration file
+## Input data and configuration file
 
 Please check the [documentation](/doc/) and the [toy examples](/toy_examples/) about the supported input data (SNP, Poolseq, Microsat/Sequence) and how to write the corresponding `header.txt` configuration file.
 
@@ -126,7 +126,7 @@ Here is an example of an analysis.
 # init data generation seeds
 diyabc -p ./ -n "t:8"
 # training set simulations
-diyabc -p ./ -R "ALL" -m -g 50 -r 100 -t 8
+diyabc -p ./ -R "ALL" -m -g 50 -r 2000 -t 8
 # prior checking
 diyabc -p ./ -d a:pl
 # parameter estimation
