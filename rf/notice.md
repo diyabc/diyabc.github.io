@@ -392,7 +392,7 @@ Some or all parameters can be in common among scenarios.
     population is population 1). So, it cannot receive lineages of
     population 3 as it should as a result of the second line. The
     correct ways are either to put line 2 before line 1, or to change
-    line 2 to: `100 merge 1 ``3`.
+    line 2 to: `100 merge 1 3`.
 
 8.  Since times of events can be parameters, the order of events can
     change according to the values taken by the time parameters. In any
@@ -434,10 +434,12 @@ on the right side
 <tbody>
 <tr class="odd">
 <td><ul>
-<li><img src="./media/image1.png" style="width:1.08333in;height:0.81667in" alt="image" /></li>
+<li><img src="./media/image1.png"
+style="width:1.08333in;height:0.81667in" alt="image" /></li>
 </ul></td>
 <td><ul>
-<li><img src="./media/image2.png" style="width:2.63333in;height:2.15833in" alt="image" /></li>
+<li><img src="./media/image2.png"
+style="width:2.63333in;height:2.15833in" alt="image" /></li>
 </ul></td>
 </tr>
 </tbody>
@@ -455,10 +457,12 @@ on the right side
 <tbody>
 <tr class="odd">
 <td><ul>
-<li><img src="./media/image3.png" style="width:1.45833in;height:0.85833in" alt="image" /></li>
+<li><img src="./media/image3.png"
+style="width:1.45833in;height:0.85833in" alt="image" /></li>
 </ul></td>
 <td><ul>
-<li><img src="./media/image4.png" style="width:2.69167in;height:2.13333in" alt="image" /></li>
+<li><img src="./media/image4.png"
+style="width:2.69167in;height:2.13333in" alt="image" /></li>
 </ul></td>
 </tr>
 </tbody>
@@ -480,10 +484,12 @@ on the right side
 <tbody>
 <tr class="odd">
 <td><ul>
-<li><img src="./media/image5.png" style="width:1.51667in;height:1.225in" alt="image" /></li>
+<li><img src="./media/image5.png" style="width:1.51667in;height:1.225in"
+alt="image" /></li>
 </ul></td>
 <td><ul>
-<li><img src="./media/image6.png" style="width:3.36111in;height:2.60208in" alt="image" /></li>
+<li><img src="./media/image6.png"
+style="width:3.36111in;height:2.60208in" alt="image" /></li>
 </ul></td>
 </tr>
 </tbody>
@@ -501,10 +507,12 @@ on the right side
 <tbody>
 <tr class="odd">
 <td><ul>
-<li><img src="./media/image7.png" style="width:1.51667in;height:1.225in" alt="image" /></li>
+<li><img src="./media/image7.png" style="width:1.51667in;height:1.225in"
+alt="image" /></li>
 </ul></td>
 <td><ul>
-<li><img src="./media/image8.png" style="width:3.36111in;height:2.73125in" alt="image" /></li>
+<li><img src="./media/image8.png"
+style="width:3.36111in;height:2.73125in" alt="image" /></li>
 </ul></td>
 </tr>
 </tbody>
@@ -536,36 +544,37 @@ on the right side
     1') and 0.5 (strong introgression from 'Pop 2' into 'Pop 1'),
     respectively.
 
-<img src="./media/image9.jpg" style="width:3.13333in;height:2.83681in" />**N1
-N2 N2 N2** *# comment 1*
+<img src="./media/image9.jpg"
+style="width:3.13333in;height:2.83681in" />**N1 N2 N2 N2** *\# comment
+1*
 
 **0 sample 1**
 
 **0 sample 2**
 
-**t1 split 2 3 4 r2** *# comment 2*
+**t1 split 2 3 4 r2** *\# comment 2*
 
-**t1 merge 1 3** *# comment 3*
+**t1 merge 1 3** *\# comment 3*
 
-**t2 merge 1 4** *# comment 4*
+**t2 merge 1 4** *\# comment 4*
 
-**t2 VarNe 1 Na** *# comment 5*
+**t2 VarNe 1 Na** *\# comment 5*
 
-> *# comment 1: both unsampled populations 'Pop 3' and 'Pop 4'
+> *\# comment 1: both unsampled populations 'Pop 3' and 'Pop 4'
 > correspond to 'Pop 2', hence their population sizes N2.*  
-> *# comment 2: at time t1 a fraction r2 of genes from 'Pop 2' goes into
-> the unsampled population 'Pop 3' and a fraction 1-r2 goes into the
-> unsampled population 'Pop 4' ('Pop 2' disappears)*
-
-> *# comment 3: we immediately merge (cf. still at time t1) the
+> *\# comment 2: at time t1 a fraction r2 of genes from 'Pop 2' goes
+> into the unsampled population 'Pop 3' and a fraction 1-r2 goes into
+> the unsampled population 'Pop 4' ('Pop 2' disappears)*
+>
+> *\# comment 3: we immediately merge (cf. still at time t1) the
 > unsampled population 'Pop 3' (with the fraction r2 of genes from 'Pop
 > 2') into the population 'Pop 1' - hence the unidirectional admixture
 > of r2 genes from 'Pop 2' into 'Pop 1' ('Pop 3' disappears)*
 >
-> *# comment 4: 'Pop 4' which now corresponds to the ex-'Pop 2' with the
-> fraction 1-r2 of genes - can be merge into 'Pop 1'*
+> *\# comment 4: 'Pop 4' which now corresponds to the ex-'Pop 2' with
+> the fraction 1-r2 of genes - can be merge into 'Pop 1'*
 
-*# comment 5: the population ancestral to 'Pop 1' and 'Pop 2' now has
+*\# comment 5: the population ancestral to 'Pop 1' and 'Pop 2' now has
 its own population size Na*
 
 1.  The following three scenarios correspond to a classic invasion
@@ -593,8 +602,10 @@ Scenario 1
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><img src="./media/image10.png" style="width:1.575in;height:1.68333in" alt="image" /></td>
-<td><img src="./media/image11.png" style="width:3.30833in;height:3.09805in" alt="image" /></td>
+<td><img src="./media/image10.png"
+style="width:1.575in;height:1.68333in" alt="image" /></td>
+<td><img src="./media/image11.png"
+style="width:3.33004in;height:3.11838in" alt="image" /></td>
 </tr>
 </tbody>
 </table>
@@ -608,8 +619,10 @@ Scenario 2
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><img src="./media/image12.png" style="width:1.63333in;height:1.54167in" alt="image" /></td>
-<td><img src="./media/image13.png" style="width:3.25833in;height:3.06223in" alt="image" /></td>
+<td><img src="./media/image12.png"
+style="width:1.63333in;height:1.54167in" alt="image" /></td>
+<td><img src="./media/image13.png"
+style="width:3.26499in;height:3.06848in" alt="image" /></td>
 </tr>
 </tbody>
 </table>
@@ -623,8 +636,10 @@ Scenario 3
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><img src="./media/image14.png" style="width:1.525in;height:1.31667in" alt="image" /></td>
-<td><img src="./media/image15.png" style="width:3.54167in;height:2.84621in" alt="image" /></td>
+<td><img src="./media/image14.png"
+style="width:1.525in;height:1.31667in" alt="image" /></td>
+<td><img src="./media/image15.png"
+style="width:3.54213in;height:2.84659in" alt="image" /></td>
 </tr>
 </tbody>
 </table>
@@ -686,9 +701,9 @@ Note also that:
 To give more flexibility to the mutation model, the program offers the
 possibility to consider <u>mutations that insert or delete a single
 nucleotide</u> to the microsatellite sequence by using a mean parameter
-(named $\mu_{\left( \text{SNI} \right)}$) with a prior to be defined and
-individual loci having either values identical to the mean parameter or
-drawn from a Gamma distribution.
+(named $\mu_{(SNI)}$) with a prior to be defined and individual loci
+having either values identical to the mean parameter or drawn from a
+Gamma distribution.
 
 ### 2.4.2 DNA sequence loci
 
@@ -749,8 +764,8 @@ a MAF ≥ 5% will be retained in a simulated dataset. In practice, the
 instruction for a given MAF has to be indicated directly in the headline
 of the file of the observed dataset (see section 7.1.1 for data file
 examples). For instance, if one wants to consider only loci with a MAF
-equal to 5% one will write &lt;MAF=0.05> in the headline. Writing
-&lt;MAF=hudson> (or omitting to write any instruction with respect to
+equal to 5% one will write &lt;MAF=0.05&gt; in the headline. Writing
+&lt;MAF=hudson&gt; (or omitting to write any instruction with respect to
 the MAF) will bring the program to use the standard Hudson's algorithm
 without further selection. The selection of a subset of loci fitting a
 given MAF allows: (i) to remove loci with very low level of polymorphism
@@ -787,11 +802,11 @@ in a simulated dataset. In practice, the instruction for a given MRC has
 to be indicated directly in the headline of the file of the observed
 dataset (see section 7.1.2 for data file examples). For instance, if one
 wants to consider only loci with a MRC equal to 5 one will write
-&lt;MRC=5> in the headline. The selection of a subset of loci fitting a
-given MRC allows to reduce the proportion of loci for which the observed
-variation may corresponds to sequencing errors. If MRC is large enough
-(e.g. MRC=5 or 10), it also removes the loci with very low level of
-polymorphism from the dataset and hence increase the mean level of
+&lt;MRC=5&gt; in the headline. The selection of a subset of loci fitting
+a given MRC allows to reduce the proportion of loci for which the
+observed variation may corresponds to sequencing errors. If MRC is large
+enough (e.g. MRC=5 or 10), it also removes the loci with very low level
+of polymorphism from the dataset and hence increase the mean level of
 genetic variation of both the observed and simulated datasets, without
 producing any bias in the analyses; In practice MRC values of 2, 3,4 and
 5 are recommended. To check for the consistency/robustness of the ABC
@@ -860,8 +875,7 @@ Two sample statistics:
 
 3.  \[V2P\] - mean allele size variance across loci (two samples)
 
-4.  \[FST\] -$F_{\text{ST}}$ between two samples (Weir and Cockerham
-    1984)
+4.  \[FST\] -$F_{ST}$ between two samples (Weir and Cockerham 1984)
 
 5.  \[LIK\] - mean index of classification (two samples)
 
@@ -911,7 +925,7 @@ Two sample statistics:
 
 4.  \[MPB\] - mean of between sample pairwise differences
 
-5.  \[HST\] -$F_{\text{ST}}$ between two samples (Hudson et al. 1992)
+5.  \[HST\] -$F_{ST}$ between two samples (Hudson et al. 1992)
 
 > Three sample statistics:
 
@@ -1254,7 +1268,8 @@ in a text editor, unless you know what you are doing!
 
 When launching the GUI, the home screen appears like this:
 
-<img src="./media/image16.png" style="width:7.98534in;height:4.49167in" />
+<img src="./media/image16.png"
+style="width:7.99566in;height:4.49747in" />
 
 -   Access to main functionalities: you can access to the two main
     functionalities of the program (i.e. training set simulation and
@@ -1276,7 +1291,8 @@ When launching the GUI, the home screen appears like this:
 -   Clicking on the “Preference” button (upper left) gives access to the
     following screen
 
-> <img src="./media/image17.png" style="width:7.7in;height:4.33116in" />
+> <img src="./media/image17.png"
+> style="width:7.70811in;height:4.33572in" />
 
 > The different options proposed are self-meaning. Default values can be
 > changed by the user. Note that the loop-size option corresponds to the
@@ -1295,7 +1311,8 @@ the same whether the data are microsatellites/DNA sequences (MSS) or SNP
 the “Start” button in the middle of the Home panel (or on the “DIYABC-RF
 main pipeline” button). The following panel appears.
 
-<img src="./media/image18.png" style="width:7.7125in;height:4.33819in" />
+<img src="./media/image18.png"
+style="width:7.7125in;height:4.33819in" />
 
 -   Enter a project name in the “Project name” window (here
     IndSeq\_demonstration\_project). Validate the project name.
@@ -1320,19 +1337,21 @@ main pipeline” button). The following panel appears.
     locus type and their corresponding numbers (A= autosomal,
     M=mitochondrial…; see section 7.1 for details about datafile
     format), and the number of <span custom-style="help-block">available
-    loci based on the MAF criterion (here 15617 &lt;A>, as14383 loci,
+    loci based on the MAF criterion (here 15617 &lt;A&gt;, as14383 loci,
     including 0 monomorphic loci, have been filtered out due to a
     MAF&lt;5% by the program after scanning the proposed observed
     dataset</span>).
 
-> <img src="./media/image19.png" style="width:7.7125in;height:4.33819in" />
+> <img src="./media/image19.png"
+> style="width:7.7125in;height:4.33819in" />
 
 -   A “Project set up is ok” message appears at the bottom of the panel
     if all items have gone correctly. You can then go the next steps by
     clicking on the large blue color “Training set simulation” “+”
     button”. The following panel appears.
 
-<img src="./media/image20.png" style="width:7.7125in;height:4.33819in" />
+<img src="./media/image20.png"
+style="width:7.7125in;height:4.33819in" />
 
 > <span id="_Toc67674952" class="anchor"></span>**5.4.3 Step 3: Inform
 > the historical model**
@@ -1340,7 +1359,8 @@ main pipeline” button). The following panel appears.
 Click on the “Add” button of the “Define historical models” section. The
 following panel appears:
 
-<img src="./media/image21.png" style="width:6.60754in;height:3.71667in" />
+<img src="./media/image21.png"
+style="width:6.6519in;height:3.74162in" />
 
 Write the code of a first scenario (scenario 1) in the edit window
 ”Describe your scenario” and click on the “Validate” button.
@@ -1358,31 +1378,33 @@ Write the code of a first scenario (scenario 1) in the edit window
     choosing the prior distribution of each parameter of the scenario. A
     parameter is anything in the scenario that is not a keyword (here
     `sample`, `merge and split`), nor a numeric value. In our example
-    scenario, parameters are hence: `N1, N2, N3, N4, ``ra``, t21, t32`
-    and `t423`. We choose a uniform distribution and change the min and
-    max values (100 and 10000 for N values - 10 and 1000 for t values;
-    see panel below).
+    scenario, parameters are hence: `N1, N2, N3, N4, ra, t21, t32` and
+    `t423`. We choose a uniform distribution and change the min and max
+    values (100 and 10000 for N values - 10 and 1000 for t values; see
+    panel below).
 
-<img src="./media/image23.png" style="width:7.275in;height:4.09211in" />
+<img src="./media/image23.png"
+style="width:7.28053in;height:4.09521in" />
 
 -   In our example, we also need to specify conditions for the priors on
-    `t21, t32 and t432`` such that `t21>t32 and t32>t423.
+    `t21, t32 and t432`` such that `t21&gt;t32 and t32&gt;t423.
 
-<img src="./media/image24.png" style="width:6.82977in;height:3.84167in" />
+<img src="./media/image24.png"
+style="width:6.84069in;height:3.84781in" />
 
-To do this we write t21>t32 and t32>t432 on two successive lines in the
-“Condition setting” frame. As noted in the panel, conditions should have
-the following format: XX&lt;YY. where ‘XX' and 'YY' are parameters of
-the same type. You can use the standard comparison signs: '>', '>=',
-'&lt;', '=&lt;'. It is worth stressing that the omission of such
-conditional constraints on merge times (cf. a population needs to exist
-in the past to allow coalescence events in it) is one of the most
-frequent implementation error made by DIYABC-RF users. If forgotten a
-message "Error in simulation process: check your scenarios, priors and
-conditions" appears. Note that the occurrence of a too large number of
-time conditional constraints within a scenario may substantially slow
-down simulations as a valid t parameter vector will be retain and run
-only once all conditions are fulfilled.
+To do this we write t21&gt;t32 and t32&gt;t432 on two successive lines
+in the “Condition setting” frame. As noted in the panel, conditions
+should have the following format: XX&lt;YY. where ‘XX' and 'YY' are
+parameters of the same type. You can use the standard comparison signs:
+'&gt;', '&gt;=', '&lt;', '=&lt;'. It is worth stressing that the
+omission of such conditional constraints on merge times (cf. a
+population needs to exist in the past to allow coalescence events in it)
+is one of the most frequent implementation error made by DIYABC-RF
+users. If forgotten a message "Error in simulation process: check your
+scenarios, priors and conditions" appears. Note that the occurrence of a
+too large number of time conditional constraints within a scenario may
+substantially slow down simulations as a valid t parameter vector will
+be retain and run only once all conditions are fulfilled.
 
 -   We then can <u>add some other scenarios in additional windows</u> by
     clicking on the button “Add” (one or several times if one wants to
@@ -1393,11 +1415,12 @@ only once all conditions are fulfilled.
     completed with instructions for each one. For the last sixth
     scenario the panel looks like this:
 
-<img src="./media/image25.png" style="width:7.7125in;height:4.33819in" />
+<img src="./media/image25.png"
+style="width:7.7125in;height:4.33819in" />
 
 You need to complete time conditions for the six scenarios by writing
-t21>t32, t42&lt;t21, t43&lt;t32, t32>t423, t431&lt;t32 and t421&lt;t21
-on successive lines in the “Condition setting” frame.
+t21&gt;t32, t42&lt;t21, t43&lt;t32, t32&gt;t423, t431&lt;t32 and
+t421&lt;t21 on successive lines in the “Condition setting” frame.
 
 > <span id="_Toc67674953" class="anchor"></span>**5.4.4 Step 4: Inform
 > number of loci to simulate (and chromosome type)**
@@ -1406,11 +1429,11 @@ Choose the number of SNP locus that you want to simulate for each
 chromosome type define in the data file (*A* for autosomal diploid loci,
 *H* for autosomal haploid loci, *X* for X-linked or haplo-diploid loci,
 *Y* for Y-linked loci and *M* for mitochondrial loci; see section
-7.1.1). Here we have only type &lt;A> SNP loci. According to our own
+7.1.1). Here we have only type &lt;A&gt; SNP loci. According to our own
 experience, analyzing (evolutionary neutral) scenarios using 5000 to
 20000 SNP loci is sufficient to obtain robust results. In this example,
 we choose to consider simulations based on a subset of 5000 SNP loci
-(with &lt;MAF=0.05> as indicated previously in the headline of the
+(with &lt;MAF=0.05&gt; as indicated previously in the headline of the
 observed dataset file) taken in order f<u>rom the first SNP locus of the
 data file</u> (users may want to change this stating point), by
 replacing 30000 by 5000 in the corresponding frame. Click on the button
@@ -1424,7 +1447,8 @@ process independent analyses of a given dataset (a sufficiently large
 number of SNP loci available in the observed dataset is obviously needed
 to do that).
 
-<img src="./media/image26.png" style="width:7.37792in;height:4.15in" />
+<img src="./media/image26.png"
+style="width:7.39296in;height:4.15846in" />
 
 > <span id="_Toc67674954" class="anchor"></span>**5.4.5 Step 5: Summary
 > statistics**
@@ -1471,7 +1495,8 @@ You can access the “training set simulation” module by clicking on the
 corresponding + button on the far right of the box blue title bar
 “Training set simulation”. The following “Run” panel appears.
 
-<img src="./media/image27.png" style="width:7.7125in;height:4.33819in" />
+<img src="./media/image27.png"
+style="width:7.7125in;height:4.33819in" />
 
 -   Indicate the required number of datasets to simulate in the training
     set: we here change the default value of 100 into 12000 (in order to
@@ -1496,7 +1521,8 @@ corresponding + button on the far right of the box blue title bar
     concatenated .zip file is the one given at the start in the “Project
     name” window (here IndSeq\_demonstration\_project).
 
-<img src="./media/image28.png" style="width:7.7125in;height:4.33819in" />
+<img src="./media/image28.png"
+style="width:7.7125in;height:4.33819in" />
 
 -   <u>Warning</u>: The “Reset” button at the very bottom part of the
     “Project administration” panel restart the pipeline from scratch
@@ -1621,14 +1647,16 @@ Follow the same steps described in section 5.4 for IndSeq SNPs.
     “Add group”) and then assign each locus to one of those groups using
     the Group arrow on the right.</span>
 
-<img src="./media/image29.png" style="width:6.13345in;height:3.45in" />
+<img src="./media/image29.png"
+style="width:6.1924in;height:3.48316in" />
 
 -   Second: define the motif size and continuous range of motif
     variation. <span custom-style="help-block">By default, all
     microsatellite loci are supposed to be dinucleotidic (motif = 2)
     with a range of 40.</span>
 
-<img src="./media/image30.png" style="width:6.11667in;height:3.44056in" />
+<img src="./media/image30.png"
+style="width:6.14555in;height:3.4568in" />
 
 > It is worth stressing that the values for motif size and allelic range
 > are just default values and do not necessarily correspond to the
@@ -1672,7 +1700,8 @@ Follow the same steps described in section 5.4 for IndSeq SNPs.
     for many eukaryote species (e.g. Estoup et al. 2002; but see
     Fraimout et al. 2017).
 
-<img src="./media/image31.png" style="width:7.7125in;height:4.33819in" />
+<img src="./media/image31.png"
+style="width:7.7125in;height:4.33819in" />
 
 **<u>For DNA sequence markers</u>: Informing the genetic model can be
 done using the following panels (implemented here from the same toy
@@ -1680,7 +1709,8 @@ example as above).**
 
 -   We need to define at least one group of DNA sequence loci.
 
-> <img src="./media/image32.png" style="width:7.7125in;height:4.33819in" />
+> <img src="./media/image32.png"
+> style="width:7.7125in;height:4.33819in" />
 
 -   Suppose that we want all DNA sequence loci in the same group because
     we consider that they all have similar mutational modalities. We
@@ -1697,7 +1727,8 @@ example as above).**
     values as the latter have been reported for many eukaryote species
     (e.g. Cornuet et al. 2010).
 
-> <img src="./media/image33.png" style="width:7.08333in;height:3.9843in" />
+> <img src="./media/image33.png"
+> style="width:7.09211in;height:3.98923in" />
 
 > The default values are indicated in the panel. Note that the default
 > mean mutation rate is not suited to mitochondrial DNA which generally
@@ -1713,7 +1744,8 @@ example as above).**
     simulations in the corresponding button (here 30000) and click on
     the button “Simulate” to launch the simulation of the training set.
 
-<img src="./media/image34.png" style="width:6.35in;height:3.5718in" />
+<img src="./media/image34.png"
+style="width:6.3535in;height:3.57377in" />
 
 ### 5.6.2 Step 5: Summary statistics
 
@@ -1744,7 +1776,7 @@ example as above).**
 
 3\. mean allele size variance across loci (two samples) (V2P)
 
-${3.F}_{\text{ST}}$ between two samples (FST)
+${3.F}_{ST}$ between two samples (FST)
 
 4\. mean index of classification (two samples) (LIK)
 
@@ -1790,7 +1822,7 @@ sites (VNS)
 
 4\. mean of between sample pairwise differences (MPB)
 
-${5.F}_{\text{ST}}$ between two samples (HST)
+${5.F}_{ST}$ between two samples (HST)
 
 -   Three sample statistics:
 
@@ -1819,7 +1851,8 @@ section 5.4.
 -   Click on the “Start” button in the middle of the Home panel. The
     following panel appears.
 
-<img src="./media/image35.png" style="width:7.7125in;height:4.33819in" />
+<img src="./media/image35.png"
+style="width:7.7125in;height:4.33819in" />
 
 -   Enter a project name in the “Project name” window (here
     “Starting\_from\_existing\_project\_IndSeq\_demonstration\_project”)
@@ -1844,7 +1877,8 @@ section 5.4.
     with the new headerRF.txt file and the associated simulated data
     that you will generate).
 
-<img src="./media/image36.png" style="width:7.7125in;height:4.33819in" />
+<img src="./media/image36.png"
+style="width:7.7125in;height:4.33819in" />
 
 -   Browse and choose a data file (an IndSeq format data file in this
     case) in the “Data file” window (here
@@ -1863,7 +1897,8 @@ section 5.4.
     clicking on the large blue color “Training set simulation” “+”
     button”. The following panel appears.
 
-> <img src="./media/image37.png" style="width:6.71125in;height:3.775in" />
+> <img src="./media/image37.png"
+> style="width:6.73395in;height:3.78777in" />
 >
 > The panel displays all information included in the headerRF.txt file
 > (historical models, priors and conditions, number of SNP loci to
@@ -1883,7 +1918,8 @@ section 5.4.
     number &gt; 12000 (here 24000 to double the number of simulated
     data). Then click on the large blue color button “Simulate”.
 
-<img src="./media/image38.png" style="width:6.04457in;height:3.4in" />
+<img src="./media/image38.png"
+style="width:6.08872in;height:3.42483in" />
 
 > You can stop the generation of simulated datasets by clicking on the
 > “STOP” button. A “<span custom-style="help-block">Run
@@ -1898,7 +1934,8 @@ section 5.4.
     is the one given at the start in the “Project name” window (here
     Starting\_from\_existing\_project\_IndSeq\_demonstration\_project).
 
-> <img src="./media/image39.png" style="width:6.96667in;height:3.91867in" />
+> <img src="./media/image39.png"
+> style="width:7.09426in;height:3.99044in" />
 
 -   You might also want to launch the optional but recommended option
     “Prior and scenario checking”. For details see section 5.4.7.
@@ -1935,7 +1972,8 @@ Four files are needed at this stage:
     the “Existing project” button and using the ”Project files” and
     “Data file” browsers**.
 
-<img src="./media/image40.png" style="width:7.7125in;height:4.33819in" />
+<img src="./media/image40.png"
+style="width:7.7125in;height:4.33819in" />
 
 ## 6.2. Scenario choice analysis
 
@@ -1948,7 +1986,8 @@ Four files are needed at this stage:
     available per scenario, nbr of parameters, nbr of summary
     statistics).
 
-<img src="./media/image41.png" style="width:7.60015in;height:4.275in" />
+<img src="./media/image41.png"
+style="width:7.60717in;height:4.27894in" />
 
 -   Provide an Analysis (sub-project) name (here
     “Scenario\_choice\_demonstration”) and validate it.
@@ -1957,7 +1996,8 @@ Four files are needed at this stage:
     activated by default). The observed dataset that will be analyzed is
     the one described in the file “statobsRF.txt”.
 
-<img src="./media/image42.png" style="width:7.59167in;height:4.27023in" />
+<img src="./media/image42.png"
+style="width:7.59657in;height:4.27299in" />
 
 -   Modify the RF analysis settings in the following frames or keep
     default settings
@@ -1992,7 +2032,8 @@ Four files are needed at this stage:
 -   Click on the “RUN” button to launch the RF analysis for scenario
     choice
 
-<img src="./media/image43.png" style="width:7.7125in;height:4.33819in" />
+<img src="./media/image43.png"
+style="width:7.7125in;height:4.33819in" />
 
 -   Follow the progress bar. You can stop the RF analysis by clicking on
     the “STOP” button. A “RF run succeeded” label appears when the RF
@@ -2033,13 +2074,15 @@ Four files are needed at this stage:
 -   Provide an Analysis (sub-project) name (here
     “Parameter\_estimation\_ra\_demonstration”) and validate it.
 
-<img src="./media/image44.png" style="width:7.7125in;height:4.33819in" />
+<img src="./media/image44.png"
+style="width:7.7125in;height:4.33819in" />
 
 -   Activate the “Parameter choice” button in the mode setting. The
     observed dataset that will be analyzed is the one described in the
     file “statobsRF.txt”.
 
-<img src="./media/image45.png" style="width:7.7125in;height:4.33819in" />
+<img src="./media/image45.png"
+style="width:7.7125in;height:4.33819in" />
 
 -   Indicate the ID number of the chosen scenario for parameter
     estimation (default = 1). Here scenario3.
@@ -2072,7 +2115,8 @@ Four files are needed at this stage:
     components of the feature vector (i.e. summary statistics) are
     informative (see section 7.3 and Collin et al. 2020 for details).
 
-<img src="./media/image46.png" style="width:7.7125in;height:4.33819in" />
+<img src="./media/image46.png"
+style="width:7.7125in;height:4.33819in" />
 
 -   Enable/Disable the addition of linear combinations axes (PLS for
     parameter estimation) (default = enable)
@@ -2093,7 +2137,8 @@ Four files are needed at this stage:
     analyses focusing on the single parameter (or parameter combination)
     indicated above.
 
-> <img src="./media/image47.png" style="width:7.7125in;height:4.33819in" />
+> <img src="./media/image47.png"
+> style="width:7.7125in;height:4.33819in" />
 
 -   Follow the progress bar. You can stop the RF analysis by clicking on
     the “STOP” button. A “RF run succeeded” label appears when the RF
@@ -2130,22 +2175,22 @@ The program uses and produces various files that we describe now.
 The data file format includes:
 
 -   A first line (headline) providing the sex-ratio as above (e.g.
-    &lt;NM=1.0NF>, the required MAF (minimum allele frequency criterion;
-    e.g. &lt;MAF=0.05> or &lt;MAF=hudson>), and any text that can be
-    used as a title. The sex ratio of the analyzed species is noted
-    under the form &lt;NM=rNF>, in which r is the ratio of the number of
-    females per male (e.g. &lt;NM=2.5NF> means that the number of males
-    is 2.5 times the number of females; for a balanced sex ratio one
-    should write &lt;NM=1.0NF>). For each SNP, the MAF is computed
-    pooling all genes genotyped over all studied population samples. For
-    instance, the specification of a MAF equal to 5% will automatically
-    select a subset of *m* loci characterized by a minimum allele
-    frequency ≥ 5% out of the *l* loci of the observed dataset and only
-    *m* loci with a MAF ≥ 5% will be retained in a simulated dataset.
-    Writing &lt;MAF=Hudson> (or omitting to write any instruction with
-    respect to the MAF) will bring the program to use the standard
-    Hudson’s algorithm without further selection; see also the above
-    section 2.4.2.
+    &lt;NM=1.0NF&gt;, the required MAF (minimum allele frequency
+    criterion; e.g. &lt;MAF=0.05&gt; or &lt;MAF=hudson&gt;), and any
+    text that can be used as a title. The sex ratio of the analyzed
+    species is noted under the form &lt;NM=rNF&gt;, in which r is the
+    ratio of the number of females per male (e.g. &lt;NM=2.5NF&gt; means
+    that the number of males is 2.5 times the number of females; for a
+    balanced sex ratio one should write &lt;NM=1.0NF&gt;). For each SNP,
+    the MAF is computed pooling all genes genotyped over all studied
+    population samples. For instance, the specification of a MAF equal
+    to 5% will automatically select a subset of *m* loci characterized
+    by a minimum allele frequency ≥ 5% out of the *l* loci of the
+    observed dataset and only *m* loci with a MAF ≥ 5% will be retained
+    in a simulated dataset. Writing &lt;MAF=Hudson&gt; (or omitting to
+    write any instruction with respect to the MAF) will bring the
+    program to use the standard Hudson’s algorithm without further
+    selection; see also the above section 2.4.2.
 
 -   A second line starting with the three keywords `IND SEX POP`,
     separated by at least one space, followed by as many letters as SNP
@@ -2210,23 +2255,23 @@ The data file format includes:
 **EXAMPLE**
 
 In our example below, the species is diploid, has an unbalanced sex
-ratio (i.e. &lt;NM=1.5NF>) and two of its populations were genotyped at
-23 SNP loci: 20 autosomal loci, 1 X-linked locus, 1 Y-linked locus and 1
-mitochondrial locus. The first line provides the title and includes the
-species sex-ratio and the MAF (minimum allele frequency). The second
-line indicates: individual name in column 1, individual sex in column 2
-(`M` for male, `F` for female, `9` or any other letter if unknown),
-population name in column 3 and one column per SNP locus (letter `A` for
-an autosomal locus, `X` for an X-linked locus, `Y` for a Y-linked locus
-and `M` for a mitochondrial locus). Columns are separated by one or more
-spaces. SNP genotypes are coded `0`, `1` or `2` (`9` for missing data)
-according to <u>the number of reference alleles</u> at the corresponding
-locus. In other words, the homozygous genotype 2 has two reference
-alleles, the homozygous genotype 0 has two non-reference alleles and the
-heterozygous genotype 1 has one reference allele and one non-reference
-allele. Note that the sex has no influence on simulations for autosomal,
-mitochondrial or haploid loci (any sex can be hence declared). For
-individuals with an unknown sex (denoted `9`, see
+ratio (i.e. &lt;NM=1.5NF&gt;) and two of its populations were genotyped
+at 23 SNP loci: 20 autosomal loci, 1 X-linked locus, 1 Y-linked locus
+and 1 mitochondrial locus. The first line provides the title and
+includes the species sex-ratio and the MAF (minimum allele frequency).
+The second line indicates: individual name in column 1, individual sex
+in column 2 (`M` for male, `F` for female, `9` or any other letter if
+unknown), population name in column 3 and one column per SNP locus
+(letter `A` for an autosomal locus, `X` for an X-linked locus, `Y` for a
+Y-linked locus and `M` for a mitochondrial locus). Columns are separated
+by one or more spaces. SNP genotypes are coded `0`, `1` or `2` (`9` for
+missing data) according to <u>the number of reference alleles</u> at the
+corresponding locus. In other words, the homozygous genotype 2 has two
+reference alleles, the homozygous genotype 0 has two non-reference
+alleles and the heterozygous genotype 1 has one reference allele and one
+non-reference allele. Note that the sex has no influence on simulations
+for autosomal, mitochondrial or haploid loci (any sex can be hence
+declared). For individuals with an unknown sex (denoted `9`, see
 `IND P1_2, P1_3 and P2_15),` data for autosomal (as well as
 mitochondrial and haploid) loci will be taken into account and
 simulated. On the other hand, the genotypes of X-linked and Y-linked
@@ -2234,7 +2279,8 @@ loci for the `same IND P1_2, P1_3 and P2_15` with unknown sex cannot be
 safely determined and are hence noted `9` for missing data (i.e. they
 are not simulated).
 
-<img src="./media/image48.png" style="width:4.83333in;height:4.35417in" alt="image" />
+<img src="./media/image48.png" style="width:4.83333in;height:4.35417in"
+alt="image" />
 
 > <span id="_Toc67674969" class="anchor"></span>**7.1.2 PoolSeq SNP
 > data**
@@ -2242,20 +2288,21 @@ are not simulated).
 The data file format includes:
 
 -   A first line (headline) providing the sex-ratio of the analyzed
-    species (e.g. &lt;NM=1.0NF>), the required MRC (minimum read count
-    criterion; e.g. &lt;MRC=5>), and any text that can be used as a
-    title. The sex ratio is noted under the form &lt;NM=rNF>, in which r
-    is the ratio of the number of females per male (e.g. &lt;NM=2.5NF>
-    means that the number of males is 2.5 times the number of females;
-    for a balanced sex ratio one should write &lt;NM=1.0NF>). The MRC is
-    the minimum number of sequence reads for each alleles of a SNP when
-    pooling the reads overall population samples. The specification of a
-    MRC equal to 5 will automatically select a subset of *m* PoolSeq
-    loci for which both alleles have at least five reads among the *l*
-    loci of the observed dataset. For instance, the first locus of the
-    list (cf. third line of the file) will not be selected. In agreement
-    with this, and only *m* loci with a MRC ≥ 5 will be retained in a
-    simulated dataset. We advise using MRC values of 2, 3, 4 or 5.
+    species (e.g. &lt;NM=1.0NF&gt;), the required MRC (minimum read
+    count criterion; e.g. &lt;MRC=5&gt;), and any text that can be used
+    as a title. The sex ratio is noted under the form &lt;NM=rNF&gt;, in
+    which r is the ratio of the number of females per male (e.g.
+    &lt;NM=2.5NF&gt; means that the number of males is 2.5 times the
+    number of females; for a balanced sex ratio one should write
+    &lt;NM=1.0NF&gt;). The MRC is the minimum number of sequence reads
+    for each alleles of a SNP when pooling the reads overall population
+    samples. The specification of a MRC equal to 5 will automatically
+    select a subset of *m* PoolSeq loci for which both alleles have at
+    least five reads among the *l* loci of the observed dataset. For
+    instance, the first locus of the list (cf. third line of the file)
+    will not be selected. In agreement with this, and only *m* loci with
+    a MRC ≥ 5 will be retained in a simulated dataset. We advise using
+    MRC values of 2, 3, 4 or 5.
 
 -   Remember that (in contrast to IndSeq SNP) <u>only PoolSeq SNPs
     located on autosomal chromosomes of diploid individuals can be
@@ -2315,7 +2362,8 @@ because the MRC=5 several SNP of the present example data file, e.g. the
 first SNP for which only two read counts are present over all pools,
 will not be selected when generating simulated datasets.
 
-<img src="./media/image49.wmf" style="width:6.52569in;height:4.35417in" />
+<img src="./media/image49.png"
+style="width:5.1875in;height:4.64583in" />
 
 > <span id="_Toc67674970" class="anchor"></span>**7.3.1 Microsatellite
 > and DNA sequence data**
@@ -2324,20 +2372,20 @@ The data file format is an extended format of the file used in the
 classical population genetics program Genepop (Rousset et al. 1995). The
 additional features are:
 
--   In the title line appears the sex ratio noted &lt;NM=rNF>, in which
-    $r$ is the ratio of the number of females per male (e.g. NM=2.5NF)
-    means that the number of males is 2.5 times the number of females;
-    for a balanced sex ratio one should write&lt;NM=1.0NF>. Since the
-    title is generally only copied, this addition should not interfere
-    with other programs using Genepop datafiles. Also if there is no
-    such sex ratio addition, DIYABC-RF will consider by default that
-    NM=1.0NF.
+-   In the title line appears the sex ratio noted &lt;NM=rNF&gt;, in
+    which $r$ is the ratio of the number of females per male (e.g.
+    NM=2.5NF) means that the number of males is 2.5 times the number of
+    females; for a balanced sex ratio one should write&lt;NM=1.0NF&gt;.
+    Since the title is generally only copied, this addition should not
+    interfere with other programs using Genepop datafiles. Also if there
+    is no such sex ratio addition, DIYABC-RF will consider by default
+    that NM=1.0NF.
 
 -   After the locus name, there is an indication for the category of the
-    locus which is A for autosomal diploid loci &lt;H> for autosomal
-    haploid loci, &lt;X> for X-linked (or haplo-diploid) loci, Y for
-    Y-linked loci and &lt;M> for mitochondrial loci. If no category is
-    noted, DIYABC-RF will consider the locus as autosomal diploid or
+    locus which is A for autosomal diploid loci &lt;H&gt; for autosomal
+    haploid loci, &lt;X&gt; for X-linked (or haplo-diploid) loci, Y for
+    Y-linked loci and &lt;M&gt; for mitochondrial loci. If no category
+    is noted, DIYABC-RF will consider the locus as autosomal diploid or
     autosomal haploid depending on the corresponding genotype of the
     first typed individual.
 
@@ -2391,13 +2439,14 @@ samples, each of 12 diploid individuals (8 females and 4 males in the
 first sample and 5 females and 7 males in the second sample). As deduced
 from the letter between and on the locus name lines (see page 25), these
 individuals have been genotyped at 3 microsatellite loci (1 autosomal
-&lt;A>, 1 X-linked &lt;X> and 1 Y-linked &lt;Y>) and 3 DNA sequence loci
-(1 autosomal &lt;A>. 1 X-linked &lt;&lt;X> and 1 mitochondrial &lt;M>).
-The species sex-ratio, given in the title line, is of three males for
-one female (&lt;NM=3NF>) or in other words, the number of males equals
-three times the number of females.
+&lt;A&gt;, 1 X-linked &lt;X&gt; and 1 Y-linked &lt;Y&gt;) and 3 DNA
+sequence loci (1 autosomal &lt;A&gt;. 1 X-linked &lt;&lt;X&gt; and 1
+mitochondrial &lt;M&gt;). The species sex-ratio, given in the title
+line, is of three males for one female (&lt;NM=3NF&gt;) or in other
+words, the number of males equals three times the number of females.
 
-<img src="./media/image50.png" style="width:5.38333in;height:4.19167in" alt="image" />
+<img src="./media/image50.png" style="width:5.38333in;height:4.19167in"
+alt="image" />
 
 <u>Example 2</u>: in this second example, the species is haploid.
 Individuals have been genotyped at three autosomal microsatellite loci
@@ -2405,7 +2454,8 @@ and one mitochondrial DNA sequence locus. The species being haploid
 (deduced from the presence of autosomal haploid loci), no indication of
 the sex-ratio appears in the title line.
 
-<img src="./media/image51.png" style="width:4.90625in;height:2.72917in" alt="image" />
+<img src="./media/image51.png" style="width:4.90625in;height:2.72917in"
+alt="image" />
 
 ## 7.2 Training set file(s)
 
@@ -2622,8 +2672,9 @@ the random generator.
 about the initialization of the random generator
 
 **Files produced with IndSeq analysis**  
-- &lt;observed\_dataset\_name>.bin and &lt;observed\_dataset\_name>.txt:
-observed dataset file in bin and txt format, respectively  
+- &lt;observed\_dataset\_name&gt;.bin and
+&lt;observed\_dataset\_name&gt;.txt: observed dataset file in bin and
+txt format, respectively  
 - maf.txt: file in which the minimum allele frequency value (maf) has
 been recorded
 
@@ -2646,7 +2697,8 @@ in silico datasets (also called pseudo-observed datasets) click on the
 of the GUI or on the “Synthetic data file generation” button in the
 upper-left part of the same panel.
 
-<img src="./media/image52.png" style="width:6.97917in;height:3.92569in" />
+<img src="./media/image52.png"
+style="width:6.97917in;height:3.92569in" />
 
 The panels following such clicking are very similar to those detailed in
 the sections 5.4 (IndSeq data), 5.5 (PoolSeq data) and 5.6
