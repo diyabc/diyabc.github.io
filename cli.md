@@ -45,7 +45,7 @@ Now we assume that we are working from a `DIYABC-RF` project directory.
 
 ## Training set simulation
 
-To simulate the training set for the random forest (based on your data set), you need the `diyabc-rf` program for your OS from [here](https://github.com/diyabc/diyabc/releases/latest), named `diyabc-rf-<os>-<version>` (where `<os>` is your OS and `<version>` is the software version).
+To simulate the training set for the random forest (based on your data set), you need the `diyabc-rf` program for your OS from [here](https://github.com/diyabc/diyabc/releases/latest), named `diyabc-RF-<os>-<version>` (where `<os>` is your OS and `<version>` is the software version, e.g. `diyabc-RF-linux-v1.1.27`).
 
 Then you need to write a `header.txt` (or `headerRF.txt`) configuration file describing your project configuration (c.f. [previous section](#input-data-an-configuration-file)).
 
@@ -53,17 +53,17 @@ You can also use the [GUI](/gui/) to generate the `header.txt` file.
 
 1. Generate the seed for data generation:
 ```bash
-diyabc-rf-<os>-<version> -p ./ -n "t:<n_core>"
+diyabc-RF-<os>-<version> -p ./ -n "t:<n_core>"
 ```
 
 2. Training set simulation:
 ```bash
-diyabc-rf-<os>-<version> -p ./ -R "ALL" -m -t <n_core> -g <batch_size> -r <n_simu>
+diyabc-RF-<os>-<version> -p ./ -R "ALL" -m -t <n_core> -g <batch_size> -r <n_simu>
 ```
 
-3. (Optional) Prior and Model checking:
+3. (Optional) Prior and scenario checking:
 ```bash
-diyabc-rf-<os>-<version> -p ./ -d a:pl
+diyabc-RF-<os>-<version> -p ./ -d a:pl
 ```
 
 Options:
@@ -73,9 +73,9 @@ Options:
 
 > Note: you can increase the size of an existing data set by running again the program with a larger training set size (`<n_simu>`).
 
-You can run `diyabc-rf-<os>-<version> -h` for more details about the program options and input parameters.
+You can run `diyabc-RF-<os>-<version> --help` for more details about the program options and input parameters.
 
-The **prior and model checking step** does a projection of the observed data set and of the simulated training set (through a PCA) to give an insight about the consistency between your data set and the simulated data based on the historical models and the chosen values for the parameter priors that you chose. Results can be found in the files prefixed with `pcaloc`.
+The **prior and scenario checking step** does a projection of the observed data set and of the simulated training set (through a PCA) to give an insight about the consistency between your data set and the simulated data based on the historical models and the chosen values for the parameter priors that you chose. Results can be found in the files prefixed with `pcaloc`.
 
 ---
 
@@ -83,15 +83,15 @@ The **prior and model checking step** does a projection of the observed data set
 
 With the random forest analysis, based on the training set, you can either run a model selection procedure, or estimate a parameter (or a combination of parameters) from a given model.
 
-To run the random forest analysis, you need the `abcranger` program for your OS, available from [here](https://github.com/diyabc/abcranger/releases/latest), named `abcranger-<os>-<version>` (where `<os>` is your OS and `<version>` is the software version).
+To run the random forest analysis, you need the `abcranger` program for your OS, available from [here](https://github.com/diyabc/abcranger/releases/latest), named `abcranger-<os>-<version>` (where `<os>` is your OS and `<version>` is the software version, e.g. `abcranger-linux-v1.2.64`).
 
-You can run `abcranger-<os>-<version> -h` for more details about the program options and input parameters.
+You can run `abcranger-<os>-<version> --help` for more details about the program options and input parameters.
 
 ### Model selection
 
 To run the model selection procedure, you can run:
 ```bash
-abcranger -t <n_tree> -j <n_core>
+abcranger-<os>-<version> -t <n_tree> -j <n_core>
 ```
 
 Options:
@@ -105,7 +105,7 @@ Options:
 
 To run, the parameter estimation procedure, you can run:
 ```bash
-abcranger -t <n_tree> -j <n_core> --parameter <param_name> --chosenscen <id>
+abcranger-<os>-<version> -t <n_tree> -j <n_core> --parameter <param_name> --chosenscen <id>
 ```
 
 Options:
