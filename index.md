@@ -29,7 +29,9 @@ information (and especially **installation instructions**).
 `DIYABC-RF GUI` is a simple and user friendly interface for the `DIYABC-RF` 
 framework.
 
-> :warning: If you encounter any issue, please visit and report bug at [DIYABC-RF GUI issue tracker](https://github.com/diyabc/diyabcGUI/issues).
+> ⚠️ **Due to work overload, the development, support and maintenance for the project `DIYABC-RF GUI` is currently paused. Feel free to contact us (by submitting an issue) if you want to take over the development for this project. Pull request are also welcome to fix bug or implement missing functionalities. You can still use the command line version of the software which is still maintained/supported. Check the documentation page [here](/cli/). Thanks** ⚠️
+
+> ℹ️ If you encounter any issue, please visit and report bug at [DIYABC-RF GUI issue tracker](https://github.com/diyabc/diyabcGUI/issues).
 
 ---
 
